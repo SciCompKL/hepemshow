@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="struct_input_params_1_1_primary_and_events" kind="struct" language="C++" prot="public">
+    <compoundname>InputParams::PrimaryAndEvents</compoundname>
+    <includes refid="_input_parameters_8hh" local="no">InputParameters.hh</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_input_params_1_1_primary_and_events_1ad6cdcf3e3bbce4db87f8b0b6de11dd9d" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string InputParams::PrimaryAndEvents::fParticleName</definition>
+        <argsstring></argsstring>
+        <name>fParticleName</name>
+        <qualifiedname>InputParams::PrimaryAndEvents::fParticleName</qualifiedname>
+        <briefdescription>
+<para>primary particle name: {&quot;e-&quot;, &quot;e+&quot; or &quot;gamma&quot;} </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" line="49" column="18" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1_1_primary_and_events_1a944a58ba60975b68ceac7c9dd4d19144" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::PrimaryAndEvents::fParticleEnergy</definition>
+        <argsstring></argsstring>
+        <name>fParticleEnergy</name>
+        <qualifiedname>InputParams::PrimaryAndEvents::fParticleEnergy</qualifiedname>
+        <briefdescription>
+<para>primary particle energy in [MeV] </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" line="50" column="18" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1_1_primary_and_events_1aced51e6b06ae9ba1052ead3eecf83e6b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::PrimaryAndEvents::fNumEvents</definition>
+        <argsstring></argsstring>
+        <name>fNumEvents</name>
+        <qualifiedname>InputParams::PrimaryAndEvents::fNumEvents</qualifiedname>
+        <briefdescription>
+<para>number of events to simulate (each will start with a single primary) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" line="51" column="18" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1_1_primary_and_events_1aa82b53c2a93ca26506f531a6108a5a24" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::PrimaryAndEvents::fPrintProgress</definition>
+        <argsstring></argsstring>
+        <name>fPrintProgress</name>
+        <qualifiedname>InputParams::PrimaryAndEvents::fPrintProgress</qualifiedname>
+        <briefdescription>
+<para>a report is printed at each of the begining of the fPrintProgess-th events </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" line="52" column="18" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1_1_primary_and_events_1a84bdd946f9a84395e2a734767095c64b" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::PrimaryAndEvents::fRandomSeed</definition>
+        <argsstring></argsstring>
+        <name>fRandomSeed</name>
+        <qualifiedname>InputParams::PrimaryAndEvents::fRandomSeed</qualifiedname>
+        <briefdescription>
+<para>seed for the random number generator </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" line="53" column="18" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_input_params_1_1_primary_and_events_1a3e78eb8a67b4fdbd114ef732da6c41fd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>InputParams::PrimaryAndEvents::PrimaryAndEvents</definition>
+        <argsstring>()</argsstring>
+        <name>PrimaryAndEvents</name>
+        <qualifiedname>InputParams::PrimaryAndEvents::PrimaryAndEvents</qualifiedname>
+        <briefdescription>
+<para>CTR with default values: simulate 1000 events, starting with an electron of 10 GeV each (do not report progress). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" line="42" column="5" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" bodystart="42" bodyend="47"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The primary partcile and events related input arguments. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" line="40" column="3" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" bodystart="40" bodyend="54"/>
+    <listofallmembers>
+      <member refid="struct_input_params_1_1_primary_and_events_1aced51e6b06ae9ba1052ead3eecf83e6b" prot="public" virt="non-virtual"><scope>InputParams::PrimaryAndEvents</scope><name>fNumEvents</name></member>
+      <member refid="struct_input_params_1_1_primary_and_events_1a944a58ba60975b68ceac7c9dd4d19144" prot="public" virt="non-virtual"><scope>InputParams::PrimaryAndEvents</scope><name>fParticleEnergy</name></member>
+      <member refid="struct_input_params_1_1_primary_and_events_1ad6cdcf3e3bbce4db87f8b0b6de11dd9d" prot="public" virt="non-virtual"><scope>InputParams::PrimaryAndEvents</scope><name>fParticleName</name></member>
+      <member refid="struct_input_params_1_1_primary_and_events_1aa82b53c2a93ca26506f531a6108a5a24" prot="public" virt="non-virtual"><scope>InputParams::PrimaryAndEvents</scope><name>fPrintProgress</name></member>
+      <member refid="struct_input_params_1_1_primary_and_events_1a84bdd946f9a84395e2a734767095c64b" prot="public" virt="non-virtual"><scope>InputParams::PrimaryAndEvents</scope><name>fRandomSeed</name></member>
+      <member refid="struct_input_params_1_1_primary_and_events_1a3e78eb8a67b4fdbd114ef732da6c41fd" prot="public" virt="non-virtual"><scope>InputParams::PrimaryAndEvents</scope><name>PrimaryAndEvents</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

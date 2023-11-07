@@ -1,0 +1,467 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_box" kind="class" language="C++" prot="public">
+    <compoundname>Box</compoundname>
+    <includes refid="_box_8hh" local="no">Box.hh</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_box_1a2c24355779e7b714cab4581547ea9580" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string Box::fName</definition>
+        <argsstring></argsstring>
+        <name>fName</name>
+        <qualifiedname>Box::fName</qualifiedname>
+        <briefdescription>
+<para>Name of this volume. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" line="139" column="21" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_box_1ae9dbbb9d4a4143cbe2febc01af577f53" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Box::fMaterialIndx</definition>
+        <argsstring></argsstring>
+        <name>fMaterialIndx</name>
+        <qualifiedname>Box::fMaterialIndx</qualifiedname>
+        <briefdescription>
+<para>Index of the material this volume is filled with. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" line="141" column="10" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_box_1a456992b909ed45dd99e1f1b9f246994c" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Box::fDx</definition>
+        <argsstring></argsstring>
+        <name>fDx</name>
+        <qualifiedname>Box::fDx</qualifiedname>
+        <briefdescription>
+<para>Half length of the box along the x-axis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" line="143" column="10" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_box_1a341d1fb2d8102035698dfa6a4de4a557" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Box::fDy</definition>
+        <argsstring></argsstring>
+        <name>fDy</name>
+        <qualifiedname>Box::fDy</qualifiedname>
+        <briefdescription>
+<para>Half length of the box along the y-axis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" line="145" column="10" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_box_1a5e868b153e22d588dd482e45fc69ca7d" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Box::fDz</definition>
+        <argsstring></argsstring>
+        <name>fDz</name>
+        <qualifiedname>Box::fDz</qualifiedname>
+        <briefdescription>
+<para>Half length of the box along the z-axis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" line="147" column="10" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_box_1a92e002367dac759cdb49991eccb80869" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double Box::kCarTolerance</definition>
+        <argsstring></argsstring>
+        <name>kCarTolerance</name>
+        <qualifiedname>Box::kCarTolerance</qualifiedname>
+        <initializer>= 1.0E-9</initializer>
+        <briefdescription>
+<para>Value of the tolerance in [mm]. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" line="150" column="16" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_box_1a167d1f1fa5733a0ad9ffed8b492a30c9" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Box::fDelta</definition>
+        <argsstring></argsstring>
+        <name>fDelta</name>
+        <qualifiedname>Box::fDelta</qualifiedname>
+        <briefdescription>
+<para>Half of the above tolerance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" line="152" column="10" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_box_1a7ac872372c33f5aecf06374c843dceca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Box::Box</definition>
+        <argsstring>(const std::string &amp;name, int indxMat, double pX, double pY, double pZ)</argsstring>
+        <name>Box</name>
+        <qualifiedname>Box::Box</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>indxMat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>pX</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>pY</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>pZ</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of this volume. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">indxMat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of the material this volume is filled with. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Half length of the box along the x-axis. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Half length of the box along the y-axis. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pZ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Half length of the box along the z-axis. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" line="68" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_box_1a6a5e09398e85d602a046b429062fb9c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Box::~Box</definition>
+        <argsstring>()</argsstring>
+        <name>~Box</name>
+        <qualifiedname>Box::~Box</qualifiedname>
+        <briefdescription>
+<para>Destructor (nothig to do) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" line="71" column="2" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" bodystart="71" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_box_1ae360d3e3aa5921e52596d0ff36535913" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; Box::GetName</definition>
+        <argsstring>() const</argsstring>
+        <name>GetName</name>
+        <qualifiedname>Box::GetName</qualifiedname>
+        <briefdescription>
+<para>Get the name of this volume. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" line="75" column="21" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" bodystart="75" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_box_1ab2e8383851eeaa396268241399073081" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Box::SetMaterialIndx</definition>
+        <argsstring>(int indx)</argsstring>
+        <name>SetMaterialIndx</name>
+        <qualifiedname>Box::SetMaterialIndx</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>indx</declname>
+        </param>
+        <briefdescription>
+<para>Set the material this volume is filled with. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">indx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of the material. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" line="81" column="8" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" bodystart="81" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="class_box_1a0ae7ae21a5e8b6fab545ccb5d67b9763" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Box::GetMaterialIndx</definition>
+        <argsstring>() const</argsstring>
+        <name>GetMaterialIndx</name>
+        <qualifiedname>Box::GetMaterialIndx</qualifiedname>
+        <briefdescription>
+<para>Get the material this volume is filled with. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Index of the material. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" line="86" column="8" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" bodystart="86" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="class_box_1ab6cccf2b74be881f887f118eb1cdffaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Box::SetHalfLength</definition>
+        <argsstring>(double val, int idx)</argsstring>
+        <name>SetHalfLength</name>
+        <qualifiedname>Box::SetHalfLength</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+        </param>
+        <briefdescription>
+<para>Set the half length of the box along the given axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Half length in [mm] units. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">idx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Encodes the axis along the half length is given (idx=0 --&gt; x; idx=1 --&gt; y; idx=2 --&gt; z). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" line="94" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_box_1a57bcebb25b0e07f573225bbc1bd4b1d1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Box::GetHalfLength</definition>
+        <argsstring>(int idx) const</argsstring>
+        <name>GetHalfLength</name>
+        <qualifiedname>Box::GetHalfLength</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+        </param>
+        <briefdescription>
+<para>Get the half length of the box along the given axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">idx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Encodes the axis along the half length is required (idx=0 --&gt; x; idx=1 --&gt; y; idx=2 --&gt; z). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Half length of this box along the required axis. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" line="101" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_box_1aad17ace7ec8e5b684b09833a3d35a2bc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Box::DistanceToOut</definition>
+        <argsstring>(double *r, double *v) const</argsstring>
+        <name>DistanceToOut</name>
+        <qualifiedname>Box::DistanceToOut</qualifiedname>
+        <param>
+          <type>double *</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Calculates distance to the volume boundary from inside along the given direction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the distance along the normalised direction vector <computeroutput>v</computeroutput> to the volume boundary, from the given point <computeroutput>p</computeroutput> inside or on the surface of the box. Intersections with surfaces, when the point is within half tolerance (<computeroutput>kCarTolerance/2</computeroutput>) from a surface, is ignored.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>3D position of the point in local coordinates </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>3D normalised direction </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Distance to the surface boundary from inside (see above). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" line="117" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_box_1a29345325f9e40e34dc345b51a48004dd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Box::DistanceToOut</definition>
+        <argsstring>(double *r) const</argsstring>
+        <name>DistanceToOut</name>
+        <qualifiedname>Box::DistanceToOut</qualifiedname>
+        <param>
+          <type>double *</type>
+          <declname>r</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the distance to the nearest boundary of a shape from inside (safety). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>While the above considers the direction, this finds the nearest boundary.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>3D position of the point in local coordinates </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Distance to the nearest surface boundary from inside (see above). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" line="127" column="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A simplified version of the G4Box shape. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>M. Novak </para>
+</simplesect>
+<simplesect kind="date"><para>July 2023</para>
+</simplesect>
+</para>
+<para>This is a simple version of the G4Box shape to describe geometry objects and use them in the simulation to calculate distance to their boundary from a point inside. Note, that the calculations include a tolerance, e.g. a point is on the surface if closer to a boundary than 1/2 tolerance (kCarTolerance). The two most important methods, used during this simplified simulation, are:</para>
+<para><itemizedlist>
+<listitem><para>DistanceToOut(position, direction): distance to boundary from a local position (inside the box) along the given direction. The boundary is ignored if the position is closer to it than 1/2 tolerance (i.e. point is on the surface). The distance to boundary is zero in this case whenever the direction is pointing outisde (i.e. the particle is moving away/out).</para>
+</listitem><listitem><para>DistanceToOut(postition): this is the <computeroutput>safety</computeroutput>, i.e. the distance to the nearest boundary from the given local point inside (zero if on the surface or outside).</para>
+</listitem></itemizedlist>
+</para>
+<para>This version of the <ref refid="class_box" kindref="compound">Box</ref> stores an index to the material that fills the shape (therefore closer to the Geant4 <computeroutput>logical</computeroutput> volume concept than to a shape).</para>
+<para><ref refid="class_box" kindref="compound">Box</ref> shapes are constructed for each geometry object in the <computeroutput><ref refid="class_geometry" kindref="compound">Geometry</ref></computeroutput> and the above methods are utilised during the simulation step computation in the <computeroutput>GammaStepper</computeroutput> and <computeroutput>ElectronStepper</computeroutput> (in some case indirectly by calling <computeroutput>Geometry::DistanceToOut</computeroutput> that first locates the point, i.e. finds the <ref refid="class_box" kindref="compound">Box</ref> object which the given global point is located in).</para>
+<para>NOTE: a point given in local coordiantes can locate<itemizedlist>
+<listitem><para><computeroutput>inside</computeroutput> : if deeper inside than <computeroutput>kCarTolerance/2</computeroutput> from any boundary</para>
+</listitem><listitem><para><computeroutput>surface</computeroutput> : if within <computeroutput>kCarTolerance/2</computeroutput> from any boundary (in- or outside)</para>
+</listitem><listitem><para><computeroutput>outside</computeroutput> : if further away than <computeroutput>kCarTolerance/2</computeroutput> from any boundary outside</para>
+</listitem></itemizedlist>
+</para>
+<para>NOTE: distance to volume boundary from a point along a given direction is zero when the point is not <computeroutput>inside</computeroutput> and the direction is pointing away. Therefore, a point located on the surface gives distance to boundary:<itemizedlist>
+<listitem><para>zero : if the direction is pointing outside of that boundary</para>
+</listitem><listitem><para>non-zero: if the direction is pointing inside of that boundary </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" line="56" column="1" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh" bodystart="56" bodyend="154"/>
+    <listofallmembers>
+      <member refid="class_box_1a7ac872372c33f5aecf06374c843dceca" prot="public" virt="non-virtual"><scope>Box</scope><name>Box</name></member>
+      <member refid="class_box_1aad17ace7ec8e5b684b09833a3d35a2bc" prot="public" virt="non-virtual"><scope>Box</scope><name>DistanceToOut</name></member>
+      <member refid="class_box_1a29345325f9e40e34dc345b51a48004dd" prot="public" virt="non-virtual"><scope>Box</scope><name>DistanceToOut</name></member>
+      <member refid="class_box_1a167d1f1fa5733a0ad9ffed8b492a30c9" prot="private" virt="non-virtual"><scope>Box</scope><name>fDelta</name></member>
+      <member refid="class_box_1a456992b909ed45dd99e1f1b9f246994c" prot="private" virt="non-virtual"><scope>Box</scope><name>fDx</name></member>
+      <member refid="class_box_1a341d1fb2d8102035698dfa6a4de4a557" prot="private" virt="non-virtual"><scope>Box</scope><name>fDy</name></member>
+      <member refid="class_box_1a5e868b153e22d588dd482e45fc69ca7d" prot="private" virt="non-virtual"><scope>Box</scope><name>fDz</name></member>
+      <member refid="class_box_1ae9dbbb9d4a4143cbe2febc01af577f53" prot="private" virt="non-virtual"><scope>Box</scope><name>fMaterialIndx</name></member>
+      <member refid="class_box_1a2c24355779e7b714cab4581547ea9580" prot="private" virt="non-virtual"><scope>Box</scope><name>fName</name></member>
+      <member refid="class_box_1a57bcebb25b0e07f573225bbc1bd4b1d1" prot="public" virt="non-virtual"><scope>Box</scope><name>GetHalfLength</name></member>
+      <member refid="class_box_1a0ae7ae21a5e8b6fab545ccb5d67b9763" prot="public" virt="non-virtual"><scope>Box</scope><name>GetMaterialIndx</name></member>
+      <member refid="class_box_1ae360d3e3aa5921e52596d0ff36535913" prot="public" virt="non-virtual"><scope>Box</scope><name>GetName</name></member>
+      <member refid="class_box_1a92e002367dac759cdb49991eccb80869" prot="private" virt="non-virtual"><scope>Box</scope><name>kCarTolerance</name></member>
+      <member refid="class_box_1ab6cccf2b74be881f887f118eb1cdffaf" prot="public" virt="non-virtual"><scope>Box</scope><name>SetHalfLength</name></member>
+      <member refid="class_box_1ab2e8383851eeaa396268241399073081" prot="public" virt="non-virtual"><scope>Box</scope><name>SetMaterialIndx</name></member>
+      <member refid="class_box_1a6a5e09398e85d602a046b429062fb9c2" prot="public" virt="non-virtual"><scope>Box</scope><name>~Box</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

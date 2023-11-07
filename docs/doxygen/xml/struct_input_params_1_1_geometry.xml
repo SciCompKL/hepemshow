@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="struct_input_params_1_1_geometry" kind="struct" language="C++" prot="public">
+    <compoundname>InputParams::Geometry</compoundname>
+    <includes refid="_input_parameters_8hh" local="no">InputParameters.hh</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_input_params_1_1_geometry_1aeb1d76c0fc304148a711523dc46acfc3" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::Geometry::fNumLayers</definition>
+        <argsstring></argsstring>
+        <name>fNumLayers</name>
+        <qualifiedname>InputParams::Geometry::fNumLayers</qualifiedname>
+        <briefdescription>
+<para>number of layers in the calorimeter </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" line="31" column="12" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1_1_geometry_1a537729dd886e135077074cb4767876a9" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::Geometry::fThicknessAbsorber</definition>
+        <argsstring></argsstring>
+        <name>fThicknessAbsorber</name>
+        <qualifiedname>InputParams::Geometry::fThicknessAbsorber</qualifiedname>
+        <briefdescription>
+<para>absorber thickness along X in [mm] </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" line="32" column="12" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1_1_geometry_1a8501f34dc2e901e384472c9b3dac3569" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::Geometry::fThicknessGap</definition>
+        <argsstring></argsstring>
+        <name>fThicknessGap</name>
+        <qualifiedname>InputParams::Geometry::fThicknessGap</qualifiedname>
+        <briefdescription>
+<para>gap thickness along X in [mm] </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" line="33" column="12" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1_1_geometry_1afa510eb07ce84dd356f460ab16e5e7e8" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::Geometry::fThicknessCalo</definition>
+        <argsstring></argsstring>
+        <name>fThicknessCalo</name>
+        <qualifiedname>InputParams::Geometry::fThicknessCalo</qualifiedname>
+        <briefdescription>
+<para>calorimeter thickness along X [mm] ONLY if number of layers is zero </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" line="34" column="12" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1_1_geometry_1a5654ad68b82aaa5be316b4ae5e3455be" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::Geometry::fSizeTransverse</definition>
+        <argsstring></argsstring>
+        <name>fSizeTransverse</name>
+        <qualifiedname>InputParams::Geometry::fSizeTransverse</qualifiedname>
+        <briefdescription>
+<para>calorimeter full size along YZ in [mm] </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" line="35" column="12" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_input_params_1_1_geometry_1a055ce985f73101bd35169d00a7c05414" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>InputParams::Geometry::Geometry</definition>
+        <argsstring>()</argsstring>
+        <name>Geometry</name>
+        <qualifiedname>InputParams::Geometry::Geometry</qualifiedname>
+        <briefdescription>
+<para>CTR with default values: 50 layers of 2.3 mm absorber and 5.7 mm gap with 400 mm transvers size. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" line="24" column="5" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" bodystart="24" bodyend="29"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The geometry related input arguments. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" line="22" column="3" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" bodystart="22" bodyend="36"/>
+    <listofallmembers>
+      <member refid="struct_input_params_1_1_geometry_1aeb1d76c0fc304148a711523dc46acfc3" prot="public" virt="non-virtual"><scope>InputParams::Geometry</scope><name>fNumLayers</name></member>
+      <member refid="struct_input_params_1_1_geometry_1a5654ad68b82aaa5be316b4ae5e3455be" prot="public" virt="non-virtual"><scope>InputParams::Geometry</scope><name>fSizeTransverse</name></member>
+      <member refid="struct_input_params_1_1_geometry_1a537729dd886e135077074cb4767876a9" prot="public" virt="non-virtual"><scope>InputParams::Geometry</scope><name>fThicknessAbsorber</name></member>
+      <member refid="struct_input_params_1_1_geometry_1afa510eb07ce84dd356f460ab16e5e7e8" prot="public" virt="non-virtual"><scope>InputParams::Geometry</scope><name>fThicknessCalo</name></member>
+      <member refid="struct_input_params_1_1_geometry_1a8501f34dc2e901e384472c9b3dac3569" prot="public" virt="non-virtual"><scope>InputParams::Geometry</scope><name>fThicknessGap</name></member>
+      <member refid="struct_input_params_1_1_geometry_1a055ce985f73101bd35169d00a7c05414" prot="public" virt="non-virtual"><scope>InputParams::Geometry</scope><name>Geometry</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

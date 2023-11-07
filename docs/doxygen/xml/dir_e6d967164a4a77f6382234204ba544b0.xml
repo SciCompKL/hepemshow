@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="dir_e6d967164a4a77f6382234204ba544b0" kind="dir">
+    <compoundname>/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/DataGeneration</compoundname>
+    <innerdir refid="dir_ca147bd045f7d506c6cb4807b020011f">/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/DataGeneration/include</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/DataGeneration/"/>
+  </compounddef>
+</doxygen>

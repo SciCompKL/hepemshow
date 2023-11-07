@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_track_stack_8cc" kind="file" language="C++">
+    <compoundname>TrackStack.cc</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_track_stack_8hh" kindref="compound">TrackStack.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;G4HepEmTrack.hh&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><ref refid="class_track_stack_1a6d118a8cc1aa0f0c83797e764747cedf" kindref="member">TrackStack::TrackStack</ref>()</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">:<sp/>fSize(16),</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/>fCurIndx(-1),</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/>fCurrentTrackID(0)<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/>fTrackVect.resize(fSize);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_track_stack_1a528b5fd33f46021e878d4d82dbbedd74" kindref="member">TrackStack::PopInto</ref>(G4HepEmTrack&amp;<sp/>track)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>-1<sp/>if<sp/>the<sp/>secondary<sp/>stack<sp/>is<sp/>empty</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_track_stack_1a3917da2d4c2a007a69e1ba9e02af032d" kindref="member">fCurIndx</ref>&lt;0)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>compy<sp/>the<sp/>next<sp/>avaiable<sp/>seconday<sp/>track<sp/>to<sp/>the<sp/>primary</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><ref refid="class_track_stack_1ae87bf7ff4f6836e10cf3b7e277b0d653" kindref="member">Copy</ref>(<ref refid="class_track_stack_1a3d2e0b43b1ded801b0c98300ac8766d1" kindref="member">fTrackVect</ref>[<ref refid="class_track_stack_1a3917da2d4c2a007a69e1ba9e02af032d" kindref="member">fCurIndx</ref>],<sp/>track);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>with<sp/>the<sp/>currently<sp/>used<sp/>secondary<sp/>index<sp/>and<sp/>decrease</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_track_stack_1a3917da2d4c2a007a69e1ba9e02af032d" kindref="member">fCurIndx</ref>--;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_track_stack_1a71cd14abad3d3d0693658e5d4a1315eb" kindref="member">TrackStack::GetTypeOfNextTrack</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_track_stack_1a3917da2d4c2a007a69e1ba9e02af032d" kindref="member">fCurIndx</ref>&lt;0)<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-999;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_track_stack_1a3d2e0b43b1ded801b0c98300ac8766d1" kindref="member">fTrackVect</ref>[<ref refid="class_track_stack_1a3917da2d4c2a007a69e1ba9e02af032d" kindref="member">fCurIndx</ref>].GetCharge();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">G4HepEmTrack&amp;<sp/><ref refid="class_track_stack_1a0f33c1b9f159ba9d6e0953c67cf1e4e2" kindref="member">TrackStack::Insert</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>make<sp/>sure<sp/>that<sp/>the<sp/>size<sp/>if<sp/>fine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>++<ref refid="class_track_stack_1a3917da2d4c2a007a69e1ba9e02af032d" kindref="member">fCurIndx</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_track_stack_1a3917da2d4c2a007a69e1ba9e02af032d" kindref="member">fCurIndx</ref>==<ref refid="class_track_stack_1a7c3631cc17083505d626d0ff669c16cf" kindref="member">fSize</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_track_stack_1a7c3631cc17083505d626d0ff669c16cf" kindref="member">fSize</ref><sp/>*=<sp/>2;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_track_stack_1a3d2e0b43b1ded801b0c98300ac8766d1" kindref="member">fTrackVect</ref>.resize(<ref refid="class_track_stack_1a7c3631cc17083505d626d0ff669c16cf" kindref="member">fSize</ref>);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>retrun<sp/>a<sp/>eference<sp/>to<sp/>the<sp/>next<sp/>avaiable<sp/>secondary<sp/>track</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><ref refid="class_track_stack_1a3d2e0b43b1ded801b0c98300ac8766d1" kindref="member">fTrackVect</ref>[<ref refid="class_track_stack_1a3917da2d4c2a007a69e1ba9e02af032d" kindref="member">fCurIndx</ref>].ReSet();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_track_stack_1a3d2e0b43b1ded801b0c98300ac8766d1" kindref="member">fTrackVect</ref>[<ref refid="class_track_stack_1a3917da2d4c2a007a69e1ba9e02af032d" kindref="member">fCurIndx</ref>];</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_track_stack_1ae87bf7ff4f6836e10cf3b7e277b0d653" kindref="member">TrackStack::Copy</ref>(G4HepEmTrack&amp;<sp/>from,<sp/>G4HepEmTrack&amp;<sp/>to)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>to.ReSet();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>to.SetPosition(from.GetPosition());</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>to.SetDirection(from.GetDirection());</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>to.SetEKin(from.GetEKin(),<sp/>from.GetLogEKin());</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>to.SetCharge(from.GetCharge());</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>to.SetSafety(from.GetSafety());</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>to.SetID(from.GetID());</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>to.SetParentID(from.GetParentID());</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>to.SetMCIndex(from.GetMCIndex());</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>to.SetOnBoundary(from.GetOnBoundary());</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/src/TrackStack.cc"/>
+  </compounddef>
+</doxygen>

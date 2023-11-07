@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build and Install &mdash; HepEmShow a compact EM shower simulation 0.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=525cde36"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The components of the simulation" href="components.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> HepEmShow a compact EM shower simulation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Build and Install</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#build-g4hepem-with-or-without-geant4-dependence">Build <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code> with or without <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> dependence:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#with-geant4-g4hepem-geant4-build-on-default">With <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> (<code class="docutils literal notranslate"><span class="pre">G4HepEm_GEANT4_BUILD=ON</span></code> default):</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#without-geant4-g4hepem-geant4-build-off">Without <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> (<code class="docutils literal notranslate"><span class="pre">G4HepEm_GEANT4_BUILD=OFF</span></code>):</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#build-hepemshow-with-g4hepem-build-with-or-without-geant4">Build <code class="docutils literal notranslate"><span class="pre">HepEmShow</span></code> with <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code> build with or without <code class="docutils literal notranslate"><span class="pre">Geant4</span></code>:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#with-a-complete-geant4-dependent-g4hepem-build">With a complete, <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> dependent <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code> build:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#with-a-standalone-geant4-independent-g4hepem-build">With a standalone, <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> independent <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code> build:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Build and install</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="components.html">The components of the simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CodeDoc.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zzbib.html">Bibliography</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HepEmShow a compact EM shower simulation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Build and Install</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="build-and-install">
+<span id="install-doc"></span><h1>Build and Install<a class="headerlink" href="#build-and-install" title="Permalink to this heading"></a></h1>
+<p>Will come later but <code class="docutils literal notranslate"><span class="pre">HepEmShow</span></code> requires <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code> that provides its Physics (see more at the <a class="reference internal" href="components.html#simulation-components-doc"><span class="std std-ref">The components of the simulation</span></a>).
+<code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code> can be built with or without <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> though a data file is needed
+in the latter case. See more later …</p>
+<section id="build-g4hepem-with-or-without-geant4-dependence">
+<h2>Build <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code> with or without <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> dependence:<a class="headerlink" href="#build-g4hepem-with-or-without-geant4-dependence" title="Permalink to this heading"></a></h2>
+<section id="with-geant4-g4hepem-geant4-build-on-default">
+<h3>With <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> (<code class="docutils literal notranslate"><span class="pre">G4HepEm_GEANT4_BUILD=ON</span></code> default):<a class="headerlink" href="#with-geant4-g4hepem-geant4-build-on-default" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">../</span> <span class="o">-</span><span class="n">DGeant4_DIR</span><span class="o">=</span><span class="n">YOUR_GEANT4_INSTALL</span><span class="o">/</span><span class="n">lib</span><span class="p">(</span><span class="n">lib64</span><span class="p">)</span><span class="o">/</span><span class="n">cmake</span><span class="o">/</span><span class="n">Geant4</span><span class="o">/</span> <span class="o">-</span><span class="n">DCMAKE_INSTALL_PREFIX</span><span class="o">=</span><span class="n">YOUR_G4HEPEM_INSTALL</span>
+</pre></div>
+</div>
+</section>
+<section id="without-geant4-g4hepem-geant4-build-off">
+<h3>Without <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> (<code class="docutils literal notranslate"><span class="pre">G4HepEm_GEANT4_BUILD=OFF</span></code>):<a class="headerlink" href="#without-geant4-g4hepem-geant4-build-off" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">../</span> <span class="o">-</span><span class="n">DG4HepEm_GEANT4_BUILD</span><span class="o">=</span><span class="n">OFF</span> <span class="o">-</span><span class="n">DCMAKE_INSTALL_PREFIX</span><span class="o">=</span><span class="n">YOUR_G4HEPEM_INSTALL</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="build-hepemshow-with-g4hepem-build-with-or-without-geant4">
+<h2>Build <code class="docutils literal notranslate"><span class="pre">HepEmShow</span></code> with <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code> build with or without <code class="docutils literal notranslate"><span class="pre">Geant4</span></code>:<a class="headerlink" href="#build-hepemshow-with-g4hepem-build-with-or-without-geant4" title="Permalink to this heading"></a></h2>
+<section id="with-a-complete-geant4-dependent-g4hepem-build">
+<h3>With a complete, <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> dependent <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code> build:<a class="headerlink" href="#with-a-complete-geant4-dependent-g4hepem-build" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">../</span> <span class="o">-</span><span class="n">DGeant4_DIR</span><span class="o">=</span><span class="n">YOUR_GEANT4_INSTALL</span><span class="o">/</span><span class="n">lib</span><span class="p">(</span><span class="n">lib64</span><span class="p">)</span><span class="o">/</span><span class="n">cmake</span><span class="o">/</span><span class="n">Geant4</span><span class="o">/</span> <span class="o">-</span><span class="n">DG4HepEm_DIR</span><span class="o">=</span><span class="n">YOUR_G4HEPEM_INSTALL</span><span class="o">/</span><span class="n">lib</span><span class="p">(</span><span class="n">lib64</span><span class="p">)</span><span class="o">/</span><span class="n">cmake</span><span class="o">/</span><span class="n">G4HepEm</span><span class="o">/</span> <span class="o">-</span><span class="n">DCMAKE_BUILD_TYPE</span><span class="o">=</span><span class="n">RELEASE</span>
+</pre></div>
+</div>
+</section>
+<section id="with-a-standalone-geant4-independent-g4hepem-build">
+<h3>With a standalone, <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> independent <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code> build:<a class="headerlink" href="#with-a-standalone-geant4-independent-g4hepem-build" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">../</span> <span class="o">-</span><span class="n">DG4HepEm_DIR</span><span class="o">=</span><span class="n">YOUR_G4HEPEM_INSTALL</span><span class="o">/</span><span class="n">lib</span><span class="p">(</span><span class="n">lib64</span><span class="p">)</span><span class="o">/</span><span class="n">cmake</span><span class="o">/</span><span class="n">G4HepEm</span><span class="o">/</span> <span class="o">-</span><span class="n">DCMAKE_BUILD_TYPE</span><span class="o">=</span><span class="n">RELEASE</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="requirements">
+<span id="install-requirements"></span><h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+</section>
+<section id="id1">
+<h2>Build and install<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="components.html" class="btn btn-neutral float-right" title="The components of the simulation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, M.Novak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

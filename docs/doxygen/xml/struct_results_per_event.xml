@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="struct_results_per_event" kind="struct" language="C++" prot="public">
+    <compoundname>ResultsPerEvent</compoundname>
+    <includes refid="_results_8hh" local="no">Results.hh</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_results_per_event_1a56300e62e8aa6cd9fb4b1cbdc6ced71d" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ResultsPerEvent::fEdepAbs</definition>
+        <argsstring></argsstring>
+        <name>fEdepAbs</name>
+        <qualifiedname>ResultsPerEvent::fEdepAbs</qualifiedname>
+        <initializer>{ 0.0 }</initializer>
+        <briefdescription>
+<para>energy deposit in the absorber during one event </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Results.hh" line="47" column="10" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Results.hh" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_results_per_event_1acb585ff9dcb316804b4ac5999ee914d8" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ResultsPerEvent::fEdepGap</definition>
+        <argsstring></argsstring>
+        <name>fEdepGap</name>
+        <qualifiedname>ResultsPerEvent::fEdepGap</qualifiedname>
+        <initializer>{ 0.0 }</initializer>
+        <briefdescription>
+<para>energy deposit in the gap during one event </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Results.hh" line="48" column="10" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Results.hh" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_results_per_event_1a7ec88cb879bc6b6d3457dbe08d1bbf01" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ResultsPerEvent::fNumSecGamma</definition>
+        <argsstring></argsstring>
+        <name>fNumSecGamma</name>
+        <qualifiedname>ResultsPerEvent::fNumSecGamma</qualifiedname>
+        <initializer>{ 0.0 }</initializer>
+        <briefdescription>
+<para>number of seconday <formula id="0">$\gamma$</formula> particles generated during one event </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Results.hh" line="50" column="10" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Results.hh" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_results_per_event_1a6b4ce615a2259673ce696b747c82812c" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ResultsPerEvent::fNumSecElectron</definition>
+        <argsstring></argsstring>
+        <name>fNumSecElectron</name>
+        <qualifiedname>ResultsPerEvent::fNumSecElectron</qualifiedname>
+        <initializer>{ 0.0 }</initializer>
+        <briefdescription>
+<para>number of seconday <formula id="2">$e^-$</formula> particles generated during one event </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Results.hh" line="51" column="10" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Results.hh" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_results_per_event_1aaacc361c66159659b16f7016bee3670c" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ResultsPerEvent::fNumSecPositron</definition>
+        <argsstring></argsstring>
+        <name>fNumSecPositron</name>
+        <qualifiedname>ResultsPerEvent::fNumSecPositron</qualifiedname>
+        <initializer>{ 0.0 }</initializer>
+        <briefdescription>
+<para>number of seconday <formula id="3">$e^+$</formula> particles generated during one event </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Results.hh" line="52" column="10" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Results.hh" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_results_per_event_1ae02070852cace2b3b94741ef81b200a0" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ResultsPerEvent::fNumStepsGamma</definition>
+        <argsstring></argsstring>
+        <name>fNumStepsGamma</name>
+        <qualifiedname>ResultsPerEvent::fNumStepsGamma</qualifiedname>
+        <initializer>{ 0.0 }</initializer>
+        <briefdescription>
+<para>number of <formula id="0">$\gamma$</formula> simulation steps during one event </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Results.hh" line="54" column="10" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Results.hh" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_results_per_event_1acf7c36b68976c0d745abf51b964f9335" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ResultsPerEvent::fNumStepsElPos</definition>
+        <argsstring></argsstring>
+        <name>fNumStepsElPos</name>
+        <qualifiedname>ResultsPerEvent::fNumStepsElPos</qualifiedname>
+        <initializer>{ 0.0 }</initializer>
+        <briefdescription>
+<para>number of <formula id="1">$e^-/e^+$</formula> simulation steps during one event </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Results.hh" line="55" column="10" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Results.hh" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Data that needs to be accumulated during one <computeroutput>event</computeroutput> (the scope is one event): </para>
+    </briefdescription>
+    <detaileddescription>
+<para><itemizedlist>
+<listitem><para>at the beginning of an <computeroutput>event</computeroutput>: usually reset (to zero)</para>
+</listitem><listitem><para>at the end of an <computeroutput>event</computeroutput>: usually written to the run scope data (see the <computeroutput><ref refid="struct_results" kindref="compound">Results</ref></computeroutput> below) </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Results.hh" line="46" column="1" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Results.hh" bodystart="46" bodyend="56"/>
+    <listofallmembers>
+      <member refid="struct_results_per_event_1a56300e62e8aa6cd9fb4b1cbdc6ced71d" prot="public" virt="non-virtual"><scope>ResultsPerEvent</scope><name>fEdepAbs</name></member>
+      <member refid="struct_results_per_event_1acb585ff9dcb316804b4ac5999ee914d8" prot="public" virt="non-virtual"><scope>ResultsPerEvent</scope><name>fEdepGap</name></member>
+      <member refid="struct_results_per_event_1a6b4ce615a2259673ce696b747c82812c" prot="public" virt="non-virtual"><scope>ResultsPerEvent</scope><name>fNumSecElectron</name></member>
+      <member refid="struct_results_per_event_1a7ec88cb879bc6b6d3457dbe08d1bbf01" prot="public" virt="non-virtual"><scope>ResultsPerEvent</scope><name>fNumSecGamma</name></member>
+      <member refid="struct_results_per_event_1aaacc361c66159659b16f7016bee3670c" prot="public" virt="non-virtual"><scope>ResultsPerEvent</scope><name>fNumSecPositron</name></member>
+      <member refid="struct_results_per_event_1acf7c36b68976c0d745abf51b964f9335" prot="public" virt="non-virtual"><scope>ResultsPerEvent</scope><name>fNumStepsElPos</name></member>
+      <member refid="struct_results_per_event_1ae02070852cace2b3b94741ef81b200a0" prot="public" virt="non-virtual"><scope>ResultsPerEvent</scope><name>fNumStepsGamma</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

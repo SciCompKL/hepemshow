@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_input_parameters_8hh" kind="file" language="C++">
+    <compoundname>InputParameters.hh</compoundname>
+    <innerclass refid="struct_input_parameters" prot="public">InputParameters</innerclass>
+    <innerclass refid="struct_input_parameters_1_1_geometry" prot="public">InputParameters::Geometry</innerclass>
+    <innerclass refid="struct_input_parameters_1_1_primary_and_events" prot="public">InputParameters::PrimaryAndEvents</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_input_parameters_8hh_1a149c8eb0297a1171aac6ed93ea959f76" prot="public" static="yes" mutable="no">
+        <type>struct option</type>
+        <definition>struct option options[]</definition>
+        <argsstring>[]</argsstring>
+        <name>options</name>
+        <initializer>= {
+  {&quot;number-of-layers      (number of layers in the calorimeter)           - default: 50&quot;     , required_argument, 0, &apos;l&apos;},
+  {&quot;absorber-thickness    (in [mm] units)                                 - default: 2.3&quot;    , required_argument, 0, &apos;a&apos;},
+  {&quot;gap-thickness         (in [mm] units)                                 - default: 5.7&quot;    , required_argument, 0, &apos;g&apos;},
+  {&quot;transverse-size       (of the calorimeter in [mm] units)              - default: 400&quot;    , required_argument, 0, &apos;t&apos;},
+
+  {&quot;primary-particle      (possible particle names: e-, e+ and gamma)     - default: e-&quot;     , required_argument, 0, &apos;p&apos;},
+  {&quot;primary-energy        (in [MeV] units)                                - default: 10 000&quot; , required_argument, 0, &apos;e&apos;},
+  {&quot;number-of-events      (number of primary events to simulate)          - default: 1000&quot;   , required_argument, 0, &apos;n&apos;},
+  {&quot;random-seed                                                           - default: 1234&quot;   , required_argument, 0, &apos;s&apos;},
+
+  {&quot;g4hepem-data-file     (the pre-generated data file with its path)     - default: ../data/hepem_data&quot; , required_argument, 0, &apos;d&apos;},
+  {&quot;run-verbosity         (verbosity of run infomation: nothing when 0)   - default: 1&quot;      , required_argument, 0, &apos;v&apos;},
+  {&quot;help&quot;                                                                                    , no_argument      , 0, &apos;h&apos;},
+  {0, 0, 0, 0}
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" line="92" column="20" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_input_parameters_8hh_1ac3bac64695ef7294a8cb100ec1ede352" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PrintParameters</definition>
+        <argsstring>(const struct InputParameters &amp;theParam)</argsstring>
+        <name>PrintParameters</name>
+        <param>
+          <type>const struct <ref refid="struct_input_parameters" kindref="compound">InputParameters</ref> &amp;</type>
+          <declname>theParam</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" line="68" column="6" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" bodystart="68" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="_input_parameters_8hh_1a54d17a6d0bb758f26b9dda4c6d8e8da8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Help</definition>
+        <argsstring>()</argsstring>
+        <name>Help</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" line="111" column="6" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" bodystart="111" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="_input_parameters_8hh_1a6337e4c0b5d25a5ae0e9aea5e32c34f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GetOpt</definition>
+        <argsstring>(int argc, char *argv[], InputParameters &amp;param)</argsstring>
+        <name>GetOpt</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type><ref refid="struct_input_parameters" kindref="compound">InputParameters</ref> &amp;</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" line="119" column="6" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh" bodystart="119" bodyend="193"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>INPUTPARAMETERS_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INPUTPARAMETERS_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>NOTE:<sp/>this<sp/>is<sp/>Unix<sp/>specific!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;getopt.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="struct_input_parameters" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_input_parameters" kindref="compound">InputParameters</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="struct_input_parameters_1a2ede6d73636729561755f9ca986475f8" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="struct_input_parameters_1a2ede6d73636729561755f9ca986475f8" kindref="member">InputParameters</ref>()<sp/>:<sp/><ref refid="struct_input_parameters_1a3a00664f729cff9c2ede9a82be35f9f1" kindref="member">fG4HepEmDataFile</ref>(</highlight><highlight class="stringliteral">&quot;../data/hepem_data&quot;</highlight><highlight class="normal">),<sp/><ref refid="struct_input_parameters_1ae5022264c5b3d91446c18fd975a6f742" kindref="member">fRunVerbosity</ref>(1)<sp/>{}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="struct_input_parameters_1_1_geometry" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_input_parameters_1_1_geometry" kindref="compound">Geometry</ref><sp/>{</highlight></codeline>
+<codeline lineno="30" refid="struct_input_parameters_1_1_geometry_1a8ff86e44e708b2f283144e44f546e025" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_input_parameters_1_1_geometry_1a8ff86e44e708b2f283144e44f546e025" kindref="member">Geometry</ref>()</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="struct_input_parameters_1_1_geometry_1a1da1662e45b6034aa1e3e04f97bc2d03" kindref="member">fNumLayers</ref>(50),</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_input_parameters_1_1_geometry_1aaec005d9ef9029fe121d6323eb9faf76" kindref="member">fThicknessAbsorber</ref>(2.3),</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_input_parameters_1_1_geometry_1a7d1ac576d4ec41f45b470fe468d097a9" kindref="member">fThicknessGap</ref>(5.7),</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_input_parameters_1_1_geometry_1a50bbe4e295d36cb85cd32312863c88f1" kindref="member">fThicknessCalo</ref>(0),</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_input_parameters_1_1_geometry_1afc52a39c40d78b6939cc676088fa42d4" kindref="member">fSizeTransverse</ref>(400.0)<sp/>{}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="struct_input_parameters_1_1_geometry_1a1da1662e45b6034aa1e3e04f97bc2d03" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_input_parameters_1_1_geometry_1a1da1662e45b6034aa1e3e04f97bc2d03" kindref="member">fNumLayers</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38" refid="struct_input_parameters_1_1_geometry_1aaec005d9ef9029fe121d6323eb9faf76" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_input_parameters_1_1_geometry_1aaec005d9ef9029fe121d6323eb9faf76" kindref="member">fThicknessAbsorber</ref>;<sp/></highlight></codeline>
+<codeline lineno="39" refid="struct_input_parameters_1_1_geometry_1a7d1ac576d4ec41f45b470fe468d097a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_input_parameters_1_1_geometry_1a7d1ac576d4ec41f45b470fe468d097a9" kindref="member">fThicknessGap</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="40" refid="struct_input_parameters_1_1_geometry_1a50bbe4e295d36cb85cd32312863c88f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_input_parameters_1_1_geometry_1a50bbe4e295d36cb85cd32312863c88f1" kindref="member">fThicknessCalo</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="41" refid="struct_input_parameters_1_1_geometry_1afc52a39c40d78b6939cc676088fa42d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_input_parameters_1_1_geometry_1afc52a39c40d78b6939cc676088fa42d4" kindref="member">fSizeTransverse</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="struct_input_parameters_1_1_primary_and_events" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_input_parameters_1_1_primary_and_events" kindref="compound">PrimaryAndEvents</ref><sp/>{</highlight></codeline>
+<codeline lineno="48" refid="struct_input_parameters_1_1_primary_and_events_1a266b39bff4d4717797753c9bce2d6ba1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_input_parameters_1_1_primary_and_events_1a266b39bff4d4717797753c9bce2d6ba1" kindref="member">PrimaryAndEvents</ref>(<sp/>)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="struct_input_parameters_1_1_primary_and_events_1abe7bda9ce7c54ed3d23dbf9dced99fb4" kindref="member">fParticleName</ref>(</highlight><highlight class="stringliteral">&quot;e-&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_input_parameters_1_1_primary_and_events_1a9f8bb9a2b488ca127faf32c26ebbf019" kindref="member">fParticleEnergy</ref>(10000.0),</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_input_parameters_1_1_primary_and_events_1a55e5297ef8e8203d4942afff69a61ba8" kindref="member">fNumEvents</ref>(1000),</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_input_parameters_1_1_primary_and_events_1a9e856f4c65b7c54b585712a80e7e27d2" kindref="member">fRandomSeed</ref>(1234)<sp/>{}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="struct_input_parameters_1_1_primary_and_events_1abe7bda9ce7c54ed3d23dbf9dced99fb4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><sp/><ref refid="struct_input_parameters_1_1_primary_and_events_1abe7bda9ce7c54ed3d23dbf9dced99fb4" kindref="member">fParticleName</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="55" refid="struct_input_parameters_1_1_primary_and_events_1a9f8bb9a2b488ca127faf32c26ebbf019" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_input_parameters_1_1_primary_and_events_1a9f8bb9a2b488ca127faf32c26ebbf019" kindref="member">fParticleEnergy</ref>;<sp/></highlight></codeline>
+<codeline lineno="56" refid="struct_input_parameters_1_1_primary_and_events_1a55e5297ef8e8203d4942afff69a61ba8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_input_parameters_1_1_primary_and_events_1a55e5297ef8e8203d4942afff69a61ba8" kindref="member">fNumEvents</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57" refid="struct_input_parameters_1_1_primary_and_events_1a9e856f4c65b7c54b585712a80e7e27d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_input_parameters_1_1_primary_and_events_1a9e856f4c65b7c54b585712a80e7e27d2" kindref="member">fRandomSeed</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>all<sp/>members</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="struct_input_parameters_1a921dbfbac71b688dfde11060591e69ed" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="struct_input_parameters_1_1_geometry" kindref="compound">Geometry</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_input_parameters_1a921dbfbac71b688dfde11060591e69ed" kindref="member">fGeometry</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62" refid="struct_input_parameters_1a34ce91465085f18f7e76bdb5a1f2a1b3" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="struct_input_parameters_1_1_primary_and_events" kindref="compound">PrimaryAndEvents</ref><sp/><ref refid="struct_input_parameters_1a34ce91465085f18f7e76bdb5a1f2a1b3" kindref="member">fPrimaryAndEvents</ref>;<sp/></highlight></codeline>
+<codeline lineno="63" refid="struct_input_parameters_1a3a00664f729cff9c2ede9a82be35f9f1" refkind="member"><highlight class="normal"><sp/><sp/>std::string<sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_input_parameters_1a3a00664f729cff9c2ede9a82be35f9f1" kindref="member">fG4HepEmDataFile</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="64" refid="struct_input_parameters_1ae5022264c5b3d91446c18fd975a6f742" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_input_parameters_1ae5022264c5b3d91446c18fd975a6f742" kindref="member">fRunVerbosity</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PrintParameters<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_input_parameters" kindref="compound">InputParameters</ref>&amp;<sp/>theParam)<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>\n<sp/>===<sp/>HepEmShow<sp/>input<sp/>parameters:<sp/>&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/>---<sp/>Geometry<sp/>configiration:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>number-of-layers<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>theParam.<ref refid="struct_input_parameters_1a921dbfbac71b688dfde11060591e69ed" kindref="member">fGeometry</ref>.<ref refid="struct_input_parameters_1_1_geometry_1a1da1662e45b6034aa1e3e04f97bc2d03" kindref="member">fNumLayers</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>absorber-thickness<sp/><sp/><sp/><sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>theParam.<ref refid="struct_input_parameters_1a921dbfbac71b688dfde11060591e69ed" kindref="member">fGeometry</ref>.<ref refid="struct_input_parameters_1_1_geometry_1aaec005d9ef9029fe121d6323eb9faf76" kindref="member">fThicknessAbsorber</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>[mm]&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>gap-thickness<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>theParam.<ref refid="struct_input_parameters_1a921dbfbac71b688dfde11060591e69ed" kindref="member">fGeometry</ref>.<ref refid="struct_input_parameters_1_1_geometry_1a7d1ac576d4ec41f45b470fe468d097a9" kindref="member">fThicknessGap</ref><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>[mm]&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>transverse-size<sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>theParam.<ref refid="struct_input_parameters_1a921dbfbac71b688dfde11060591e69ed" kindref="member">fGeometry</ref>.<ref refid="struct_input_parameters_1_1_geometry_1afc52a39c40d78b6939cc676088fa42d4" kindref="member">fSizeTransverse</ref><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>[mm]&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/>---<sp/>Primary<sp/>and<sp/>Event<sp/>configiration:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>primary-particle<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>theParam.<ref refid="struct_input_parameters_1a34ce91465085f18f7e76bdb5a1f2a1b3" kindref="member">fPrimaryAndEvents</ref>.<ref refid="struct_input_parameters_1_1_primary_and_events_1abe7bda9ce7c54ed3d23dbf9dced99fb4" kindref="member">fParticleName</ref><sp/><sp/><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>primary-energy<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>theParam.<ref refid="struct_input_parameters_1a34ce91465085f18f7e76bdb5a1f2a1b3" kindref="member">fPrimaryAndEvents</ref>.<ref refid="struct_input_parameters_1_1_primary_and_events_1a9f8bb9a2b488ca127faf32c26ebbf019" kindref="member">fParticleEnergy</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>[MeV]&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>number-of-events<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>theParam.<ref refid="struct_input_parameters_1a34ce91465085f18f7e76bdb5a1f2a1b3" kindref="member">fPrimaryAndEvents</ref>.<ref refid="struct_input_parameters_1_1_primary_and_events_1a55e5297ef8e8203d4942afff69a61ba8" kindref="member">fNumEvents</ref><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/><sp/>std::endl;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>random-seed<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>theParam.<ref refid="struct_input_parameters_1a34ce91465085f18f7e76bdb5a1f2a1b3" kindref="member">fPrimaryAndEvents</ref>.<ref refid="struct_input_parameters_1_1_primary_and_events_1a9e856f4c65b7c54b585712a80e7e27d2" kindref="member">fRandomSeed</ref><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/><sp/>std::endl;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/>---<sp/>Additional<sp/>configiration:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>g4hepem-data-file<sp/><sp/><sp/><sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>theParam.<ref refid="struct_input_parameters_1a3a00664f729cff9c2ede9a82be35f9f1" kindref="member">fG4HepEmDataFile</ref><sp/><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>run-verbosity<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>theParam.<ref refid="struct_input_parameters_1ae5022264c5b3d91446c18fd975a6f742" kindref="member">fRunVerbosity</ref><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">//<sp/>options<sp/>for<sp/>providign<sp/>input<sp/>arguments<sp/>to<sp/>the<sp/>`HepEmShow`<sp/>application</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">option<sp/>options[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;number-of-layers<sp/><sp/><sp/><sp/><sp/><sp/>(number<sp/>of<sp/>layers<sp/>in<sp/>the<sp/>calorimeter)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>default:<sp/>50&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>,<sp/>required_argument,<sp/>0,<sp/></highlight><highlight class="charliteral">&apos;l&apos;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;absorber-thickness<sp/><sp/><sp/><sp/>(in<sp/>[mm]<sp/>units)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>default:<sp/>2.3&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>required_argument,<sp/>0,<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;gap-thickness<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(in<sp/>[mm]<sp/>units)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>default:<sp/>5.7&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>required_argument,<sp/>0,<sp/></highlight><highlight class="charliteral">&apos;g&apos;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;transverse-size<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(of<sp/>the<sp/>calorimeter<sp/>in<sp/>[mm]<sp/>units)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>default:<sp/>400&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>required_argument,<sp/>0,<sp/></highlight><highlight class="charliteral">&apos;t&apos;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;primary-particle<sp/><sp/><sp/><sp/><sp/><sp/>(possible<sp/>particle<sp/>names:<sp/>e-,<sp/>e+<sp/>and<sp/>gamma)<sp/><sp/><sp/><sp/><sp/>-<sp/>default:<sp/>e-&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>,<sp/>required_argument,<sp/>0,<sp/></highlight><highlight class="charliteral">&apos;p&apos;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;primary-energy<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(in<sp/>[MeV]<sp/>units)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>default:<sp/>10<sp/>000&quot;</highlight><highlight class="normal"><sp/>,<sp/>required_argument,<sp/>0,<sp/></highlight><highlight class="charliteral">&apos;e&apos;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;number-of-events<sp/><sp/><sp/><sp/><sp/><sp/>(number<sp/>of<sp/>primary<sp/>events<sp/>to<sp/>simulate)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>default:<sp/>1000&quot;</highlight><highlight class="normal"><sp/><sp/><sp/>,<sp/>required_argument,<sp/>0,<sp/></highlight><highlight class="charliteral">&apos;n&apos;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;random-seed<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>default:<sp/>1234&quot;</highlight><highlight class="normal"><sp/><sp/><sp/>,<sp/>required_argument,<sp/>0,<sp/></highlight><highlight class="charliteral">&apos;s&apos;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;g4hepem-data-file<sp/><sp/><sp/><sp/><sp/>(the<sp/>pre-generated<sp/>data<sp/>file<sp/>with<sp/>its<sp/>path)<sp/><sp/><sp/><sp/><sp/>-<sp/>default:<sp/>../data/hepem_data&quot;</highlight><highlight class="normal"><sp/>,<sp/>required_argument,<sp/>0,<sp/></highlight><highlight class="charliteral">&apos;d&apos;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;run-verbosity<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(verbosity<sp/>of<sp/>run<sp/>infomation:<sp/>nothing<sp/>when<sp/>0)<sp/><sp/><sp/>-<sp/>default:<sp/>1&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/>required_argument,<sp/>0,<sp/></highlight><highlight class="charliteral">&apos;v&apos;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;help&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/>no_argument<sp/><sp/><sp/><sp/><sp/><sp/>,<sp/>0,<sp/></highlight><highlight class="charliteral">&apos;h&apos;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>{0,<sp/>0,<sp/>0,<sp/>0}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment">//<sp/>auxiliary<sp/>functions<sp/>for<sp/>obtaining<sp/>input<sp/>arguments</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Help()<sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/>std::cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;\n<sp/>===<sp/>Usage:<sp/>HepEmShow<sp/>[OPTIONS]<sp/>\n&quot;</highlight><highlight class="normal">&lt;&lt;std::endl;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>options[i].name<sp/>!=<sp/>NULL;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\t-%c<sp/><sp/>--%s\n&quot;</highlight><highlight class="normal">,<sp/>options[i].val,<sp/>options[i].name);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GetOpt(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[],<sp/><ref refid="struct_input_parameters" kindref="compound">InputParameters</ref>&amp;<sp/>param)<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c,<sp/>optidx<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>c<sp/>=<sp/>getopt_long(argc,<sp/>argv,<sp/></highlight><highlight class="stringliteral">&quot;hl:a:g:c:t:p:e:n:r:s:d:&quot;</highlight><highlight class="normal">,<sp/>options,<sp/>&amp;optidx);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(c)<sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>0:</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c<sp/>=<sp/>options[optidx].val;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>fall<sp/>through<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;l&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>param.<ref refid="struct_input_parameters_1a921dbfbac71b688dfde11060591e69ed" kindref="member">fGeometry</ref>.<ref refid="struct_input_parameters_1_1_geometry_1a1da1662e45b6034aa1e3e04f97bc2d03" kindref="member">fNumLayers</ref><sp/>=<sp/>std::stoi(optarg);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>param.<ref refid="struct_input_parameters_1a921dbfbac71b688dfde11060591e69ed" kindref="member">fGeometry</ref>.<ref refid="struct_input_parameters_1_1_geometry_1aaec005d9ef9029fe121d6323eb9faf76" kindref="member">fThicknessAbsorber</ref><sp/>=<sp/>std::stod(optarg);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;g&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>param.<ref refid="struct_input_parameters_1a921dbfbac71b688dfde11060591e69ed" kindref="member">fGeometry</ref>.<ref refid="struct_input_parameters_1_1_geometry_1a7d1ac576d4ec41f45b470fe468d097a9" kindref="member">fThicknessGap</ref><sp/>=<sp/>std::stod(optarg);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;t&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>param.<ref refid="struct_input_parameters_1a921dbfbac71b688dfde11060591e69ed" kindref="member">fGeometry</ref>.<ref refid="struct_input_parameters_1_1_geometry_1afc52a39c40d78b6939cc676088fa42d4" kindref="member">fSizeTransverse</ref><sp/>=<sp/>std::stod(optarg);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;p&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>param.<ref refid="struct_input_parameters_1a34ce91465085f18f7e76bdb5a1f2a1b3" kindref="member">fPrimaryAndEvents</ref>.<ref refid="struct_input_parameters_1_1_primary_and_events_1abe7bda9ce7c54ed3d23dbf9dced99fb4" kindref="member">fParticleName</ref><sp/>=<sp/>optarg;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!(param.<ref refid="struct_input_parameters_1a34ce91465085f18f7e76bdb5a1f2a1b3" kindref="member">fPrimaryAndEvents</ref>.<ref refid="struct_input_parameters_1_1_primary_and_events_1abe7bda9ce7c54ed3d23dbf9dced99fb4" kindref="member">fParticleName</ref>==</highlight><highlight class="stringliteral">&quot;e-&quot;</highlight><highlight class="normal"><sp/>||<sp/>param.<ref refid="struct_input_parameters_1a34ce91465085f18f7e76bdb5a1f2a1b3" kindref="member">fPrimaryAndEvents</ref>.<ref refid="struct_input_parameters_1_1_primary_and_events_1abe7bda9ce7c54ed3d23dbf9dced99fb4" kindref="member">fParticleName</ref>==</highlight><highlight class="stringliteral">&quot;e+&quot;</highlight><highlight class="normal"><sp/>||<sp/>param.<ref refid="struct_input_parameters_1a34ce91465085f18f7e76bdb5a1f2a1b3" kindref="member">fPrimaryAndEvents</ref>.<ref refid="struct_input_parameters_1_1_primary_and_events_1abe7bda9ce7c54ed3d23dbf9dced99fb4" kindref="member">fParticleName</ref>==</highlight><highlight class="stringliteral">&quot;gamma&quot;</highlight><highlight class="normal">)<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n<sp/>***<sp/>Unknown<sp/>primary<sp/>particle<sp/>name<sp/>-p:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>optarg<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Help();</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(-1);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;e&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>param.<ref refid="struct_input_parameters_1a34ce91465085f18f7e76bdb5a1f2a1b3" kindref="member">fPrimaryAndEvents</ref>.<ref refid="struct_input_parameters_1_1_primary_and_events_1a9f8bb9a2b488ca127faf32c26ebbf019" kindref="member">fParticleEnergy</ref><sp/>=<sp/>std::stod(optarg);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;n&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>param.<ref refid="struct_input_parameters_1a34ce91465085f18f7e76bdb5a1f2a1b3" kindref="member">fPrimaryAndEvents</ref>.<ref refid="struct_input_parameters_1_1_primary_and_events_1a55e5297ef8e8203d4942afff69a61ba8" kindref="member">fNumEvents</ref><sp/>=<sp/>std::stoi(optarg);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;s&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>param.<ref refid="struct_input_parameters_1a34ce91465085f18f7e76bdb5a1f2a1b3" kindref="member">fPrimaryAndEvents</ref>.<ref refid="struct_input_parameters_1_1_primary_and_events_1a9e856f4c65b7c54b585712a80e7e27d2" kindref="member">fRandomSeed</ref><sp/>=<sp/>std::stod(optarg);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;d&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>param.<ref refid="struct_input_parameters_1a3a00664f729cff9c2ede9a82be35f9f1" kindref="member">fG4HepEmDataFile</ref><sp/>=<sp/>optarg;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;v&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>param.<ref refid="struct_input_parameters_1ae5022264c5b3d91446c18fd975a6f742" kindref="member">fRunVerbosity</ref><sp/>=<sp/>std::stoi(optarg);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;h&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Help();</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(-1);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n<sp/>***<sp/>Unknown<sp/>input<sp/>argument:<sp/>%c\n&quot;</highlight><highlight class="normal">,c);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Help();</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>exit(-1);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>number<sp/>of<sp/>layers<sp/>must<sp/>be<sp/>&gt;=<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(param.<ref refid="struct_input_parameters_1a921dbfbac71b688dfde11060591e69ed" kindref="member">fGeometry</ref>.<ref refid="struct_input_parameters_1_1_geometry_1a1da1662e45b6034aa1e3e04f97bc2d03" kindref="member">fNumLayers</ref><sp/>&lt;<sp/>1<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n<sp/>***<sp/>Calorimeter<sp/>number<sp/>of<sp/>layers<sp/>must<sp/>be<sp/>&gt;=<sp/>1!<sp/>\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>Help();</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>exit(-1);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>check<sp/>if<sp/>the<sp/>data<sp/>file<sp/>was<sp/>given<sp/>with/without<sp/>extension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(param.<ref refid="struct_input_parameters_1a3a00664f729cff9c2ede9a82be35f9f1" kindref="member">fG4HepEmDataFile</ref>.find(</highlight><highlight class="stringliteral">&quot;.json&quot;</highlight><highlight class="normal">)==std::string::npos)<sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>param.<ref refid="struct_input_parameters_1a3a00664f729cff9c2ede9a82be35f9f1" kindref="member">fG4HepEmDataFile</ref><sp/>+=<sp/></highlight><highlight class="stringliteral">&quot;.json&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>print<sp/>parameters<sp/>if<sp/>the<sp/>verbosity<sp/>&gt;<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(param.<ref refid="struct_input_parameters_1ae5022264c5b3d91446c18fd975a6f742" kindref="member">fRunVerbosity</ref><sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>PrintParameters(param);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>INPUTPARAMETERS_HH</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/InputParameters.hh"/>
+  </compounddef>
+</doxygen>

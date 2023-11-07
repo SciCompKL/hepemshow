@@ -1,0 +1,674 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_hist" kind="class" language="C++" prot="public">
+    <compoundname>Hist</compoundname>
+    <includes refid="_hist_8hh" local="no">Hist.hh</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_hist_1a7a2f30412b9aaf9ee7fe32722db18aa5" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Hist::fFileName</definition>
+        <argsstring></argsstring>
+        <name>fFileName</name>
+        <qualifiedname>Hist::fFileName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="100" column="23" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hist_1a990b463f6093878edb0cbdc5d35bc529" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; Hist::fx</definition>
+        <argsstring></argsstring>
+        <name>fx</name>
+        <qualifiedname>Hist::fx</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="101" column="15" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hist_1ab1883fc776a0e0838511607fbef253c2" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; Hist::fy</definition>
+        <argsstring></argsstring>
+        <name>fy</name>
+        <qualifiedname>Hist::fy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="102" column="15" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hist_1aa71f6930ea5768d890932cbd0ac6cc54" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Hist::fMin</definition>
+        <argsstring></argsstring>
+        <name>fMin</name>
+        <qualifiedname>Hist::fMin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="103" column="23" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hist_1adb4756fd04bff297f0ae1257e41037b6" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Hist::fMax</definition>
+        <argsstring></argsstring>
+        <name>fMax</name>
+        <qualifiedname>Hist::fMax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="104" column="23" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hist_1a51273a9b8b4518a8392af09d5772645b" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Hist::fDelta</definition>
+        <argsstring></argsstring>
+        <name>fDelta</name>
+        <qualifiedname>Hist::fDelta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="105" column="23" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hist_1a8a888de0da8801f0240059b6452b5f43" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Hist::fInvDelta</definition>
+        <argsstring></argsstring>
+        <name>fInvDelta</name>
+        <qualifiedname>Hist::fInvDelta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="106" column="23" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hist_1a6e6f2129a9f7824cd66ab5e2df25a204" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Hist::fSum</definition>
+        <argsstring></argsstring>
+        <name>fSum</name>
+        <qualifiedname>Hist::fSum</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="107" column="23" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hist_1a9ab3183f50aade57af95bc22eb5ffd6b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Hist::fNumBins</definition>
+        <argsstring></argsstring>
+        <name>fNumBins</name>
+        <qualifiedname>Hist::fNumBins</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="108" column="23" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_hist_1a126aa63a703e1143ead88cbb18432759" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Hist::Hist</definition>
+        <argsstring>(const std::string &amp;filename, double min, double max, int numbin)</argsstring>
+        <name>Hist</name>
+        <qualifiedname>Hist::Hist</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>max</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numbin</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String to be used as file name when writing into file. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum bin value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum bin value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numbin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of bins required between <computeroutput>min</computeroutput> and <computeroutput>max</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="30" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hist_1a5aeb6c2d0e4967d732427cfde67f2dce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Hist::Hist</definition>
+        <argsstring>(const std::string &amp;filename, double min, double max, double delta)</argsstring>
+        <name>Hist</name>
+        <qualifiedname>Hist::Hist</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>max</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String to be used as file name when writing into file. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum bin value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum bin value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Required width of a bin. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="39" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hist_1a1d872656e56cbe3d44fa69ca110bc68a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Hist::Hist</definition>
+        <argsstring>()</argsstring>
+        <name>Hist</name>
+        <qualifiedname>Hist::Hist</qualifiedname>
+        <briefdescription>
+<para>Default constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="42" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hist_1a33efa5f5905fa72c4ea41d416c7d5456" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Hist::~Hist</definition>
+        <argsstring>()</argsstring>
+        <name>~Hist</name>
+        <qualifiedname>Hist::~Hist</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="45" column="3" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" bodystart="45" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hist_1a79f2da3286205ec4cb025cddfd307f8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Hist::Initialize</definition>
+        <argsstring>()</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>Hist::Initialize</qualifiedname>
+        <briefdescription>
+<para>Auxiliary method to setup the initial state of the histogram. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="48" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hist_1ac6959a1bab2f319671b4e44398ebce2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Hist::ReSet</definition>
+        <argsstring>(const std::string &amp;filename, double min, double max, int numbins)</argsstring>
+        <name>ReSet</name>
+        <qualifiedname>Hist::ReSet</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>max</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numbins</declname>
+        </param>
+        <briefdescription>
+<para>Method to modify the properties of the histogram. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new name of the filename. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new minimum bin value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new maximum bin value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numbins</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new number of bins required between <computeroutput>min</computeroutput> and <computeroutput>max</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="57" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hist_1a83904f1855afc769d8cfa1be636f8172" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Hist::Fill</definition>
+        <argsstring>(double x)</argsstring>
+        <name>Fill</name>
+        <qualifiedname>Hist::Fill</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+<para>Method to populate the histogram with data: the corresponding bin content is increased by 1. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to add. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="63" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hist_1a1ff2822e4272fae23a83b7f22d507a8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Hist::Fill</definition>
+        <argsstring>(double x, double w)</argsstring>
+        <name>Fill</name>
+        <qualifiedname>Hist::Fill</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+<para>Method to populate the histogram with data and a weight: the corresponding bin content is increased by the weight. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to add. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The corresponding weight. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="70" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hist_1ac6196bc73e90d6d3fa21701520f7be5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Hist::Scale</definition>
+        <argsstring>(double sc)</argsstring>
+        <name>Scale</name>
+        <qualifiedname>Hist::Scale</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>sc</declname>
+        </param>
+        <briefdescription>
+<para>Method to scale all bin content by a constant. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scaling factor. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="76" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hist_1a0195888d2c9f0fb12cd5eb713795b399" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Hist::GetNumBins</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNumBins</name>
+        <qualifiedname>Hist::GetNumBins</qualifiedname>
+        <briefdescription>
+<para>Method to provide the number of bins. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Number of bins. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="81" column="11" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" bodystart="81" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hist_1a27e44cb32fdbe30551dc75503ebd6639" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double Hist::GetDelta</definition>
+        <argsstring>() const</argsstring>
+        <name>GetDelta</name>
+        <qualifiedname>Hist::GetDelta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="82" column="11" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" bodystart="82" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hist_1a9aefd9d05ff8646e1d8c071b52a583b5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double Hist::GetMin</definition>
+        <argsstring>() const</argsstring>
+        <name>GetMin</name>
+        <qualifiedname>Hist::GetMin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="83" column="11" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" bodystart="83" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hist_1abb59429280a65e9ef71d1f942c62ccda" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double Hist::GetMax</definition>
+        <argsstring>() const</argsstring>
+        <name>GetMax</name>
+        <qualifiedname>Hist::GetMax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="84" column="11" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" bodystart="84" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hist_1a84b4e02c97eb6d4274da5909344b95a0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double Hist::GetSum</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSum</name>
+        <qualifiedname>Hist::GetSum</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="85" column="11" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" bodystart="85" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hist_1acd9ae0f586b8e515780413b901cdab0e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; double &gt; &amp;</type>
+        <definition>const std::vector&lt; double &gt; &amp; Hist::GetX</definition>
+        <argsstring>() const</argsstring>
+        <name>GetX</name>
+        <qualifiedname>Hist::GetX</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="86" column="21" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" bodystart="86" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hist_1a13a4ae5eeb944c0237e3f3359d15c737" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; double &gt; &amp;</type>
+        <definition>const std::vector&lt; double &gt; &amp; Hist::GetY</definition>
+        <argsstring>() const</argsstring>
+        <name>GetY</name>
+        <qualifiedname>Hist::GetY</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="87" column="21" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" bodystart="87" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hist_1acaadd1b1872f06fc998ae24043a1e1d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Hist::WriteToFile</definition>
+        <argsstring>(bool isNorm=false)</argsstring>
+        <name>WriteToFile</name>
+        <qualifiedname>Hist::WriteToFile</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isNorm</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="90" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hist_1a5f7351130934c5f7c0e97fb882ac1957" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Hist::WriteToFile</definition>
+        <argsstring>(double norm)</argsstring>
+        <name>WriteToFile</name>
+        <qualifiedname>Hist::WriteToFile</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>norm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="91" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hist_1a606e18630f082d8c7192c04685cf6770" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Hist::Add</definition>
+        <argsstring>(const Hist *hist)</argsstring>
+        <name>Add</name>
+        <qualifiedname>Hist::Add</qualifiedname>
+        <param>
+          <type>const <ref refid="class_hist" kindref="compound">Hist</ref> *</type>
+          <declname>hist</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="95" column="8"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A simple histogram only to collect some data during the simulation. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>M. Novak </para>
+</simplesect>
+<simplesect kind="date"><para>July 2023 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" line="19" column="1" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Hist.hh" bodystart="19" bodyend="109"/>
+    <listofallmembers>
+      <member refid="class_hist_1a606e18630f082d8c7192c04685cf6770" prot="public" virt="non-virtual"><scope>Hist</scope><name>Add</name></member>
+      <member refid="class_hist_1a51273a9b8b4518a8392af09d5772645b" prot="private" virt="non-virtual"><scope>Hist</scope><name>fDelta</name></member>
+      <member refid="class_hist_1a7a2f30412b9aaf9ee7fe32722db18aa5" prot="private" virt="non-virtual"><scope>Hist</scope><name>fFileName</name></member>
+      <member refid="class_hist_1a83904f1855afc769d8cfa1be636f8172" prot="public" virt="non-virtual"><scope>Hist</scope><name>Fill</name></member>
+      <member refid="class_hist_1a1ff2822e4272fae23a83b7f22d507a8c" prot="public" virt="non-virtual"><scope>Hist</scope><name>Fill</name></member>
+      <member refid="class_hist_1a8a888de0da8801f0240059b6452b5f43" prot="private" virt="non-virtual"><scope>Hist</scope><name>fInvDelta</name></member>
+      <member refid="class_hist_1adb4756fd04bff297f0ae1257e41037b6" prot="private" virt="non-virtual"><scope>Hist</scope><name>fMax</name></member>
+      <member refid="class_hist_1aa71f6930ea5768d890932cbd0ac6cc54" prot="private" virt="non-virtual"><scope>Hist</scope><name>fMin</name></member>
+      <member refid="class_hist_1a9ab3183f50aade57af95bc22eb5ffd6b" prot="private" virt="non-virtual"><scope>Hist</scope><name>fNumBins</name></member>
+      <member refid="class_hist_1a6e6f2129a9f7824cd66ab5e2df25a204" prot="private" virt="non-virtual"><scope>Hist</scope><name>fSum</name></member>
+      <member refid="class_hist_1a990b463f6093878edb0cbdc5d35bc529" prot="private" virt="non-virtual"><scope>Hist</scope><name>fx</name></member>
+      <member refid="class_hist_1ab1883fc776a0e0838511607fbef253c2" prot="private" virt="non-virtual"><scope>Hist</scope><name>fy</name></member>
+      <member refid="class_hist_1a27e44cb32fdbe30551dc75503ebd6639" prot="public" virt="non-virtual"><scope>Hist</scope><name>GetDelta</name></member>
+      <member refid="class_hist_1abb59429280a65e9ef71d1f942c62ccda" prot="public" virt="non-virtual"><scope>Hist</scope><name>GetMax</name></member>
+      <member refid="class_hist_1a9aefd9d05ff8646e1d8c071b52a583b5" prot="public" virt="non-virtual"><scope>Hist</scope><name>GetMin</name></member>
+      <member refid="class_hist_1a0195888d2c9f0fb12cd5eb713795b399" prot="public" virt="non-virtual"><scope>Hist</scope><name>GetNumBins</name></member>
+      <member refid="class_hist_1a84b4e02c97eb6d4274da5909344b95a0" prot="public" virt="non-virtual"><scope>Hist</scope><name>GetSum</name></member>
+      <member refid="class_hist_1acd9ae0f586b8e515780413b901cdab0e" prot="public" virt="non-virtual"><scope>Hist</scope><name>GetX</name></member>
+      <member refid="class_hist_1a13a4ae5eeb944c0237e3f3359d15c737" prot="public" virt="non-virtual"><scope>Hist</scope><name>GetY</name></member>
+      <member refid="class_hist_1a126aa63a703e1143ead88cbb18432759" prot="public" virt="non-virtual"><scope>Hist</scope><name>Hist</name></member>
+      <member refid="class_hist_1a5aeb6c2d0e4967d732427cfde67f2dce" prot="public" virt="non-virtual"><scope>Hist</scope><name>Hist</name></member>
+      <member refid="class_hist_1a1d872656e56cbe3d44fa69ca110bc68a" prot="public" virt="non-virtual"><scope>Hist</scope><name>Hist</name></member>
+      <member refid="class_hist_1a79f2da3286205ec4cb025cddfd307f8a" prot="public" virt="non-virtual"><scope>Hist</scope><name>Initialize</name></member>
+      <member refid="class_hist_1ac6959a1bab2f319671b4e44398ebce2a" prot="public" virt="non-virtual"><scope>Hist</scope><name>ReSet</name></member>
+      <member refid="class_hist_1ac6196bc73e90d6d3fa21701520f7be5a" prot="public" virt="non-virtual"><scope>Hist</scope><name>Scale</name></member>
+      <member refid="class_hist_1acaadd1b1872f06fc998ae24043a1e1d4" prot="public" virt="non-virtual"><scope>Hist</scope><name>WriteToFile</name></member>
+      <member refid="class_hist_1a5f7351130934c5f7c0e97fb882ac1957" prot="public" virt="non-virtual"><scope>Hist</scope><name>WriteToFile</name></member>
+      <member refid="class_hist_1a33efa5f5905fa72c4ea41d416c7d5456" prot="public" virt="non-virtual"><scope>Hist</scope><name>~Hist</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

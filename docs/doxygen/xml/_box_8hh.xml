@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_box_8hh" kind="file" language="C++">
+    <compoundname>Box.hh</compoundname>
+    <innerclass refid="class_box" prot="public">Box</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>BOX_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BOX_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Constants<sp/>used<sp/>in<sp/>the<sp/>Inside()<sp/>method<sp/>(not<sp/>utilised<sp/>by<sp/>the<sp/>simulation)*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//enum<sp/><sp/>EInside<sp/>{<sp/>kOutside,<sp/>kSurface,<sp/>kInside};</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="class_box" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_box" kindref="compound">Box</ref><sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="68" refid="class_box_1a7ac872372c33f5aecf06374c843dceca" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="class_box_1a7ac872372c33f5aecf06374c843dceca" kindref="member">Box</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>indxMat,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pX,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pY,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pZ);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="class_box_1a6a5e09398e85d602a046b429062fb9c2" refkind="member"><highlight class="normal"><sp/><ref refid="class_box_1a6a5e09398e85d602a046b429062fb9c2" kindref="member">~Box</ref><sp/>()<sp/>{}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="class_box_1ae360d3e3aa5921e52596d0ff36535913" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="class_box_1ae360d3e3aa5921e52596d0ff36535913" kindref="member">GetName</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_box_1a2c24355779e7b714cab4581547ea9580" kindref="member">fName</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="class_box_1ab2e8383851eeaa396268241399073081" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_box_1ab2e8383851eeaa396268241399073081" kindref="member">SetMaterialIndx</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>indx)<sp/>{<sp/><ref refid="class_box_1ae9dbbb9d4a4143cbe2febc01af577f53" kindref="member">fMaterialIndx</ref><sp/>=<sp/>indx;<sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="class_box_1a0ae7ae21a5e8b6fab545ccb5d67b9763" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="class_box_1a0ae7ae21a5e8b6fab545ccb5d67b9763" kindref="member">GetMaterialIndx</ref>()</highlight><highlight class="keyword"><sp/>const<sp/><sp/><sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_box_1ae9dbbb9d4a4143cbe2febc01af577f53" kindref="member">fMaterialIndx</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="class_box_1ab6cccf2b74be881f887f118eb1cdffaf" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_box_1ab6cccf2b74be881f887f118eb1cdffaf" kindref="member">SetHalfLength</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>val,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idx);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="class_box_1a57bcebb25b0e07f573225bbc1bd4b1d1" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_box_1a57bcebb25b0e07f573225bbc1bd4b1d1" kindref="member">GetHalfLength</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idx)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="class_box_1aad17ace7ec8e5b684b09833a3d35a2bc" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_box_1aad17ace7ec8e5b684b09833a3d35a2bc" kindref="member">DistanceToOut</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>r,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*v)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="class_box_1a29345325f9e40e34dc345b51a48004dd" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_box_1a29345325f9e40e34dc345b51a48004dd" kindref="member">DistanceToOut</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>r)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>whether<sp/>the<sp/>given<sp/>`position`<sp/>(in<sp/>local<sp/>coordinates)<sp/>is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>inside(0)/outside(1)/on<sp/>surface(2),<sp/>taking<sp/>into<sp/>account<sp/>tolerance.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>EInside<sp/>Inside(double<sp/>rx,<sp/>double<sp/>ry,<sp/>double<sp/>rz)<sp/>const;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>EInside<sp/>Inside(double*<sp/>r)<sp/>const;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="class_box_1a2c24355779e7b714cab4581547ea9580" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_box_1a2c24355779e7b714cab4581547ea9580" kindref="member">fName</ref>;</highlight></codeline>
+<codeline lineno="141" refid="class_box_1ae9dbbb9d4a4143cbe2febc01af577f53" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_box_1ae9dbbb9d4a4143cbe2febc01af577f53" kindref="member">fMaterialIndx</ref>;</highlight></codeline>
+<codeline lineno="143" refid="class_box_1a456992b909ed45dd99e1f1b9f246994c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_box_1a456992b909ed45dd99e1f1b9f246994c" kindref="member">fDx</ref>;</highlight></codeline>
+<codeline lineno="145" refid="class_box_1a341d1fb2d8102035698dfa6a4de4a557" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_box_1a341d1fb2d8102035698dfa6a4de4a557" kindref="member">fDy</ref>;</highlight></codeline>
+<codeline lineno="147" refid="class_box_1a5e868b153e22d588dd482e45fc69ca7d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_box_1a5e868b153e22d588dd482e45fc69ca7d" kindref="member">fDz</ref>;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="class_box_1a92e002367dac759cdb49991eccb80869" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_box_1a92e002367dac759cdb49991eccb80869" kindref="member">kCarTolerance</ref><sp/>=<sp/>1.0E-9;</highlight></codeline>
+<codeline lineno="152" refid="class_box_1a167d1f1fa5733a0ad9ffed8b492a30c9" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_box_1a167d1f1fa5733a0ad9ffed8b492a30c9" kindref="member">fDelta</ref>;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>BOX_HH</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Box.hh"/>
+  </compounddef>
+</doxygen>

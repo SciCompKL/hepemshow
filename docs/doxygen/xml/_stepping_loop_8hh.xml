@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_stepping_loop_8hh" kind="file" language="C++">
+    <compoundname>SteppingLoop.hh</compoundname>
+    <innerclass refid="class_stepping_loop" prot="public">SteppingLoop</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>STEPPINGLOOP_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STEPPINGLOOP_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">G4HepEmTLData;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">G4HepEmState;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">G4HepEmTrack;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_track_stack" kindref="compound">TrackStack</ref>;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_geometry" kindref="compound">Geometry</ref>;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="struct_results" kindref="compound">Results</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_box" kindref="compound">Box</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="class_stepping_loop" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_stepping_loop" kindref="compound">SteppingLoop</ref><sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="class_stepping_loop_1a1d7aa9c14da7b327829dc318d13fc2ed" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_stepping_loop_1a1d7aa9c14da7b327829dc318d13fc2ed" kindref="member">GammaStepper</ref>(G4HepEmTLData&amp;<sp/>theTLData,<sp/>G4HepEmState&amp;<sp/>theState,<sp/><ref refid="class_track_stack" kindref="compound">TrackStack</ref>&amp;<sp/>theTrackStack,<sp/><ref refid="class_geometry" kindref="compound">Geometry</ref>&amp;<sp/>theGeometry,<sp/><ref refid="struct_results" kindref="compound">Results</ref>&amp;<sp/>theResult,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>eventID);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="class_stepping_loop_1ad0de81b62ac3ba13532464c2c01f1b39" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_stepping_loop_1ad0de81b62ac3ba13532464c2c01f1b39" kindref="member">ElectronStepper</ref>(G4HepEmTLData&amp;<sp/>theTLData,<sp/>G4HepEmState&amp;<sp/>theState,<sp/><ref refid="class_track_stack" kindref="compound">TrackStack</ref>&amp;<sp/>theTrackStack,<sp/><ref refid="class_geometry" kindref="compound">Geometry</ref>&amp;<sp/>theGeometry,<sp/><ref refid="struct_results" kindref="compound">Results</ref>&amp;<sp/>theResult,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>eventID);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><ref refid="class_stepping_loop" kindref="compound">SteppingLoop</ref>()<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="class_stepping_loop_1af0fc2b1e935c4f75824521c1976e5644" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_stepping_loop_1af0fc2b1e935c4f75824521c1976e5644" kindref="member">StackSecondaries</ref>(G4HepEmTLData&amp;<sp/>theTLData,<sp/><ref refid="class_track_stack" kindref="compound">TrackStack</ref>&amp;<sp/>theTrackStack,<sp/>G4HepEmTrack&amp;<sp/>thePrimary);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="class_stepping_loop_1a473d26c5090a12b239c3e2a1ac682243" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_stepping_loop_1a473d26c5090a12b239c3e2a1ac682243" kindref="member">SteppingAction</ref>(<ref refid="struct_results" kindref="compound">Results</ref>&amp;<sp/>theResult,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>G4HepEmTrack&amp;<sp/>theTrack,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_box" kindref="compound">Box</ref>*<sp/>currentVolume,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>currentPhysStepLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>indxLayer,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>indxAbsorber,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>eventID,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stepID);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>some<sp/>utilities<sp/>to<sp/>modify<sp/>3vectors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Set3Vect(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>v,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>to);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Set3Vect(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>v,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>to);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AddTo3Vect(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>v,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>u,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>scale=1.0);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>STEPPINGLOOP_HH</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/SteppingLoop.hh"/>
+  </compounddef>
+</doxygen>

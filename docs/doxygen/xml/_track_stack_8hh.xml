@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_track_stack_8hh" kind="file" language="C++">
+    <compoundname>TrackStack.hh</compoundname>
+    <innerclass refid="class_track_stack" prot="public">TrackStack</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TrackStack_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TrackStack_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">G4HepEmTrack;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="class_track_stack" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_track_stack" kindref="compound">TrackStack</ref><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33" refid="class_track_stack_1a6d118a8cc1aa0f0c83797e764747cedf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_track_stack_1a6d118a8cc1aa0f0c83797e764747cedf" kindref="member">TrackStack</ref>();</highlight></codeline>
+<codeline lineno="35" refid="class_track_stack_1a9762dba449e945f1391e4272b495b4e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><ref refid="class_track_stack_1a9762dba449e945f1391e4272b495b4e6" kindref="member">~TrackStack</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="class_track_stack_1a528b5fd33f46021e878d4d82dbbedd74" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_track_stack_1a528b5fd33f46021e878d4d82dbbedd74" kindref="member">PopInto</ref>(G4HepEmTrack&amp;<sp/>track);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="class_track_stack_1a71cd14abad3d3d0693658e5d4a1315eb" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_track_stack_1a71cd14abad3d3d0693658e5d4a1315eb" kindref="member">GetTypeOfNextTrack</ref>();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="class_track_stack_1a0f33c1b9f159ba9d6e0953c67cf1e4e2" refkind="member"><highlight class="normal"><sp/><sp/>G4HepEmTrack&amp;<sp/><sp/><ref refid="class_track_stack_1a0f33c1b9f159ba9d6e0953c67cf1e4e2" kindref="member">Insert</ref>();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="class_track_stack_1ae87bf7ff4f6836e10cf3b7e277b0d653" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_track_stack_1ae87bf7ff4f6836e10cf3b7e277b0d653" kindref="member">Copy</ref>(G4HepEmTrack&amp;<sp/>from,<sp/>G4HepEmTrack&amp;<sp/>to);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="class_track_stack_1a4e4f64496afddaacd19dcf99c1008402" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="class_track_stack_1a4e4f64496afddaacd19dcf99c1008402" kindref="member">GetNextTrackID</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_track_stack_1a5c45f50a86755ec9e93fb524d2684f89" kindref="member">fCurrentTrackID</ref>++;<sp/>}</highlight></codeline>
+<codeline lineno="80" refid="class_track_stack_1a1fd724f7c0c8b125304786c6f4b0e00c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_track_stack_1a1fd724f7c0c8b125304786c6f4b0e00c" kindref="member">ReSetTrackID</ref>()<sp/><sp/><sp/>{<sp/><ref refid="class_track_stack_1a5c45f50a86755ec9e93fb524d2684f89" kindref="member">fCurrentTrackID</ref>=0;<sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="class_track_stack_1a7c3631cc17083505d626d0ff669c16cf" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_track_stack_1a7c3631cc17083505d626d0ff669c16cf" kindref="member">fSize</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87" refid="class_track_stack_1a3917da2d4c2a007a69e1ba9e02af032d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_track_stack_1a3917da2d4c2a007a69e1ba9e02af032d" kindref="member">fCurIndx</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="88" refid="class_track_stack_1a5c45f50a86755ec9e93fb524d2684f89" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_track_stack_1a5c45f50a86755ec9e93fb524d2684f89" kindref="member">fCurrentTrackID</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="89" refid="class_track_stack_1a3d2e0b43b1ded801b0c98300ac8766d1" refkind="member"><highlight class="normal"><sp/><sp/>std::vector&lt;G4HepEmTrack&gt;<sp/><ref refid="class_track_stack_1a3d2e0b43b1ded801b0c98300ac8766d1" kindref="member">fTrackVect</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>TrackStack_HH</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/TrackStack.hh"/>
+  </compounddef>
+</doxygen>

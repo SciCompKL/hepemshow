@@ -1,0 +1,490 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_stepping_loop" kind="class" language="C++" prot="public">
+    <compoundname>SteppingLoop</compoundname>
+    <includes refid="_stepping_loop_8hh" local="no">SteppingLoop.hh</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_stepping_loop_1a1d7aa9c14da7b327829dc318d13fc2ed" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void SteppingLoop::GammaStepper</definition>
+        <argsstring>(G4HepEmTLData &amp;theTLData, G4HepEmState &amp;theState, TrackStack &amp;theTrackStack, Geometry &amp;theGeometry, Results &amp;theResult, int eventID)</argsstring>
+        <name>GammaStepper</name>
+        <qualifiedname>SteppingLoop::GammaStepper</qualifiedname>
+        <param>
+          <type>G4HepEmTLData &amp;</type>
+          <declname>theTLData</declname>
+        </param>
+        <param>
+          <type>G4HepEmState &amp;</type>
+          <declname>theState</declname>
+        </param>
+        <param>
+          <type><ref refid="class_track_stack" kindref="compound">TrackStack</ref> &amp;</type>
+          <declname>theTrackStack</declname>
+        </param>
+        <param>
+          <type><ref refid="class_geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>theGeometry</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_results" kindref="compound">Results</ref> &amp;</type>
+          <declname>theResult</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>eventID</declname>
+        </param>
+        <briefdescription>
+<para>Stepping loop for simulating the entire history of a <formula id="0">$\gamma$</formula> track. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The initial state of the <formula id="0">$\gamma$</formula> track is provided in the <computeroutput>G4HepEmGammaTrack</computeroutput> field of <computeroutput>theTLData</computeroutput> input argument by the caller. The history is simulated then till the end, the state of the <formula id="0">$\gamma$</formula> track is updated while secondary tracks, produced in the physics interactions, are pushed to <computeroutput>theTrackStack</computeroutput> (if any) and the required simulation results are collected/updated into <computeroutput>theResult</computeroutput> structure after each individual simulation step.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>theTLData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <computeroutput>G4HepEm</computeroutput> specific (thread local) object primarily used to obtain all physics related information from <computeroutput>G4HepEm</computeroutput> needed to compute a simulation step </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>theState</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <computeroutput>G4HepEm</computeroutput> specific object that stores pointers to the top level <computeroutput>G4HepEm</computeroutput> data structure and parameters that are used by <computeroutput>G4HepEm</computeroutput> to provide all physics related infomation needed to compute a simulation step </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>theTrackStack</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the track stack that is used to store the secondary tracks produced while simulating the entire history o fthe input <formula id="0">$\gamma$</formula> track </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>theGeometry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the geometry of the application in which the input track history is simulated </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>theResult</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data structure that holds all the infomation needs to be collected during the simulation. It might be updated after each simulation step by calling the <computeroutput>SteppingAction</computeroutput> method. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>eventID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the currently simulated event, i.e. the one to which the given input <formula id="0">$\gamma$</formula> track belongs to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/SteppingLoop.hh" line="108" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_stepping_loop_1ad0de81b62ac3ba13532464c2c01f1b39" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void SteppingLoop::ElectronStepper</definition>
+        <argsstring>(G4HepEmTLData &amp;theTLData, G4HepEmState &amp;theState, TrackStack &amp;theTrackStack, Geometry &amp;theGeometry, Results &amp;theResult, int eventID)</argsstring>
+        <name>ElectronStepper</name>
+        <qualifiedname>SteppingLoop::ElectronStepper</qualifiedname>
+        <param>
+          <type>G4HepEmTLData &amp;</type>
+          <declname>theTLData</declname>
+        </param>
+        <param>
+          <type>G4HepEmState &amp;</type>
+          <declname>theState</declname>
+        </param>
+        <param>
+          <type><ref refid="class_track_stack" kindref="compound">TrackStack</ref> &amp;</type>
+          <declname>theTrackStack</declname>
+        </param>
+        <param>
+          <type><ref refid="class_geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>theGeometry</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_results" kindref="compound">Results</ref> &amp;</type>
+          <declname>theResult</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>eventID</declname>
+        </param>
+        <briefdescription>
+<para>Stepping loop for simulating the entire history of a <formula id="1">$e^-/e^+$</formula> track. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The initial state of the <formula id="1">$e^-/e^+$</formula> track is provided in the <computeroutput>G4HepEmGammaTrack</computeroutput> field of <computeroutput>theTLData</computeroutput> input argument by the caller. The history is simulated then till the end, the state of the <formula id="1">$e^-/e^+$</formula> track is updated while secondary tracks, produced in the physics interactions, are pushed to <computeroutput>theTrackStack</computeroutput> (if any) and the required simulation results are collected/updated into <computeroutput>theResult</computeroutput> structure after each individual simulation step.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>theTLData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <computeroutput>G4HepEm</computeroutput> specific (thread local) object primarily used to obtain all physics related information from <computeroutput>G4HepEm</computeroutput> needed to compute a simulation step </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>theState</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <computeroutput>G4HepEm</computeroutput> specific object that stores pointers to the top level <computeroutput>G4HepEm</computeroutput> data structure and parameters that are used by <computeroutput>G4HepEm</computeroutput> to provide all physics related infomation needed to compute a simulation step </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>theTrackStack</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the track stack that is used to store the secondary tracks produced while simulating the entire history o fthe input <formula id="1">$e^-/e^+$</formula> track </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>theGeometry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the geometry of the application in which the input track history is simulated </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>theResult</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data structure that holds all the infomation needs to be collected during the simulation. It might be updated after each simulation step by calling the <computeroutput>SteppingAction</computeroutput> method. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>eventID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the currently simulated event, i.e. the one to which the given input <formula id="1">$e^-/e^+$</formula> track belongs to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/SteppingLoop.hh" line="124" column="15"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_stepping_loop_1a9a7b42e9d9cbc6a8d5c654a5f4cc4140" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SteppingLoop::SteppingLoop</definition>
+        <argsstring>()=delete</argsstring>
+        <name>SteppingLoop</name>
+        <qualifiedname>SteppingLoop::SteppingLoop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/SteppingLoop.hh" line="128" column="3"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_stepping_loop_1af0fc2b1e935c4f75824521c1976e5644" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void SteppingLoop::StackSecondaries</definition>
+        <argsstring>(G4HepEmTLData &amp;theTLData, TrackStack &amp;theTrackStack, G4HepEmTrack &amp;thePrimary)</argsstring>
+        <name>StackSecondaries</name>
+        <qualifiedname>SteppingLoop::StackSecondaries</qualifiedname>
+        <param>
+          <type>G4HepEmTLData &amp;</type>
+          <declname>theTLData</declname>
+        </param>
+        <param>
+          <type><ref refid="class_track_stack" kindref="compound">TrackStack</ref> &amp;</type>
+          <declname>theTrackStack</declname>
+        </param>
+        <param>
+          <type>G4HepEmTrack &amp;</type>
+          <declname>thePrimary</declname>
+        </param>
+        <briefdescription>
+<para>Auxiliary method that pushes the secondary track(s), produced by physics interactions at the post-step point (if any), into the track stack. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>theTLData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <computeroutput>G4HepEm</computeroutput> specific (thread local) object that is used by <computeroutput>G4HepEm</computeroutput> to deliver the secondary tracks to the caller after calling the its <computeroutput>Perform</computeroutput> top level method </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>theTrackStack</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the track stack that is used to store the secondary tracks produced while simulating the entire history of the input track in the steppers </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>thePrimary</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the primary track, in its post interaction state (after calling <computeroutput>G4HepEm</computeroutput> top level <computeroutput>Perform</computeroutput> method), i.e. the one that underwent the physics interaction </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/SteppingLoop.hh" line="136" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_stepping_loop_1a473d26c5090a12b239c3e2a1ac682243" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void SteppingLoop::SteppingAction</definition>
+        <argsstring>(Results &amp;theResult, const G4HepEmTrack &amp;theTrack, const Box *currentVolume, double currentPhysStepLength, int indxLayer, int indxAbsorber, int eventID, int stepID)</argsstring>
+        <name>SteppingAction</name>
+        <qualifiedname>SteppingLoop::SteppingAction</qualifiedname>
+        <param>
+          <type><ref refid="struct_results" kindref="compound">Results</ref> &amp;</type>
+          <declname>theResult</declname>
+        </param>
+        <param>
+          <type>const G4HepEmTrack &amp;</type>
+          <declname>theTrack</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_box" kindref="compound">Box</ref> *</type>
+          <declname>currentVolume</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>currentPhysStepLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>indxLayer</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>indxAbsorber</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>eventID</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>stepID</declname>
+        </param>
+        <briefdescription>
+<para>This method is called at the end of each simulation steps to collect some data during the simulation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method provides the possibility of collecting some data after each simulation steps (e.g. energy deposit or length of the step). Among the <computeroutput>Geant4</computeroutput> user actions this corresponds to the <computeroutput>G4UserSteppingAction</computeroutput></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>theResult</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data structure that holds all the infomation needs to be collected during the simulation (some fields might be updated) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>theTrack</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the primary track, in its post interaction state, i.e. at the end of the step </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>currentVolume</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to the volume (<computeroutput>absorber</computeroutput>/<computeroutput>gap</computeroutput>) in which the simulation step was done </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>currentPhysStepLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>real (physical) length of the step </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>indxLayer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index of the layer in which the step was done </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>indxAbsorber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>indicates if the step was done in the <computeroutput>absorber</computeroutput> (0) or in the <computeroutput>gap</computeroutput> (1) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>eventID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the event to which the particle under tracking belongs to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stepID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of this step that was just performed, i.e. number of steps cmpleted so far with with the current track </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/SteppingLoop.hh" line="152" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_stepping_loop_1ab69cad131a7c398a5755058e863d978e" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void SteppingLoop::Set3Vect</definition>
+        <argsstring>(double *v, double to)</argsstring>
+        <name>Set3Vect</name>
+        <qualifiedname>SteppingLoop::Set3Vect</qualifiedname>
+        <param>
+          <type>double *</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>to</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/SteppingLoop.hh" line="156" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_stepping_loop_1a9ac6e54ee8b934f2e98a109aee1bd4b8" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void SteppingLoop::Set3Vect</definition>
+        <argsstring>(double *v, const double *to)</argsstring>
+        <name>Set3Vect</name>
+        <qualifiedname>SteppingLoop::Set3Vect</qualifiedname>
+        <param>
+          <type>double *</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const double *</type>
+          <declname>to</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/SteppingLoop.hh" line="157" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_stepping_loop_1a351bdc9b2f937caa0d35fac2e496db53" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void SteppingLoop::AddTo3Vect</definition>
+        <argsstring>(double *v, const double *u, double scale=1.0)</argsstring>
+        <name>AddTo3Vect</name>
+        <qualifiedname>SteppingLoop::AddTo3Vect</qualifiedname>
+        <param>
+          <type>double *</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const double *</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+          <defval>1.0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/SteppingLoop.hh" line="158" column="15"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Stepping loops for simulating <formula id="2">$e^-$</formula>, <formula id="3">$e^+$</formula> and <formula id="0">$\gamma$</formula> particle histories. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>M. Novak </para>
+</simplesect>
+<simplesect kind="date"><para>July 2023</para>
+</simplesect>
+</para>
+<para>The stepping loops can calculate a given <formula id="0">$\gamma$</formula> or <formula id="1">$e^-/e^+$</formula> particle simulation history from their initial state till the end in a step-by-step way (by the <computeroutput><ref refid="class_stepping_loop_1a1d7aa9c14da7b327829dc318d13fc2ed" kindref="member">SteppingLoop::GammaStepper</ref>(G4HepEmTLData&amp;, G4HepEmState&amp;, <ref refid="class_track_stack" kindref="compound">TrackStack</ref>&amp;, <ref refid="class_geometry" kindref="compound">Geometry</ref>&amp;, <ref refid="struct_results" kindref="compound">Results</ref>&amp;, int)</computeroutput> and <computeroutput><ref refid="class_stepping_loop_1ad0de81b62ac3ba13532464c2c01f1b39" kindref="member">SteppingLoop::ElectronStepper</ref>(G4HepEmTLData&amp;, G4HepEmState&amp;, <ref refid="class_track_stack" kindref="compound">TrackStack</ref>&amp;, <ref refid="class_geometry" kindref="compound">Geometry</ref>&amp;, <ref refid="struct_results" kindref="compound">Results</ref>&amp;, int)</computeroutput> respectively). At each step:<itemizedlist>
+<listitem><para>the actual step length is calculated (accounting both the geometrical and the physics related constraints)</para>
+</listitem><listitem><para>the track is moved to its post-step position</para>
+</listitem><listitem><para>all physics related actions, happening along and/or at the post-step point, are performed on the track</para>
+</listitem><listitem><para>secondary tracks, generated in the given step by a physics interaction (if any), are insterted into the track stack (by calling the <computeroutput><ref refid="class_stepping_loop_1af0fc2b1e935c4f75824521c1976e5644" kindref="member">SteppingLoop::StackSecondaries</ref>(G4HepEmTLData&amp;, <ref refid="class_track_stack" kindref="compound">TrackStack</ref>&amp;, G4HepEmTrack&amp;)</computeroutput> method)</para>
+</listitem><listitem><para>information (e.g. energy deposit) might be collected at the end of each simulation step (by calling the <computeroutput><ref refid="class_stepping_loop_1a473d26c5090a12b239c3e2a1ac682243" kindref="member">SteppingLoop::SteppingAction</ref>(<ref refid="struct_results" kindref="compound">Results</ref>&amp;, const G4HepEmTrack&amp;, const Box*, double, int, int, int, int)</computeroutput> method )</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>A bit more details</bold>:</para>
+<para>A simulation history is terminated when:<itemizedlist>
+<listitem><para>the particle kinetic energy becomes zero (e.g. an <formula id="2">$e^-$</formula> lost all its kinetic energy along its last step)</para>
+</listitem><listitem><para>the particle participated in a destructive interaction (e.g. photoelectric absorption of a <formula id="0">$\gamma$</formula> photon or conversion to <formula id="1">$e^-/e^+$</formula> pairs)</para>
+</listitem><listitem><para>the particle leaves the calorimeter (in a normal <computeroutput>Geant4</computeroutput> simulation the the history is terminated when the particle leaves the world)</para>
+</listitem></itemizedlist>
+</para>
+<para>The physics related step length constraints as well as the actions (including the secondary track production) are provided by the <computeroutput>G4HepEm</computeroutput> implementation of the EM physics simulation.</para>
+<para><computeroutput>G4HepEm</computeroutput> implements two top level methods, in its Gamma and Electron managers:<itemizedlist>
+<listitem><para>to provide the information on <computeroutput>HowFar</computeroutput> a given input <formula id="0">$\gamma$</formula> or <formula id="1">$e^-/e^+$</formula> track goes according to their physics related constraints (e.g. till their next physics interaction takes place or due to other physics related constraints).</para>
+</listitem><listitem><para>to <computeroutput>Perform</computeroutput> all necessary physics related updates on the given input <formula id="0">$\gamma$</formula> or <formula id="1">$e^-/e^+$</formula> track and produce all secondary tracks in the given physics interaction (if any).</para>
+</listitem></itemizedlist>
+</para>
+<para>The first (<computeroutput>HowFar</computeroutput>) is invoked at the pre-step point while the second (<computeroutput>Perform</computeroutput>) is at the post-step point of each individual simulation step computation inside the <computeroutput><ref refid="class_stepping_loop_1a1d7aa9c14da7b327829dc318d13fc2ed" kindref="member">SteppingLoop::GammaStepper()</ref></computeroutput> and <computeroutput><ref refid="class_stepping_loop_1ad0de81b62ac3ba13532464c2c01f1b39" kindref="member">SteppingLoop::ElectronStepper()</ref></computeroutput>.</para>
+<para>In <computeroutput>G4HepEm</computeroutput> it&apos;s the <computeroutput>G4HepEmTLData</computeroutput> (thread local data) that is used in the top level, two sided communication between the consumer and <computeroutput>G4HepEm</computeroutput>. It encapsulates the (primary and secondary) tracks and the random number generator dedicated for one particular thread. Its <bold>primary</bold> Gamma/Electron track field is used to store the actual state of the <formula id="0">$\gamma$</formula> or <formula id="1">$e^-/e^+$</formula> track that is under tracking. The step limit, imposed by all physics related constraints on the actual track, is calculated at each pre-step point by calling the bove-mentioned <computeroutput>HowFar</computeroutput> top level method provided by <computeroutput>G4HepEm</computeroutput>. Then the <computeroutput>Perform</computeroutput> method needs to be invoked at the post-step point that performs all necessary physics related updates on the input <bold>primary</bold> track while produces all <bold>scondary</bold> tracks related to the given physics interaction (if any). The secondary tracks are delivered back to the caller in the appropriate <bold>seondary</bold> track fields of the <computeroutput>G4HepEmTLData</computeroutput> object.</para>
+<para>We might provide more details on how a <formula id="0">$\gamma$</formula> and <formula id="1">$e^-/e^+$</formula> simulation step is computed but you might find some information by inspecting the implementations of the top level <computeroutput>HowFar</computeroutput> and <computeroutput>Perform</computeroutput> <computeroutput>G4HepEm</computeroutput> methods in the corresponding <computeroutput>G4HepEmGammaManager/G4HepEmElectronManager</computeroutput>. </para>
+    </detaileddescription>
+    <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/SteppingLoop.hh" line="90" column="1" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/SteppingLoop.hh" bodystart="90" bodyend="160"/>
+    <listofallmembers>
+      <member refid="class_stepping_loop_1a351bdc9b2f937caa0d35fac2e496db53" prot="private" virt="non-virtual"><scope>SteppingLoop</scope><name>AddTo3Vect</name></member>
+      <member refid="class_stepping_loop_1ad0de81b62ac3ba13532464c2c01f1b39" prot="public" virt="non-virtual"><scope>SteppingLoop</scope><name>ElectronStepper</name></member>
+      <member refid="class_stepping_loop_1a1d7aa9c14da7b327829dc318d13fc2ed" prot="public" virt="non-virtual"><scope>SteppingLoop</scope><name>GammaStepper</name></member>
+      <member refid="class_stepping_loop_1ab69cad131a7c398a5755058e863d978e" prot="private" virt="non-virtual"><scope>SteppingLoop</scope><name>Set3Vect</name></member>
+      <member refid="class_stepping_loop_1a9ac6e54ee8b934f2e98a109aee1bd4b8" prot="private" virt="non-virtual"><scope>SteppingLoop</scope><name>Set3Vect</name></member>
+      <member refid="class_stepping_loop_1af0fc2b1e935c4f75824521c1976e5644" prot="private" virt="non-virtual"><scope>SteppingLoop</scope><name>StackSecondaries</name></member>
+      <member refid="class_stepping_loop_1a473d26c5090a12b239c3e2a1ac682243" prot="private" virt="non-virtual"><scope>SteppingLoop</scope><name>SteppingAction</name></member>
+      <member refid="class_stepping_loop_1a9a7b42e9d9cbc6a8d5c654a5f4cc4140" prot="private" virt="non-virtual"><scope>SteppingLoop</scope><name>SteppingLoop</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

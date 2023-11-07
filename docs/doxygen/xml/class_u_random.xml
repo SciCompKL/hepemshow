@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_u_random" kind="class" language="C++" prot="public">
+    <compoundname>URandom</compoundname>
+    <includes refid="_u_random_8hh" local="no">URandom.hh</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_u_random_1a091edcd5c38bb2b2a4c0960d4f56c793" prot="public" static="no" mutable="no">
+        <type>std::mt19937_64</type>
+        <definition>std::mt19937_64 URandom::fEngine</definition>
+        <argsstring></argsstring>
+        <name>fEngine</name>
+        <qualifiedname>URandom::fEngine</qualifiedname>
+        <briefdescription>
+<para>c++11 implementation of the 64-bit Mersenne Twister engine </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/URandom.hh" line="45" column="20" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/URandom.hh" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_u_random_1aa6c951503d67b9be7b2e4fd6de4415b2" prot="public" static="no" mutable="no">
+        <type>std::uniform_real_distribution&lt; double &gt; *</type>
+        <definition>std::uniform_real_distribution&lt;double&gt;* URandom::fDist</definition>
+        <argsstring></argsstring>
+        <name>fDist</name>
+        <qualifiedname>URandom::fDist</qualifiedname>
+        <briefdescription>
+<para>uniform distribution: utilises the above random engine to provide random numbers on <formula id="4">$(0,1)$</formula> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/URandom.hh" line="47" column="35" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/URandom.hh" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_u_random_1a4a68d6fbc770bb3b69b84eb9a1698d94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>URandom::URandom</definition>
+        <argsstring>(int seed=123)</argsstring>
+        <name>URandom</name>
+        <qualifiedname>URandom::URandom</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>seed</declname>
+          <defval>123</defval>
+        </param>
+        <briefdescription>
+<para>CTR. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>seed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>seed of the random number generator. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/URandom.hh" line="36" column="4"/>
+      </memberdef>
+      <memberdef kind="function" id="class_u_random_1a31e88fa4b0610950a82d87c535e3d33f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>URandom::~URandom</definition>
+        <argsstring>()</argsstring>
+        <name>~URandom</name>
+        <qualifiedname>URandom::~URandom</qualifiedname>
+        <briefdescription>
+<para>DTR. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/URandom.hh" line="38" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_u_random_1a869185702aeec4f37a4f788dcd5ea838" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double URandom::flat</definition>
+        <argsstring>()</argsstring>
+        <name>flat</name>
+        <qualifiedname>URandom::flat</qualifiedname>
+        <briefdescription>
+<para>Method to provide uniform random numbers on <formula id="4">$(0,1)$</formula>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/URandom.hh" line="41" column="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A uniform random number generator. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>M. Novak </para>
+</simplesect>
+<simplesect kind="date"><para>July 2023</para>
+</simplesect>
+</para>
+<para>This is the uniform random number generator, i.e. the only thing that is need to make the <computeroutput>G4HepEm</computeroutput> physics implementation complete (see more at the <computeroutput><ref refid="class_physics" kindref="compound">Physics</ref></computeroutput> documentation). This random number generator relies on the c++11 implementation of the 64-bit Mersenne Twister engine. The <computeroutput><ref refid="class_u_random_1a869185702aeec4f37a4f788dcd5ea838" kindref="member">URandom::flat()</ref></computeroutput> method can be used to provide uniform random numbers on the <formula id="4">$(0,1)$</formula>. An object from this class is constructed in the <computeroutput>HepEmShow</computeroutput> main and set to be used in the <computeroutput>G4HepEmRandomEngine</computeroutput>.</para>
+<para><simplesect kind="note"><para>This random number generator can be replaced with anything that can provide uniform fandom numbers on <formula id="4">$(0,1)$</formula>. One need to modify the corresponding implementations in <computeroutput><ref refid="class_physics" kindref="compound">Physics</ref></computeroutput> (namely, one line in the <computeroutput>G4HepEmRandomEngine::flat()</computeroutput> and <computeroutput>G4HepEmRandomEngine::flatArray()</computeroutput> implementations in <computeroutput>Physics.cc</computeroutput>) and replace the <computeroutput><ref refid="class_u_random" kindref="compound">URandom</ref></computeroutput> object construction in the <computeroutput>HepEmShow</computeroutput> main. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/URandom.hh" line="29" column="1" bodyfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/URandom.hh" bodystart="29" bodyend="49"/>
+    <listofallmembers>
+      <member refid="class_u_random_1aa6c951503d67b9be7b2e4fd6de4415b2" prot="public" virt="non-virtual"><scope>URandom</scope><name>fDist</name></member>
+      <member refid="class_u_random_1a091edcd5c38bb2b2a4c0960d4f56c793" prot="public" virt="non-virtual"><scope>URandom</scope><name>fEngine</name></member>
+      <member refid="class_u_random_1a869185702aeec4f37a4f788dcd5ea838" prot="public" virt="non-virtual"><scope>URandom</scope><name>flat</name></member>
+      <member refid="class_u_random_1a4a68d6fbc770bb3b69b84eb9a1698d94" prot="public" virt="non-virtual"><scope>URandom</scope><name>URandom</name></member>
+      <member refid="class_u_random_1a31e88fa4b0610950a82d87c535e3d33f" prot="public" virt="non-virtual"><scope>URandom</scope><name>~URandom</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The components of the simulation &mdash; HepEmShow a compact EM shower simulation 0.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=525cde36"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Code documentation" href="../CodeDoc.html" />
+    <link rel="prev" title="Build and Install" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> HepEmShow a compact EM shower simulation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Build and Install</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The components of the simulation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#geometry">Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#physics">Physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#event-processing">Event processing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#event-loop">Event loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stepping-loop">Stepping loop</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-hepemshow-application-main">The <code class="docutils literal notranslate"><span class="pre">HepEmShow</span></code> application main</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#input-arguments">Input arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-hepemshow-datageneration-application-main">The <code class="docutils literal notranslate"><span class="pre">HepEmShow-DataGeneration</span></code> application main</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-configurations">Example configurations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CodeDoc.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zzbib.html">Bibliography</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HepEmShow a compact EM shower simulation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">The components of the simulation</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="the-components-of-the-simulation">
+<span id="simulation-components-doc"></span><h1>The components of the simulation<a class="headerlink" href="#the-components-of-the-simulation" title="Permalink to this heading"></a></h1>
+<p>The two main components of the simulation is the <a class="reference internal" href="#geometry">Geometry</a> and <a class="reference internal" href="#physics">Physics</a> providing the necessary information and functionalities fused together
+to compute the individual simulation steps during the <a class="reference internal" href="#event-processing">Event processing</a> inside the <a class="reference internal" href="#stepping-loop">Stepping loop</a>, i.e. how far the particle goes
+in a given simulation step and what happens with it at that post-step point.</p>
+<p>The <a class="reference internal" href="#geometry">Geometry</a> describes the simulation setup, including navigation possibilities or providing information on the <strong>geometrical constraints for
+the simulation step computation</strong> (e.g. given a global point, how far the nearest volume boundary is or how far the volume boundary to a given
+direction is, etc.). The <a class="reference internal" href="#physics">Physics</a> component is responsible to supply the <strong>physics related constraints for the simulation step computation</strong>
+(e.g. how far the given particle go till its next interaction of the given type or how far a charge particle goes till it loses all its current
+energy, etc.). These constraints are required during the <a class="reference internal" href="#event-processing">Event processing</a> at the beginning of each simulation step computation in the
+<a class="reference internal" href="#stepping-loop">Stepping loop</a> to decide length of the simulation step. The particle is then moved to the post-step point and the necessary <a class="reference internal" href="#geometry">Geometry</a>
+and/or <a class="reference internal" href="#physics">Physics</a> related <strong>actions are performed</strong> on the particle. Some information regarding the given simulation step, e.g. energy deposit,
+might be collected at the end of each simulation step before performing the computation of the next step till the history of the particle is
+terminated (e.g. <span class="math notranslate nohighlight">\(e^-\)</span> lost all its kinetic energy in the last step; <span class="math notranslate nohighlight">\(\gamma\)</span> was absorbed in photoelectric process or destructed by
+producing <span class="math notranslate nohighlight">\(e^-/e^+\)</span> pair, etc.).</p>
+<p>A short description of the main components of the <code class="docutils literal notranslate"><span class="pre">HepEmShow</span></code> simulation application, such as the <a class="reference internal" href="#geometry">Geometry</a>, <a class="reference internal" href="#physics">Physics</a>, <a class="reference internal" href="#event-processing">Event processing</a> and
+<a class="reference internal" href="#stepping-loop">Stepping loop</a>, is provided in this section together with <a class="reference internal" href="#the-hepemshow-application-main">The HepEmShow application main</a> and some example configuration.</p>
+<section id="geometry">
+<span id="geometry-doc"></span><h2>Geometry<a class="headerlink" href="#geometry" title="Permalink to this heading"></a></h2>
+<p>The application <a class="reference internal" href="../Simulation/SimulationCodeDoc.html#_CPPv48Geometry" title="Geometry"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> is a configurable simplified sampling <code class="docutils literal notranslate"><span class="pre">calorimeter</span></code> that is built up from <code class="docutils literal notranslate"><span class="pre">N</span></code> <code class="docutils literal notranslate"><span class="pre">layer</span></code>-s of an <code class="docutils literal notranslate"><span class="pre">absorber</span></code> and
+a <code class="docutils literal notranslate"><span class="pre">gap</span></code> as illustrated in <a class="reference internal" href="#fig-calo-layer2"><span class="std std-numref">Fig. 1</span></a>.</p>
+<figure class="align-center" id="geom-calo-layer2">
+<span id="fig-calo-layer2"></span><a class="reference internal image-reference" href="../_images/calo_layer2.png"><img alt="geom-calo_layer2" src="../_images/calo_layer2.png" style="width: 604.8000000000001px; height: 318.40000000000003px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Illustration of the default <code class="docutils literal notranslate"><span class="pre">absorber</span></code> (green) and <code class="docutils literal notranslate"><span class="pre">gap</span></code> (blue) <code class="docutils literal notranslate"><span class="pre">layer</span></code> structured simplified sampling calorimeter configuration (with <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">=</span> <span class="pre">14</span></code> <code class="docutils literal notranslate"><span class="pre">layer</span></code>-s in this case).
+The red arrow from left represents the direction of the incoming primary particle beam.</span><a class="headerlink" href="#geom-calo-layer2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The number of <code class="docutils literal notranslate"><span class="pre">layer</span></code>-s <code class="docutils literal notranslate"><span class="pre">N</span></code>, the thickness of both the <code class="docutils literal notranslate"><span class="pre">absorber</span></code> and <code class="docutils literal notranslate"><span class="pre">gap</span></code> can be set at the construction of the calorimeter
+(see the <a class="reference internal" href="#input-arguments">Input arguments</a> of <a class="reference internal" href="#the-hepemshow-application-main">The HepEmShow application main</a>). All thicknesses are measured along the <code class="docutils literal notranslate"><span class="pre">x</span></code>-axis in <code class="docutils literal notranslate"><span class="pre">mm</span></code> units.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">gap</span></code> thickness can be set even to zero in which case the <code class="docutils literal notranslate"><span class="pre">calorimeter</span></code> is built up from the given number of <code class="docutils literal notranslate"><span class="pre">layer</span></code>-s of
+<code class="docutils literal notranslate"><span class="pre">absorber</span></code> with the given thickness (i.e. a single material calorimeter sliced by the <code class="docutils literal notranslate"><span class="pre">layer</span></code>-s) as illustrated in <a class="reference internal" href="#fig-calo-layer1"><span class="std std-numref">Fig. 2</span></a>.</p>
+<figure class="align-center" id="geom-calo-layer1">
+<span id="fig-calo-layer1"></span><a class="reference internal image-reference" href="../_images/calo_layer1.png"><img alt="geom-calo_layer1" src="../_images/calo_layer1.png" style="width: 589.0px; height: 325.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Illustration of the single material calorimeter sliced by the <code class="docutils literal notranslate"><span class="pre">layer</span></code>-s (<code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">=</span> <span class="pre">18</span></code>). As the <code class="docutils literal notranslate"><span class="pre">gap</span></code> thickness is set to <code class="docutils literal notranslate"><span class="pre">0</span></code>, the
+single <code class="docutils literal notranslate"><span class="pre">layer</span></code> thickness is identical to the <code class="docutils literal notranslate"><span class="pre">absorber</span></code> (blue) thickness while the <code class="docutils literal notranslate"><span class="pre">calorimeter</span></code> thickness is <span class="math notranslate nohighlight">\(\times\)</span> <code class="docutils literal notranslate"><span class="pre">N</span></code> of that.</span><a class="headerlink" href="#geom-calo-layer1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</div>
+<p>The thickness of the single <code class="docutils literal notranslate"><span class="pre">layer</span></code> as well as the entire <code class="docutils literal notranslate"><span class="pre">calorimeter</span></code> is automatically computed from the given <code class="docutils literal notranslate"><span class="pre">absorber</span></code>, <code class="docutils literal notranslate"><span class="pre">gap</span></code>
+thicknesses and number of <code class="docutils literal notranslate"><span class="pre">layer</span></code>-s respectively. The transverse size, i.e. the full extent of the <code class="docutils literal notranslate"><span class="pre">absorber</span></code>, <code class="docutils literal notranslate"><span class="pre">gap</span></code>, <code class="docutils literal notranslate"><span class="pre">layer</span></code>
+and the <code class="docutils literal notranslate"><span class="pre">calorimeter</span></code> along the <code class="docutils literal notranslate"><span class="pre">y</span></code>- and <code class="docutils literal notranslate"><span class="pre">z</span></code>-axes, can also be set as an input argument (see the <a class="reference internal" href="#input-arguments">Input arguments</a> of
+<a class="reference internal" href="#the-hepemshow-application-main">The HepEmShow application main</a>). The calorimeter is places in the center of the <code class="docutils literal notranslate"><span class="pre">world</span></code> so 5 (<a class="reference internal" href="../Simulation/SimulationCodeDoc.html#_CPPv43Box" title="Box"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Box</span></code></a> shaped) volumes are
+used in total to describe the application geometry. The size of the <code class="docutils literal notranslate"><span class="pre">world</span></code> volume is computed automatically based on the extent of the
+calorimeter such that it encloses the entire calorimeter with some margin.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">x</span></code>-coordinate of the left hand side boundary of the calorimeter as well as an appropriate
+initial <code class="docutils literal notranslate"><span class="pre">x</span></code>-coordinate of the primary particles (such that they are located mid-way between the <code class="docutils literal notranslate"><span class="pre">calorimeter</span></code> and
+the <code class="docutils literal notranslate"><span class="pre">world</span></code> boundaries along the negative <code class="docutils literal notranslate"><span class="pre">x</span></code>-axis) are calculated. At the beginning of an event, the
+<a class="reference internal" href="../Simulation/SimulationCodeDoc.html#_CPPv416PrimaryGenerator" title="PrimaryGenerator"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">PrimaryGenerator</span></code></a> will generate primary particles at this later position with the <code class="docutils literal notranslate"><span class="pre">[1,0,0]</span></code> direction vector,
+i.e. pointing toward to the left hand side boundary of the calorimeter. Each primary particle is then moved to the former position,
+i.e. on the left hand side boundary of the calorimeter, in their very first step such that they will enter into the calorimeter
+in the next, second simulation step.</p>
+</div>
+<p>Each of these volumes is filled with a given material specified by the material index of the volume. These indices are the subscripts of the
+(<code class="docutils literal notranslate"><span class="pre">Geant4</span></code> predefined NIST) materials listed in the material name vector of <a class="reference internal" href="#the-hepemshow-datageneration-application-main">The HepEmShow-DataGeneration application main</a>. In the default case, which is the same that
+was used to generate the <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code> data shipped with the application, this material name vector is</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">The material name vector as it is in <a class="reference internal" href="#the-hepemshow-datageneration-application-main">The HepEmShow-DataGeneration application main</a>.</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// list of Geant4 (NIST) material names</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">matList</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;G4_Galactic&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;G4_PbWO4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;G4_lAr&quot;</span><span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<p>This corresponds to the default <cite>index-to-material</cite> and eventually to the <cite>material-to-volume</cite> association shown
+in <a class="reference internal" href="#table-material-index"><span class="std std-numref">Table 1</span></a>. A complete list of the predefined NIST materials provided by <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> with their composition
+can be found at the corresponding part of the <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> <a class="reference external" href="https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Appendix/materialNames.html">documentation (Book For Application Developers: Geant4 Material Database)</a>.</p>
+<table class="docutils align-default" id="table-material-index">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">The default material to index and material to volume association.</span><a class="headerlink" href="#table-material-index" title="Permalink to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Material</p></th>
+<th class="head"><p>Index</p></th>
+<th class="head"><p>Used in Volume</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><cite>galactic</cite>
+(low density gas)</p></td>
+<td><p>0</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">layer</span></code>
+<code class="docutils literal notranslate"><span class="pre">calorimeter</span></code>
+<code class="docutils literal notranslate"><span class="pre">world</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>lead tungstate
+(atolzite)</p></td>
+<td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">absorber</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>liquid-argon</p></td>
+<td><p>2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gap</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Changing the material name(s) in this above vector of the <a class="reference internal" href="#the-hepemshow-datageneration-application-main">The HepEmShow-DataGeneration application main</a> (especially at index <code class="docutils literal notranslate"><span class="pre">1</span></code>
+and/or <code class="docutils literal notranslate"><span class="pre">2</span></code> as the vacuum is always needed to fill the <code class="docutils literal notranslate"><span class="pre">layer</span></code>, <code class="docutils literal notranslate"><span class="pre">calorimeter</span></code> and <code class="docutils literal notranslate"><span class="pre">world</span></code> container volumes), regenerating the data
+by executing this data generation application, then executing again the <code class="docutils literal notranslate"><span class="pre">HepEmShow</span></code> application, corresponds to changing the material
+of the <code class="docutils literal notranslate"><span class="pre">absorber</span></code> and/or <code class="docutils literal notranslate"><span class="pre">gap</span></code> volumes of the simulation.</p>
+</div>
+<p>The application geometry also provides a rather simple “navigation” capability (used in the simulation stepping loops) through its <a class="reference internal" href="../Simulation/SimulationCodeDoc.html#_CPPv4N8Geometry22CalculateDistanceToOutEPdPdPP3BoxPiPi" title="Geometry::CalculateDistanceToOut"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Geometry::CalculateDistanceToOut()</span></code></a> method
+described in details at the corresponding code documentation.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Unlike the <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> geometry modeller and navigation, that provides generic geometry description and navigation capabilities,
+the <a class="reference internal" href="../Simulation/SimulationCodeDoc.html#_CPPv48Geometry" title="Geometry"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> implemented for <code class="docutils literal notranslate"><span class="pre">HepEmShow</span></code> is specific to the configurable simplified sampling calorimeter described above. Focusing
+only to this specific geometry modelling and related navigation problem made possible to provide a rather compact, simple and clear implementation
+of all geometry related functionalities required during the simulation (i.e. in the <a class="reference internal" href="../Simulation/SimulationCodeDoc.html#_CPPv412SteppingLoop" title="SteppingLoop"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">SteppingLoop</span></code></a>).</p>
+</div>
+</section>
+<section id="physics">
+<h2>Physics<a class="headerlink" href="#physics" title="Permalink to this heading"></a></h2>
+<p>Targeting only the simulation of the EM shower inherently leads to a compact simulation as it includes only <span class="math notranslate nohighlight">\(e^-/e^+\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span>
+particles with their EM (i.e. without gamma- and lepto-nuclear) interactions. Focusing to the descriptions of these interactions, that ensures
+sufficient details and accuracy for HEP detector simulations, leads to an even more specific set of interactions and underlying models that
+the physics component of the simulation needs to provide. This well defined, important but small subset of the very rich physics offered by
+the <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> toolkit, can then be implemented in a very compact form.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code> R&amp;D project <a class="bibtex reference internal" href="../zzbib.html#g4hepem" id="id1">[4]</a> offers such an implementation with several attractive properties. Separation of data definition,
+initialisation and run-time functionalities results in a rather small, <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> independent, stateless, header based implementation of all
+physics related run-time functionalities required for such EM shower simulations. Furthermore, all the data, extracted from <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> during
+the initialisation, can be exported/imported into/from a single file making possible to skip the <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> dependent initialisation phase
+in subsequent executions of the application. Therefore, <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code> offers the possibility of a <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> like but <code class="docutils literal notranslate"><span class="pre">Geant4</span></code>
+independent EM physics component for developing particle transport simulations. Further information on <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code>, including the
+<a class="reference external" href="https://g4hepem.readthedocs.io/en/latest/IntroAndInstall/introduction.html#physics-modelling-capability">physics interactions included</a>,
+can be found in the corresponding part of the <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code> <a class="reference external" href="https://g4hepem.readthedocs.io/en/latest/">documentation</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">hepemshow</span></code> repository includes the pre-generated data file (<code class="docutils literal notranslate"><span class="pre">/data/hepem_data.json</span></code>) that has been extracted by using the
+<code class="docutils literal notranslate"><span class="pre">HepEmShow-DataGeneration</span></code> with the default material configuration settings. Providing this data file makes possible
+to initialise the <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code> data component from this file making <code class="docutils literal notranslate"><span class="pre">HepEmShow</span></code> independent from <code class="docutils literal notranslate"><span class="pre">Geant4</span></code>. The <code class="docutils literal notranslate"><span class="pre">HepEmShow-DataGeneration</span></code>
+application is also available in the <code class="docutils literal notranslate"><span class="pre">hepemshow</span></code> repository. This can be used to re-generate the above data file when the goal is to change
+the default material configuration (see above at the <a class="reference internal" href="#geometry">Geometry</a> section). However, as the data extraction requires the <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> dependent
+initialisation of <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code>, it requires a <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> dependent build of <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code>. See more details in the
+<a class="reference external" href="install_Requirements">Requirements</a> subsection of the <a class="reference external" href="install_doc">Build and Install</a> section.</p>
+</div>
+<p>As mentioned above, the entire physics of the <code class="docutils literal notranslate"><span class="pre">HepEmShow</span></code> simulation application is provided by <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code> <a class="bibtex reference internal" href="../zzbib.html#g4hepem" id="id2">[4]</a>. The required,
+definitions (<code class="docutils literal notranslate"><span class="pre">.hh</span></code> files) of the <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code> run-time functionalities are pulled in by the <code class="docutils literal notranslate"><span class="pre">Physics.hh</span></code> header while the corresponding
+implementations (<code class="docutils literal notranslate"><span class="pre">.icc</span></code> files) are in the <code class="docutils literal notranslate"><span class="pre">Physics.cc</span></code>. The only missing implementation, that the client needs to provide, is a uniform
+random number generator that needs to be utilised to complete the implementation of the <code class="docutils literal notranslate"><span class="pre">G4HepEmRandomEngine</span></code>. This is also done in the
+<code class="docutils literal notranslate"><span class="pre">Physics.cc</span></code> file by using the local <a class="reference internal" href="../Simulation/SimulationCodeDoc.html#_CPPv47URandom" title="URandom"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">URandom</span></code></a> uniform random number generator. More information can be found in the code
+documentation of the <a class="reference internal" href="../Simulation/SimulationCodeDoc.html#_CPPv47Physics" title="Physics"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Physics</span></code></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code> provides two top level methods, <code class="docutils literal notranslate"><span class="pre">HowFar</span></code> and <code class="docutils literal notranslate"><span class="pre">Perform</span></code> in its <code class="docutils literal notranslate"><span class="pre">G4HepEmGammaManager</span></code> and <code class="docutils literal notranslate"><span class="pre">G4HepEmElectronManager</span></code> for <span class="math notranslate nohighlight">\(\gamma\)</span> and <span class="math notranslate nohighlight">\(e^-/e^+\)</span> particles respectively:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">HowFar</span></code>: the physics constrained step length of the given input track, i.e. how far the particle goes e.g. till the next physics
+interaction takes place or it loses all its kinetic energy or due to any other physics related constraints.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Perform</span></code>: performs all necessary physics related actions and updates on the given input track, including the production of secondary
+tracks in the given physics interaction (if any).</p></li>
+</ul>
+</div></blockquote>
+<p>These two top level methods are utilised in the <a class="reference internal" href="#stepping-loop">Stepping loop</a> during the computation of the individual simulation step. <code class="docutils literal notranslate"><span class="pre">HowFar</span></code> is invoked
+at the pre-step point, i.e. at the step limit evaluation, while <code class="docutils literal notranslate"><span class="pre">Perform</span></code> is utilised at the post-step point of each individual simulation step
+computation inside the <a class="reference internal" href="../Simulation/SimulationCodeDoc.html#_CPPv4N12SteppingLoop12GammaStepperER13G4HepEmTLDataR12G4HepEmStateR10TrackStackR8GeometryR7Resultsi" title="SteppingLoop::GammaStepper"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">SteppingLoop::GammaStepper()</span></code></a> and <a class="reference internal" href="../Simulation/SimulationCodeDoc.html#_CPPv4N12SteppingLoop15ElectronStepperER13G4HepEmTLDataR12G4HepEmStateR10TrackStackR8GeometryR7Resultsi" title="SteppingLoop::ElectronStepper"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">SteppingLoop::ElectronStepper()</span></code></a> methods.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Unlike the <a class="reference internal" href="#geometry">Geometry</a> of the application, the <a class="reference internal" href="#physics">Physics</a> is fully generic as <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code> provides an application independent, generic
+EM physics component similarly to the corresponding native <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> implementation. However, the <code class="docutils literal notranslate"><span class="pre">Geant4</span></code> dependent initialisation
+phase of <code class="docutils literal notranslate"><span class="pre">G4HepEm</span></code>, i.e. the data extraction, has been eliminated from <code class="docutils literal notranslate"><span class="pre">HepEmShow</span></code> by separating it to the additional <code class="docutils literal notranslate"><span class="pre">HepEmShow-DataGeneration</span></code>
+application in order to make <code class="docutils literal notranslate"><span class="pre">HepEmShow</span></code> independent from <code class="docutils literal notranslate"><span class="pre">Geant4</span></code>. As a consequence, the corresponding generated data file is specific to a given
+material configuration and needs to be re-generated whenever one would like to change that material configuration as discussed above.</p>
+</div>
+</section>
+<section id="event-processing">
+<h2>Event processing<a class="headerlink" href="#event-processing" title="Permalink to this heading"></a></h2>
+<section id="event-loop">
+<h3>Event loop<a class="headerlink" href="#event-loop" title="Permalink to this heading"></a></h3>
+</section>
+<section id="stepping-loop">
+<h3>Stepping loop<a class="headerlink" href="#stepping-loop" title="Permalink to this heading"></a></h3>
+</section>
+</section>
+<section id="the-hepemshow-application-main">
+<h2>The <code class="docutils literal notranslate"><span class="pre">HepEmShow</span></code> application main<a class="headerlink" href="#the-hepemshow-application-main" title="Permalink to this heading"></a></h2>
+<section id="input-arguments">
+<h3>Input arguments<a class="headerlink" href="#input-arguments" title="Permalink to this heading"></a></h3>
+</section>
+</section>
+<section id="the-hepemshow-datageneration-application-main">
+<h2>The <code class="docutils literal notranslate"><span class="pre">HepEmShow-DataGeneration</span></code> application main<a class="headerlink" href="#the-hepemshow-datageneration-application-main" title="Permalink to this heading"></a></h2>
+</section>
+<section id="example-configurations">
+<h2>Example configurations<a class="headerlink" href="#example-configurations" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install.html" class="btn btn-neutral float-left" title="Build and Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../CodeDoc.html" class="btn btn-neutral float-right" title="Code documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, M.Novak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

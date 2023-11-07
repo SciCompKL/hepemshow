@@ -1,0 +1,197 @@
+\begin{sphinxtheindex}
+\let\bigletter\sphinxstyleindexlettergroup
+\let\spxpagem \sphinxstyleindexpagemain
+\let\spxentry \sphinxstyleindexentry
+\let\spxextra \sphinxstyleindexextra
+
+  \bigletter B
+  \item \spxentry{Box}\spxextra{C++ class}, \hyperpage{19}
+  \item \spxentry{Box::\textasciitilde{}Box}\spxextra{C++ function}, \hyperpage{20}
+  \item \spxentry{Box::Box}\spxextra{C++ function}, \hyperpage{20}
+  \item \spxentry{Box::DistanceToOut}\spxextra{C++ function}, \hyperpage{21}
+  \item \spxentry{Box::fDelta}\spxextra{C++ member}, \hyperpage{22}
+  \item \spxentry{Box::fDx}\spxextra{C++ member}, \hyperpage{21}
+  \item \spxentry{Box::fDy}\spxextra{C++ member}, \hyperpage{21}
+  \item \spxentry{Box::fDz}\spxextra{C++ member}, \hyperpage{21}
+  \item \spxentry{Box::fMaterialIndx}\spxextra{C++ member}, \hyperpage{21}
+  \item \spxentry{Box::fName}\spxextra{C++ member}, \hyperpage{21}
+  \item \spxentry{Box::GetHalfLength}\spxextra{C++ function}, \hyperpage{20}
+  \item \spxentry{Box::GetMaterialIndx}\spxextra{C++ function}, \hyperpage{20}
+  \item \spxentry{Box::GetName}\spxextra{C++ function}, \hyperpage{20}
+  \item \spxentry{Box::kCarTolerance}\spxextra{C++ member}, \hyperpage{21}
+  \item \spxentry{Box::SetHalfLength}\spxextra{C++ function}, \hyperpage{20}
+  \item \spxentry{Box::SetMaterialIndx}\spxextra{C++ function}, \hyperpage{20}
+
+  \indexspace
+  \bigletter E
+  \item \spxentry{EventLoop}\spxextra{C++ class}, \hyperpage{33}
+  \item \spxentry{EventLoop::BeginOfEventAction}\spxextra{C++ function}, \hyperpage{34}
+  \item \spxentry{EventLoop::BeginOfTrackingAction}\spxextra{C++ function}, \hyperpage{34}
+  \item \spxentry{EventLoop::EndOfEventAction}\spxextra{C++ function}, \hyperpage{34}
+  \item \spxentry{EventLoop::EndOfTrackingAction}\spxextra{C++ function}, \hyperpage{34}
+  \item \spxentry{EventLoop::ProcessEvents}\spxextra{C++ function}, \hyperpage{33}
+
+  \indexspace
+  \bigletter G
+  \item \spxentry{Geometry}\spxextra{C++ class}, \hyperpage{12}
+  \item \spxentry{Geometry::\textasciitilde{}Geometry}\spxextra{C++ function}, \hyperpage{14}
+  \item \spxentry{Geometry::CalculateDistanceToOut}\spxextra{C++ function}, \hyperpage{16}
+  \item \spxentry{Geometry::fAbsThick}\spxextra{C++ member}, \hyperpage{18}
+  \item \spxentry{Geometry::fBoxAbs}\spxextra{C++ member}, \hyperpage{18}
+  \item \spxentry{Geometry::fBoxCalo}\spxextra{C++ member}, \hyperpage{18}
+  \item \spxentry{Geometry::fBoxGap}\spxextra{C++ member}, \hyperpage{19}
+  \item \spxentry{Geometry::fBoxLayer}\spxextra{C++ member}, \hyperpage{18}
+  \item \spxentry{Geometry::fBoxWorld}\spxextra{C++ member}, \hyperpage{18}
+  \item \spxentry{Geometry::fCaloSizeYZ}\spxextra{C++ member}, \hyperpage{18}
+  \item \spxentry{Geometry::fCaloStartX}\spxextra{C++ member}, \hyperpage{18}
+  \item \spxentry{Geometry::fCaloThick}\spxextra{C++ member}, \hyperpage{18}
+  \item \spxentry{Geometry::fGapThick}\spxextra{C++ member}, \hyperpage{18}
+  \item \spxentry{Geometry::fLayerThick}\spxextra{C++ member}, \hyperpage{18}
+  \item \spxentry{Geometry::fNumLayers}\spxextra{C++ member}, \hyperpage{18}
+  \item \spxentry{Geometry::fPrimaryXPosition}\spxextra{C++ member}, \hyperpage{18}
+  \item \spxentry{Geometry::Geometry}\spxextra{C++ function}, \hyperpage{14}
+  \item \spxentry{Geometry::GetAbsThick}\spxextra{C++ function}, \hyperpage{15}
+  \item \spxentry{Geometry::GetCaloSizeYZ}\spxextra{C++ function}, \hyperpage{15}
+  \item \spxentry{Geometry::GetCaloStartXposition}\spxextra{C++ function}, \hyperpage{15}
+  \item \spxentry{Geometry::GetCaloThick}\spxextra{C++ function}, \hyperpage{14}
+  \item \spxentry{Geometry::GetGapThick}\spxextra{C++ function}, \hyperpage{15}
+  \item \spxentry{Geometry::GetNumLayers}\spxextra{C++ function}, \hyperpage{14}
+  \item \spxentry{Geometry::GetPrimaryXposition}\spxextra{C++ function}, \hyperpage{15}
+  \item \spxentry{Geometry::SetAbsThick}\spxextra{C++ function}, \hyperpage{14}
+  \item \spxentry{Geometry::SetCaloSizeYZ}\spxextra{C++ function}, \hyperpage{15}
+  \item \spxentry{Geometry::SetGapThick}\spxextra{C++ function}, \hyperpage{15}
+  \item \spxentry{Geometry::SetNumLayers}\spxextra{C++ function}, \hyperpage{14}
+  \item \spxentry{Geometry::UpdateParameters}\spxextra{C++ function}, \hyperpage{17}
+
+  \indexspace
+  \bigletter H
+  \item \spxentry{Hist}\spxextra{C++ class}, \hyperpage{29}
+  \item \spxentry{Hist::\textasciitilde{}Hist}\spxextra{C++ function}, \hyperpage{30}
+  \item \spxentry{Hist::Fill}\spxextra{C++ function}, \hyperpage{30}
+  \item \spxentry{Hist::GetNumBins}\spxextra{C++ function}, \hyperpage{30}
+  \item \spxentry{Hist::Hist}\spxextra{C++ function}, \hyperpage{29}
+  \item \spxentry{Hist::Initialize}\spxextra{C++ function}, \hyperpage{30}
+  \item \spxentry{Hist::ReSet}\spxextra{C++ function}, \hyperpage{30}
+  \item \spxentry{Hist::Scale}\spxextra{C++ function}, \hyperpage{30}
+
+  \indexspace
+  \bigletter I
+  \item \spxentry{InputParameters}\spxextra{C++ struct}, \hyperpage{31}
+  \item \spxentry{InputParameters::fG4HepEmDataFile}\spxextra{C++ member}, \hyperpage{32}
+  \item \spxentry{InputParameters::fGeometry}\spxextra{C++ member}, \hyperpage{32}
+  \item \spxentry{InputParameters::fPrimaryAndEvents}\spxextra{C++ member}, \hyperpage{32}
+  \item \spxentry{InputParameters::fRunVerbosity}\spxextra{C++ member}, \hyperpage{32}
+  \item \spxentry{InputParameters::Geometry}\spxextra{C++ struct}, \hyperpage{32}
+  \item \spxentry{InputParameters::Geometry::fNumLayers}\spxextra{C++ member}, \hyperpage{32}
+  \item \spxentry{InputParameters::Geometry::fSizeTransverse}\spxextra{C++ member}, \hyperpage{32}
+  \item \spxentry{InputParameters::Geometry::fThicknessAbsorber}\spxextra{C++ member}, 
+		\hyperpage{32}
+  \item \spxentry{InputParameters::Geometry::fThicknessCalo}\spxextra{C++ member}, \hyperpage{32}
+  \item \spxentry{InputParameters::Geometry::fThicknessGap}\spxextra{C++ member}, \hyperpage{32}
+  \item \spxentry{InputParameters::Geometry::Geometry}\spxextra{C++ function}, \hyperpage{32}
+  \item \spxentry{InputParameters::InputParameters}\spxextra{C++ function}, \hyperpage{31}
+  \item \spxentry{InputParameters::PrimaryAndEvents}\spxextra{C++ struct}, \hyperpage{32}
+  \item \spxentry{InputParameters::PrimaryAndEvents::fNumEvents}\spxextra{C++ member}, 
+		\hyperpage{33}
+  \item \spxentry{InputParameters::PrimaryAndEvents::fParticleEnergy}\spxextra{C++ member}, 
+		\hyperpage{33}
+  \item \spxentry{InputParameters::PrimaryAndEvents::fParticleName}\spxextra{C++ member}, 
+		\hyperpage{33}
+  \item \spxentry{InputParameters::PrimaryAndEvents::fRandomSeed}\spxextra{C++ member}, 
+		\hyperpage{33}
+  \item \spxentry{InputParameters::PrimaryAndEvents::PrimaryAndEvents}\spxextra{C++ function}, 
+		\hyperpage{33}
+
+  \indexspace
+  \bigletter M
+  \item \spxentry{main}\spxextra{C++ function}, \hyperpage{12}
+
+  \indexspace
+  \bigletter P
+  \item \spxentry{Physics}\spxextra{C++ class}, \hyperpage{22}
+  \item \spxentry{PrimaryGenerator}\spxextra{C++ class}, \hyperpage{23}
+  \item \spxentry{PrimaryGenerator::\textasciitilde{}PrimaryGenerator}\spxextra{C++ function}, 
+		\hyperpage{24}
+  \item \spxentry{PrimaryGenerator::fCharge}\spxextra{C++ member}, \hyperpage{26}
+  \item \spxentry{PrimaryGenerator::fDirection}\spxextra{C++ member}, \hyperpage{26}
+  \item \spxentry{PrimaryGenerator::fKinEnergy}\spxextra{C++ member}, \hyperpage{26}
+  \item \spxentry{PrimaryGenerator::fPosition}\spxextra{C++ member}, \hyperpage{26}
+  \item \spxentry{PrimaryGenerator::GenerateOne}\spxextra{C++ function}, \hyperpage{24}
+  \item \spxentry{PrimaryGenerator::GetCharge}\spxextra{C++ function}, \hyperpage{25}
+  \item \spxentry{PrimaryGenerator::GetDirection}\spxextra{C++ function}, \hyperpage{25}
+  \item \spxentry{PrimaryGenerator::GetKinEnergy}\spxextra{C++ function}, \hyperpage{24}
+  \item \spxentry{PrimaryGenerator::GetPosition}\spxextra{C++ function}, \hyperpage{25}
+  \item \spxentry{PrimaryGenerator::PrimaryGenerator}\spxextra{C++ function}, \hyperpage{24}
+  \item \spxentry{PrimaryGenerator::SetCharge}\spxextra{C++ function}, \hyperpage{25}
+  \item \spxentry{PrimaryGenerator::SetDirection}\spxextra{C++ function}, \hyperpage{25}
+  \item \spxentry{PrimaryGenerator::SetKinEnergy}\spxextra{C++ function}, \hyperpage{24}
+  \item \spxentry{PrimaryGenerator::SetPosition}\spxextra{C++ function}, \hyperpage{24}
+
+  \indexspace
+  \bigletter R
+  \item \spxentry{Results}\spxextra{C++ struct}, \hyperpage{27}
+  \item \spxentry{Results::fEdepAbs}\spxextra{C++ member}, \hyperpage{28}
+  \item \spxentry{Results::fEdepAbs2}\spxextra{C++ member}, \hyperpage{28}
+  \item \spxentry{Results::fEdepGap}\spxextra{C++ member}, \hyperpage{28}
+  \item \spxentry{Results::fEdepGap2}\spxextra{C++ member}, \hyperpage{28}
+  \item \spxentry{Results::fEdepPerLayer}\spxextra{C++ member}, \hyperpage{28}
+  \item \spxentry{Results::fElPosTrackLenghtPerLayer}\spxextra{C++ member}, \hyperpage{28}
+  \item \spxentry{Results::fGammaTrackLenghtPerLayer}\spxextra{C++ member}, \hyperpage{28}
+  \item \spxentry{Results::fNumSecElectron}\spxextra{C++ member}, \hyperpage{28}
+  \item \spxentry{Results::fNumSecElectron2}\spxextra{C++ member}, \hyperpage{28}
+  \item \spxentry{Results::fNumSecGamma}\spxextra{C++ member}, \hyperpage{28}
+  \item \spxentry{Results::fNumSecGamma2}\spxextra{C++ member}, \hyperpage{28}
+  \item \spxentry{Results::fNumSecPositron}\spxextra{C++ member}, \hyperpage{28}
+  \item \spxentry{Results::fNumSecPositron2}\spxextra{C++ member}, \hyperpage{28}
+  \item \spxentry{Results::fNumStepsElPos}\spxextra{C++ member}, \hyperpage{28}
+  \item \spxentry{Results::fNumStepsElPos2}\spxextra{C++ member}, \hyperpage{29}
+  \item \spxentry{Results::fNumStepsGamma}\spxextra{C++ member}, \hyperpage{28}
+  \item \spxentry{Results::fNumStepsGamma2}\spxextra{C++ member}, \hyperpage{28}
+  \item \spxentry{Results::fPerEventRes}\spxextra{C++ member}, \hyperpage{29}
+  \item \spxentry{ResultsPerEvent}\spxextra{C++ struct}, \hyperpage{27}
+  \item \spxentry{ResultsPerEvent::fEdepAbs}\spxextra{C++ member}, \hyperpage{27}
+  \item \spxentry{ResultsPerEvent::fEdepGap}\spxextra{C++ member}, \hyperpage{27}
+  \item \spxentry{ResultsPerEvent::fNumSecElectron}\spxextra{C++ member}, \hyperpage{27}
+  \item \spxentry{ResultsPerEvent::fNumSecGamma}\spxextra{C++ member}, \hyperpage{27}
+  \item \spxentry{ResultsPerEvent::fNumSecPositron}\spxextra{C++ member}, \hyperpage{27}
+  \item \spxentry{ResultsPerEvent::fNumStepsElPos}\spxextra{C++ member}, \hyperpage{27}
+  \item \spxentry{ResultsPerEvent::fNumStepsGamma}\spxextra{C++ member}, \hyperpage{27}
+
+  \indexspace
+  \bigletter S
+  \item \spxentry{SteppingLoop}\spxextra{C++ class}, \hyperpage{34}
+  \item \spxentry{SteppingLoop::ElectronStepper}\spxextra{C++ function}, \hyperpage{36}
+  \item \spxentry{SteppingLoop::GammaStepper}\spxextra{C++ function}, \hyperpage{36}
+  \item \spxentry{SteppingLoop::StackSecondaries}\spxextra{C++ function}, \hyperpage{37}
+  \item \spxentry{SteppingLoop::SteppingAction}\spxextra{C++ function}, \hyperpage{37}
+
+  \indexspace
+  \bigletter T
+  \item \spxentry{TrackStack}\spxextra{C++ class}, \hyperpage{38}
+  \item \spxentry{TrackStack::\textasciitilde{}TrackStack}\spxextra{C++ function}, \hyperpage{38}
+  \item \spxentry{TrackStack::Copy}\spxextra{C++ function}, \hyperpage{39}
+  \item \spxentry{TrackStack::fCurIndx}\spxextra{C++ member}, \hyperpage{39}
+  \item \spxentry{TrackStack::fCurrentTrackID}\spxextra{C++ member}, \hyperpage{39}
+  \item \spxentry{TrackStack::fSize}\spxextra{C++ member}, \hyperpage{39}
+  \item \spxentry{TrackStack::fTrackVect}\spxextra{C++ member}, \hyperpage{39}
+  \item \spxentry{TrackStack::GetNextTrackID}\spxextra{C++ function}, \hyperpage{39}
+  \item \spxentry{TrackStack::GetTypeOfNextTrack}\spxextra{C++ function}, \hyperpage{38}
+  \item \spxentry{TrackStack::Insert}\spxextra{C++ function}, \hyperpage{39}
+  \item \spxentry{TrackStack::PopInto}\spxextra{C++ function}, \hyperpage{38}
+  \item \spxentry{TrackStack::ReSetTrackID}\spxextra{C++ function}, \hyperpage{39}
+  \item \spxentry{TrackStack::TrackStack}\spxextra{C++ function}, \hyperpage{38}
+
+  \indexspace
+  \bigletter U
+  \item \spxentry{URandom}\spxextra{C++ class}, \hyperpage{22}
+  \item \spxentry{URandom::\textasciitilde{}URandom}\spxextra{C++ function}, \hyperpage{23}
+  \item \spxentry{URandom::fDist}\spxextra{C++ member}, \hyperpage{23}
+  \item \spxentry{URandom::fEngine}\spxextra{C++ member}, \hyperpage{23}
+  \item \spxentry{URandom::flat}\spxextra{C++ function}, \hyperpage{23}
+  \item \spxentry{URandom::URandom}\spxextra{C++ function}, \hyperpage{23}
+
+  \indexspace
+  \bigletter W
+  \item \spxentry{WriteResults}\spxextra{C++ function}, \hyperpage{27}
+
+\end{sphinxtheindex}

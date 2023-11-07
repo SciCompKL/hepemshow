@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_event_loop_8hh" kind="file" language="C++">
+    <compoundname>EventLoop.hh</compoundname>
+    <innerclass refid="class_event_loop" prot="public">EventLoop</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>EVENTLOOP_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EVENTLOOP_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">G4HepEmTLData;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">G4HepEmState;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">G4HepEmTrack;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_primary_generator" kindref="compound">PrimaryGenerator</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_geometry" kindref="compound">Geometry</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="struct_results" kindref="compound">Results</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="class_event_loop" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_event_loop" kindref="compound">EventLoop</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="class_event_loop_1a7b1d4b512c5fa676bd990cfaa6d561c9" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_event_loop_1a7b1d4b512c5fa676bd990cfaa6d561c9" kindref="member">ProcessEvents</ref>(G4HepEmTLData&amp;<sp/>theTLData,<sp/>G4HepEmState&amp;<sp/>theState,<sp/><ref refid="class_primary_generator" kindref="compound">PrimaryGenerator</ref>&amp;<sp/>thePrimaryGenerator,<sp/><ref refid="class_geometry" kindref="compound">Geometry</ref>&amp;<sp/>theGeometry,<sp/><ref refid="struct_results" kindref="compound">Results</ref>&amp;<sp/>theResult,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numEventToSimulate,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>verbosity);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><ref refid="class_event_loop" kindref="compound">EventLoop</ref>()<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="class_event_loop_1af34a47f54be63c327216ab77bb0505d4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_event_loop_1af34a47f54be63c327216ab77bb0505d4" kindref="member">BeginOfEventAction</ref>(<ref refid="struct_results" kindref="compound">Results</ref>&amp;<sp/>theResult,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>eventID,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>G4HepEmTrack&amp;<sp/>thePrimaryTrack);</highlight></codeline>
+<codeline lineno="58" refid="class_event_loop_1ac63175ca75f98869d887e0b4dd72e38e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_event_loop_1ac63175ca75f98869d887e0b4dd72e38e" kindref="member">EndOfEventAction</ref>(<sp/><sp/><ref refid="struct_results" kindref="compound">Results</ref>&amp;<sp/>theResult,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>eventID);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="class_event_loop_1a4fd22ea39b677d0802d70f67e571b616" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_event_loop_1a4fd22ea39b677d0802d70f67e571b616" kindref="member">BeginOfTrackingAction</ref>(<ref refid="struct_results" kindref="compound">Results</ref>&amp;<sp/>theResult,<sp/>G4HepEmTrack&amp;<sp/>theTrack);</highlight></codeline>
+<codeline lineno="63" refid="class_event_loop_1ad4213d30cae150022509656095dd8f88" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_event_loop_1ad4213d30cae150022509656095dd8f88" kindref="member">EndOfTrackingAction</ref>(<sp/><sp/><ref refid="struct_results" kindref="compound">Results</ref>&amp;<sp/>theResult,<sp/>G4HepEmTrack&amp;<sp/>theTrack);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>EVENTLOOP_HH</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/EventLoop.hh"/>
+  </compounddef>
+</doxygen>

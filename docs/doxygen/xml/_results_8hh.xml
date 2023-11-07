@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_results_8hh" kind="file" language="C++">
+    <compoundname>Results.hh</compoundname>
+    <innerclass refid="struct_results_per_event" prot="public">ResultsPerEvent</innerclass>
+    <innerclass refid="struct_results" prot="public">Results</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_results_8hh_1a2e94780b3b797ba10abaf1154db56016" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WriteResults</definition>
+        <argsstring>(struct Results &amp;res, int numEvents=1)</argsstring>
+        <name>WriteResults</name>
+        <param>
+          <type>struct <ref refid="struct_results" kindref="compound">Results</ref> &amp;</type>
+          <declname>res</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numEvents</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Writes the final results of the simulation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Writes the 3 histrograms (mean energy deposit, <formula id="0">$\gamma$</formula> and <formula id="1">$e^-/e^+$</formula> steps per-layer) into files while all the other collected data to the screen. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Results.hh" line="93" column="6" declfile="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Results.hh" declline="93" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A collection of data that are recorded during the simulation. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>M. Novak </para>
+</simplesect>
+<simplesect kind="date"><para>July 2023</para>
+</simplesect>
+</para>
+<para>The following data is recorded during the simulation (mean is per event):<itemizedlist>
+<listitem><para>mean values in the individual layers of the calorimeter for energy deposit, neutral (gamma) and charged (electron/positron) particle simulation steps</para>
+</listitem><listitem><para>mean number of energy deposited in the <computeroutput>absorber</computeroutput> and <computeroutput>gap</computeroutput></para>
+</listitem><listitem><para>mean number of secondary gamma, electron and positrons produced</para>
+</listitem><listitem><para>mean number of neutral (gamma) and charged (electron/positron)</para>
+</listitem></itemizedlist>
+</para>
+<para>Quantities, recorded in the individual layers are stored in histograms and written to files at the end of the simulation while the others are reported in the screen. An example looks like <programlisting><codeline><highlight class="normal">---<sp/>Results::WriteResults<sp/>----------------------------------</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">Absorber:<sp/>mean<sp/>Edep<sp/>=<sp/>6722.95<sp/>[MeV]<sp/>and<sp/><sp/>Std-dev<sp/>=<sp/>309.636<sp/>[MeV]</highlight></codeline>
+<codeline><highlight class="normal">Gap<sp/><sp/><sp/><sp/><sp/>:<sp/>mean<sp/>Edep<sp/>=<sp/>2571.75<sp/>[MeV]<sp/>and<sp/><sp/>Std-dev<sp/>=<sp/>118.507<sp/>[MeV]</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">Mean<sp/>number<sp/>of<sp/>gamma<sp/><sp/><sp/><sp/><sp/><sp/><sp/>4457.043</highlight></codeline>
+<codeline><highlight class="normal">Mean<sp/>number<sp/>of<sp/>e-<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7957.899</highlight></codeline>
+<codeline><highlight class="normal">Mean<sp/>number<sp/>of<sp/>e+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>428.922</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">Mean<sp/>number<sp/>of<sp/>e-/e+<sp/>steps<sp/>36097</highlight></codeline>
+<codeline><highlight class="normal">Mean<sp/>number<sp/>of<sp/>gamma<sp/>steps<sp/>40436.2</highlight></codeline>
+<codeline><highlight class="normal">------------------------------------------------------------</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>RESULTS_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RESULTS_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hist_8hh" kindref="compound">Hist.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="struct_results_per_event" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_results_per_event" kindref="compound">ResultsPerEvent</ref><sp/>{</highlight></codeline>
+<codeline lineno="47" refid="struct_results_per_event_1a56300e62e8aa6cd9fb4b1cbdc6ced71d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_per_event_1a56300e62e8aa6cd9fb4b1cbdc6ced71d" kindref="member">fEdepAbs</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>0.0<sp/>};<sp/></highlight></codeline>
+<codeline lineno="48" refid="struct_results_per_event_1acb585ff9dcb316804b4ac5999ee914d8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_per_event_1acb585ff9dcb316804b4ac5999ee914d8" kindref="member">fEdepGap</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>0.0<sp/>};<sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="struct_results_per_event_1a7ec88cb879bc6b6d3457dbe08d1bbf01" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_per_event_1a7ec88cb879bc6b6d3457dbe08d1bbf01" kindref="member">fNumSecGamma</ref><sp/><sp/><sp/>{<sp/>0.0<sp/>};<sp/></highlight></codeline>
+<codeline lineno="51" refid="struct_results_per_event_1a6b4ce615a2259673ce696b747c82812c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_per_event_1a6b4ce615a2259673ce696b747c82812c" kindref="member">fNumSecElectron</ref>{<sp/>0.0<sp/>};<sp/></highlight></codeline>
+<codeline lineno="52" refid="struct_results_per_event_1aaacc361c66159659b16f7016bee3670c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_per_event_1aaacc361c66159659b16f7016bee3670c" kindref="member">fNumSecPositron</ref>{<sp/>0.0<sp/>};<sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="struct_results_per_event_1ae02070852cace2b3b94741ef81b200a0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_per_event_1ae02070852cace2b3b94741ef81b200a0" kindref="member">fNumStepsGamma</ref><sp/>{<sp/>0.0<sp/>};<sp/></highlight></codeline>
+<codeline lineno="55" refid="struct_results_per_event_1acf7c36b68976c0d745abf51b964f9335" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_per_event_1acf7c36b68976c0d745abf51b964f9335" kindref="member">fNumStepsElPos</ref><sp/>{<sp/>0.0<sp/>};<sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="struct_results" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_results" kindref="compound">Results</ref><sp/>{</highlight></codeline>
+<codeline lineno="66" refid="struct_results_1a868f71c54a3068363ff43ec93ce835f0" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="class_hist" kindref="compound">Hist</ref><sp/><ref refid="struct_results_1a868f71c54a3068363ff43ec93ce835f0" kindref="member">fEdepPerLayer</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="67" refid="struct_results_1af2f609c28fe15e0892646fae98c8ef16" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="class_hist" kindref="compound">Hist</ref><sp/><ref refid="struct_results_1af2f609c28fe15e0892646fae98c8ef16" kindref="member">fGammaTrackLenghtPerLayer</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="68" refid="struct_results_1a1d825ca3eb96f2604ee4750d6f93bd08" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="class_hist" kindref="compound">Hist</ref><sp/><ref refid="struct_results_1a1d825ca3eb96f2604ee4750d6f93bd08" kindref="member">fElPosTrackLenghtPerLayer</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="struct_results_1a7fc8bebd72ddf91416801fe0a2dbc07b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_1a7fc8bebd72ddf91416801fe0a2dbc07b" kindref="member">fEdepAbs</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>0.0<sp/>};<sp/><sp/></highlight></codeline>
+<codeline lineno="71" refid="struct_results_1aa8199cd60249fdbee9e78e2423856dd6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_1aa8199cd60249fdbee9e78e2423856dd6" kindref="member">fEdepAbs2</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>0.0<sp/>};<sp/><sp/></highlight></codeline>
+<codeline lineno="72" refid="struct_results_1a6de00d97715d97f9a133f059b7ef6ef0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_1a6de00d97715d97f9a133f059b7ef6ef0" kindref="member">fEdepGap</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>0.0<sp/>};<sp/><sp/></highlight></codeline>
+<codeline lineno="73" refid="struct_results_1a32993f72fd83dfb4bf5c86b7e9d8ad45" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_1a32993f72fd83dfb4bf5c86b7e9d8ad45" kindref="member">fEdepGap2</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>0.0<sp/>};<sp/><sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="struct_results_1a47beba7267414de3f4f49b24ec415ad0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_1a47beba7267414de3f4f49b24ec415ad0" kindref="member">fNumSecGamma</ref><sp/><sp/><sp/><sp/>{<sp/>0.0<sp/>};<sp/><sp/></highlight></codeline>
+<codeline lineno="76" refid="struct_results_1a3ca7616ea0ea716906d5053182c959c3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_1a3ca7616ea0ea716906d5053182c959c3" kindref="member">fNumSecGamma2</ref><sp/><sp/><sp/>{<sp/>0.0<sp/>};<sp/><sp/></highlight></codeline>
+<codeline lineno="77" refid="struct_results_1a1e2f826da8897f45b17f9a3ab9debfa3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_1a1e2f826da8897f45b17f9a3ab9debfa3" kindref="member">fNumSecElectron</ref><sp/>{<sp/>0.0<sp/>};<sp/><sp/></highlight></codeline>
+<codeline lineno="78" refid="struct_results_1a548c3fab61b24d09d868341d2b2a587c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_1a548c3fab61b24d09d868341d2b2a587c" kindref="member">fNumSecElectron2</ref>{<sp/>0.0<sp/>};<sp/><sp/></highlight></codeline>
+<codeline lineno="79" refid="struct_results_1a9ff96ee9ba078c770be81e807fce7fb3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_1a9ff96ee9ba078c770be81e807fce7fb3" kindref="member">fNumSecPositron</ref><sp/>{<sp/>0.0<sp/>};<sp/><sp/></highlight></codeline>
+<codeline lineno="80" refid="struct_results_1a54033a6b6e44c31928bf3f47002c2dbf" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_1a54033a6b6e44c31928bf3f47002c2dbf" kindref="member">fNumSecPositron2</ref>{<sp/>0.0<sp/>};<sp/><sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="struct_results_1a40a1269864fb39cb90b41eb20543b812" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_1a40a1269864fb39cb90b41eb20543b812" kindref="member">fNumStepsGamma</ref><sp/><sp/>{<sp/>0.0<sp/>};<sp/><sp/></highlight></codeline>
+<codeline lineno="83" refid="struct_results_1aa7e6a1539475aaf2c03219ae4e592948" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_1aa7e6a1539475aaf2c03219ae4e592948" kindref="member">fNumStepsGamma2</ref><sp/>{<sp/>0.0<sp/>};<sp/><sp/></highlight></codeline>
+<codeline lineno="84" refid="struct_results_1a155d60e512b400067017049605b6bf92" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_1a155d60e512b400067017049605b6bf92" kindref="member">fNumStepsElPos</ref><sp/><sp/>{<sp/>0.0<sp/>};<sp/><sp/></highlight></codeline>
+<codeline lineno="85" refid="struct_results_1a931fd090154f4d3298a74fe488034456" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_results_1a931fd090154f4d3298a74fe488034456" kindref="member">fNumStepsElPos2</ref><sp/>{<sp/>0.0<sp/>};<sp/><sp/></highlight></codeline>
+<codeline lineno="86" refid="struct_results_1ab17af8cb8b09a2c55f3b2d7d4c8f07a9" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="struct_results_per_event" kindref="compound">ResultsPerEvent</ref><sp/><ref refid="struct_results_1ab17af8cb8b09a2c55f3b2d7d4c8f07a9" kindref="member">fPerEventRes</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="_results_8hh_1a2e94780b3b797ba10abaf1154db56016" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_results_8hh_1a2e94780b3b797ba10abaf1154db56016" kindref="member">WriteResults</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_results" kindref="compound">Results</ref>&amp;<sp/>res,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numEvents=1);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>RESULTS_HH</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/Results.hh"/>
+  </compounddef>
+</doxygen>

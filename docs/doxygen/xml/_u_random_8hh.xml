@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_u_random_8hh" kind="file" language="C++">
+    <compoundname>URandom.hh</compoundname>
+    <innerclass refid="class_u_random" prot="public">URandom</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>URandom_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>URandom_HH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;random&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="class_u_random" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_u_random" kindref="compound">URandom</ref><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="class_u_random_1a4a68d6fbc770bb3b69b84eb9a1698d94" refkind="member"><highlight class="normal"><sp/><sp/><sp/><ref refid="class_u_random_1a4a68d6fbc770bb3b69b84eb9a1698d94" kindref="member">URandom</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seed=123);</highlight></codeline>
+<codeline lineno="38" refid="class_u_random_1a31e88fa4b0610950a82d87c535e3d33f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="class_u_random_1a31e88fa4b0610950a82d87c535e3d33f" kindref="member">~URandom</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="class_u_random_1a869185702aeec4f37a4f788dcd5ea838" refkind="member"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_u_random_1a869185702aeec4f37a4f788dcd5ea838" kindref="member">flat</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="45" refid="class_u_random_1a091edcd5c38bb2b2a4c0960d4f56c793" refkind="member"><highlight class="normal"><sp/><sp/><sp/>std::mt19937_64<sp/><ref refid="class_u_random_1a091edcd5c38bb2b2a4c0960d4f56c793" kindref="member">fEngine</ref>;</highlight></codeline>
+<codeline lineno="47" refid="class_u_random_1aa6c951503d67b9be7b2e4fd6de4415b2" refkind="member"><highlight class="normal"><sp/><sp/><sp/>std::uniform_real_distribution&lt;double&gt;*<sp/><ref refid="class_u_random_1aa6c951503d67b9be7b2e4fd6de4415b2" kindref="member">fDist</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>URandom_HH</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/mnovak/projects/Geant4/For-DiffProgramming/hepemshow/Simulation/include/URandom.hh"/>
+  </compounddef>
+</doxygen>
