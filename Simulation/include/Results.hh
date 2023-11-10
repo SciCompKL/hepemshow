@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 
 #ifndef RESULTS_HH
 #define RESULTS_HH

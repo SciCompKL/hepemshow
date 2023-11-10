@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 #ifndef EVENTLOOP_HH
 #define EVENTLOOP_HH
 

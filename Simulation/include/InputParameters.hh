@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 
 #ifndef INPUTPARAMETERS_HH
 #define INPUTPARAMETERS_HH

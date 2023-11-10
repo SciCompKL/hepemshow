@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 
 #ifndef BOX_HH
 #define BOX_HH

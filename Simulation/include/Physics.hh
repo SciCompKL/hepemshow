@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 
 #ifndef PHYSICS_HH
 #define PHYSICS_HH

@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 
 #ifndef PRIMARYGENERATOR_HH
 #define PRIMARYGENERATOR_HH

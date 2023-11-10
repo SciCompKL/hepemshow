@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 
 #ifndef HIST_H
 #define HIST_H

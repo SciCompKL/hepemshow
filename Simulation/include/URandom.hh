@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 #ifndef URandom_HH
 #define URandom_HH
 

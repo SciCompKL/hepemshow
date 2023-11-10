@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 
 #ifndef GEOMETRY_HH
 #define GEOMETRY_HH
