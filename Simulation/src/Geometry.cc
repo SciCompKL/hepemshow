@@ -48,12 +48,12 @@ void Geometry::UpdateParameters() {
   // set/calculate the left hand side x point where the calorimeter starts
   fCaloStartX = -0.5*fCaloThick;
   // set/calculate a world size such that everything fits inside
-  const double worldThick = 1.1*fCaloThick;
+  const G4double worldThick = 1.1*fCaloThick;
   // set/calculate the mid-point between the world and calorimeter on the left
   fPrimaryXPosition = -0.25*(worldThick + fCaloThick);
 
   // half size of all (but the world) along the YZ plane
-  const double halfCaloYZ = 0.5*fCaloSizeYZ;
+  const G4double halfCaloYZ = 0.5*fCaloSizeYZ;
 
   fBoxWorld->SetHalfLength(0.5*worldThick, 0);
   fBoxWorld->SetHalfLength(1.1*halfCaloYZ, 1);
@@ -81,7 +81,7 @@ void Geometry::UpdateParameters() {
 
 
 // note: try to keep this more verbose than fast to keep it clear
-double Geometry::CalculateDistanceToOut(double* r, double *v, Box** currentVolume, int* indxLayer, int* indxAbs) {
+G4double Geometry::CalculateDistanceToOut(G4double* r, G4double *v, Box** currentVolume, int* indxLayer, int* indxAbs) {
   // init everything to a step in the `world` case
   *currentVolume = fBoxWorld;
   *indxLayer     = -1;
@@ -90,8 +90,8 @@ double Geometry::CalculateDistanceToOut(double* r, double *v, Box** currentVolum
   // calculate position in the `calorimeter` system:
   // - only x-coordinate is need as everything is centered along the yz
   // - actually its the same as the global: the calorimeter is not translated nor rotated
-  const double rx_Calo = r[0];
-  const double dToCalo = fBoxCalo->DistanceToOut(r, v);
+  const G4double rx_Calo = r[0];
+  const G4double dToCalo = fBoxCalo->DistanceToOut(r, v);
   // check if about leaving the calorimeter volume: distance to out is zero
   if (dToCalo == 0.0) {
     // currentVolume is already set to `world`
@@ -103,8 +103,8 @@ double Geometry::CalculateDistanceToOut(double* r, double *v, Box** currentVolum
   const int iLayer = int( (rx_Calo+0.5*fCaloThick)/fLayerThick );
   *indxLayer = iLayer;
   // - then the corresponding translation vector and transform the point
-  const double trLayeri = -0.5*fCaloThick + (iLayer+0.5)*fLayerThick;
-  const double rx_Layer = rx_Calo - trLayeri;
+  const G4double trLayeri = -0.5*fCaloThick + (iLayer+0.5)*fLayerThick;
+  const G4double rx_Layer = rx_Calo - trLayeri;
   r[0] =  rx_Layer;
 
   // calculate the distance to the `layer` boundary along the given direction
@@ -119,7 +119,7 @@ double Geometry::CalculateDistanceToOut(double* r, double *v, Box** currentVolum
   if (rx_Layer + 0.5*fLayerThick < fAbsThick || fGapThick == 0) { // in the `absorber`
     // calculate the position in the `absorber` system:
     // - the translation vector and transform the point
-    const double trAbs = -0.5*(fLayerThick - fAbsThick);
+    const G4double trAbs = -0.5*(fLayerThick - fAbsThick);
     r[0] = rx_Layer - trAbs;
     // set what is left and calculate the distance to the `absorber` boundary along
     // the given direction (again, I could push here and do recursion whenever it's zero)
@@ -129,7 +129,7 @@ double Geometry::CalculateDistanceToOut(double* r, double *v, Box** currentVolum
   } else { // in the `gap`
     // calculate the position in the `gap` system:
     // - the translation vector and transform the point
-    const double  trGap = -0.5*(fLayerThick -fGapThick) + fAbsThick;
+    const G4double  trGap = -0.5*(fLayerThick -fGapThick) + fAbsThick;
     r[0] = rx_Layer - trGap;
     // set what is left and calculate the distance to the `gap` boundary along
     // the given direction (again, I could push here and do recursion whenever it's zero)

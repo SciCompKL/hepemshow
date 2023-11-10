@@ -112,7 +112,7 @@ void EventLoop::ProcessEvents(G4HepEmTLData& theTLData, G4HepEmState& theState, 
       //   Therefore, primaries need to be moved to the calorimeter boundary
       //   (as they point into the calorimeter they will be inside then).
       if (nextTrack->GetParentID() < 0) {
-        double* pos = nextTrack->GetPosition();
+        G4double* pos = nextTrack->GetPosition();
         pos[0] = theGeometry.GetCaloStartXposition();
       }
       // - invoke the beginning of tracking action before start tracking this track
@@ -141,7 +141,7 @@ void EventLoop::ProcessEvents(G4HepEmTLData& theTLData, G4HepEmState& theState, 
   // calculate and report the event processing time
   struct timeval finish;
   gettimeofday(&finish, NULL);
-  const double theTime = ((double)(finish.tv_sec-start.tv_sec)*1000000 + (double)(finish.tv_usec-start.tv_usec)) / 1000000;
+  const G4double theTime = ((G4double)(finish.tv_sec-start.tv_sec)*1000000 + (G4double)(finish.tv_usec-start.tv_usec)) / 1000000;
   if (verbosity > 0) {
     std::cout << " --- EventLoop::ProcessEvents: completed simulation within t = " << theTime << " [s]" << std::endl;
   }
@@ -163,7 +163,7 @@ void EventLoop::BeginOfEventAction(Results& theResult, int eventID, const G4HepE
 
 void EventLoop::EndOfEventAction(Results& theResult, int eventID) {
   // propagare the data accunulated during this event to the results
-  double dum = theResult.fPerEventRes.fEdepAbs;
+  G4double dum = theResult.fPerEventRes.fEdepAbs;
   theResult.fEdepAbs  += dum;
   theResult.fEdepAbs2 += dum*dum;
 

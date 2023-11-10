@@ -35,10 +35,10 @@ struct InputParameters {
       fSizeTransverse(400.0) {}
 
     int    fNumLayers;         ///< number of layers in the calorimeter
-    double fThicknessAbsorber; ///< absorber thickness along X in [mm]
-    double fThicknessGap;      ///< gap thickness along X in [mm]
-    double fThicknessCalo;     ///< calorimeter thickness along X [mm] ONLY if number of layers is zero
-    double fSizeTransverse;    ///< calorimeter full size along YZ in [mm]
+    G4double fThicknessAbsorber; ///< absorber thickness along X in [mm]
+    G4double fThicknessGap;      ///< gap thickness along X in [mm]
+    G4double fThicknessCalo;     ///< calorimeter thickness along X [mm] ONLY if number of layers is zero
+    G4double fSizeTransverse;    ///< calorimeter full size along YZ in [mm]
   };
 
 
@@ -52,9 +52,9 @@ struct InputParameters {
       fRandomSeed(1234) {}
 
     std::string  fParticleName;   ///< primary particle name: {"e-", "e+" or "gamma"}
-    double       fParticleEnergy; ///< primary particle energy in [MeV]
+    G4double       fParticleEnergy; ///< primary particle energy in [MeV]
     int          fNumEvents;      ///< number of events to simulate (each will start with a single primary)
-    double       fRandomSeed;     ///< seed for the random number generator
+    G4double       fRandomSeed;     ///< seed for the random number generator
   };
 
   // all members

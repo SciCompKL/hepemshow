@@ -4,7 +4,7 @@
 #include <iostream>
 #include <cstdio>
 
-Hist::Hist(const std::string& fname, double min, double max, int numbin)
+Hist::Hist(const std::string& fname, G4double min, G4double max, int numbin)
 : fFileName(fname),
   fMin(min),
   fMax(max),
@@ -17,7 +17,7 @@ Hist::Hist(const std::string& fname, double min, double max, int numbin)
   Initialize();
 }
 
-Hist::Hist(const std::string& fname, double min, double max, double delta)
+Hist::Hist(const std::string& fname, G4double min, G4double max, G4double delta)
 : fFileName(fname),
   fMin(min),
   fMax(max),
@@ -54,7 +54,7 @@ void Hist::Initialize() {
 }
 
 
-void Hist::ReSet(const std::string& filename, double min, double max, int numbins) {
+void Hist::ReSet(const std::string& filename, G4double min, G4double max, int numbins) {
   fFileName = filename;
   fMin      = min;
   fMax      = max;
@@ -65,7 +65,7 @@ void Hist::ReSet(const std::string& filename, double min, double max, int numbin
 }
 
 
-void Hist::Fill(double x) {
+void Hist::Fill(G4double x) {
   if (x<fMin) return;
   int indx = (x==fMax) ? fNumBins-1 : (int)((x - fMin) * fInvDelta);
 /*
@@ -83,7 +83,7 @@ void Hist::Fill(double x) {
 }
 
 
-void Hist::Fill(double x, double w) {
+void Hist::Fill(G4double x, G4double w) {
   if (x<fMin) return;
   int indx = (x==fMax) ? fNumBins-1 : (int)((x - fMin) * fInvDelta);
 /*
@@ -101,7 +101,7 @@ void Hist::Fill(double x, double w) {
 }
 
 
-void Hist::Scale(double sc) {
+void Hist::Scale(G4double sc) {
   for (int i = 0; i < fNumBins; ++i) {
     fy[i] *= sc;
   }
@@ -116,7 +116,7 @@ void Hist::WriteToFile(bool isNorm) {
            << std::endl;
     exit(1);
   }
-  double norm = 1.0;
+  G4double norm = 1.0;
   if (isNorm) {
     norm  = 1. / (fSum*fDelta);
   }
@@ -127,7 +127,7 @@ void Hist::WriteToFile(bool isNorm) {
 }
 
 
-void Hist::WriteToFile(double norm) {
+void Hist::WriteToFile(G4double norm) {
   FILE* f = fopen(fFileName.c_str(), "w");
   if (!f) {
     std::cerr << "\n ***** ERROR in Hist::WriteToFile  "

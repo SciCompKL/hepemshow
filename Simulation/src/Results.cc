@@ -9,7 +9,7 @@
 
 void WriteResults(struct Results& res, int numEvents) {
   // for the histograms, bring them to be mean per event and write
-  const double norm = numEvents > 0 ? 1.0/numEvents : 1.0;
+  const G4double norm = numEvents > 0 ? 1.0/numEvents : 1.0;
   res.fEdepPerLayer.Scale(norm);
   res.fGammaTrackLenghtPerLayer.Scale(norm);
   res.fElPosTrackLenghtPerLayer.Scale(norm);
@@ -21,11 +21,11 @@ void WriteResults(struct Results& res, int numEvents) {
   //
   res.fEdepAbs  = res.fEdepAbs*norm;
   res.fEdepAbs2 = res.fEdepAbs2*norm;
-  const double rmsEAbs = std::sqrt(std::abs(res.fEdepAbs2 - res.fEdepAbs*res.fEdepAbs));
+  const G4double rmsEAbs = std::sqrt(std::abs(res.fEdepAbs2 - res.fEdepAbs*res.fEdepAbs));
 
   res.fEdepGap  = res.fEdepGap*norm;
   res.fEdepGap2 = res.fEdepGap2*norm;
-  const double rmsEGap = std::sqrt(std::abs(res.fEdepGap2 - res.fEdepGap*res.fEdepGap));
+  const G4double rmsEGap = std::sqrt(std::abs(res.fEdepGap2 - res.fEdepGap*res.fEdepGap));
 
 
   // the secondary type and step number statistics

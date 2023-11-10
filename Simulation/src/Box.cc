@@ -7,7 +7,7 @@
 #include <cmath>
 
 
-Box::Box (const std::string& name, int indxMat, double pX, double pY, double pZ)
+Box::Box (const std::string& name, int indxMat, G4double pX, G4double pY, G4double pZ)
 : fName(name),
   fMaterialIndx(indxMat),
   fDx(pX),
@@ -26,7 +26,7 @@ Box::Box (const std::string& name, int indxMat, double pX, double pY, double pZ)
 }
 
 
-void Box::SetHalfLength(double val, int idx) {
+void Box::SetHalfLength(G4double val, int idx) {
    // limit to thickness of surfaces
   if (val > 2*kCarTolerance) {
     switch (idx) {
@@ -47,7 +47,7 @@ void Box::SetHalfLength(double val, int idx) {
   }
 }
 
-double Box::GetHalfLength(int idx) const {
+G4double Box::GetHalfLength(int idx) const {
   switch (idx) {
     case 0: return fDx;
     case 1: return fDy;
@@ -59,7 +59,7 @@ double Box::GetHalfLength(int idx) const {
 
 // p should be in local coordinates
 // returns zero if p is outside of the box or within tolerance
-double Box::DistanceToOut(double* p, double *v) const {
+G4double Box::DistanceToOut(G4double* p, G4double *v) const {
   // Check if point is not inside and traveling away: zero
   // Note: eitehr in surafece or outside
   if ((std::abs(p[0]) - fDx) >= -fDelta && p[0]*v[0] > 0) {
@@ -73,23 +73,23 @@ double Box::DistanceToOut(double* p, double *v) const {
   }
   // Find intersection
   //
-  const double vx = v[0];
-  const double tx = (vx == 0) ? 1.0E+20 : (std::copysign(fDx,vx) - p[0])/vx;
+  const G4double vx = v[0];
+  const G4double tx = (vx == 0) ? 1.0E+20 : (std::copysign(fDx,vx) - p[0])/vx;
   //
-  const double vy = v[1];
-  const double ty = (vy == 0) ? tx : (std::copysign(fDy,vy) - p[1])/vy;
-  const double txy = std::min(tx,ty);
+  const G4double vy = v[1];
+  const G4double ty = (vy == 0) ? tx : (std::copysign(fDy,vy) - p[1])/vy;
+  const G4double txy = std::min(tx,ty);
   //
-  const double vz = v[2];
-  const double tz = (vz == 0) ? txy : (std::copysign(fDz,vz) - p[2])/vz;
-  const double tmax = std::min(txy,tz);
+  const G4double vz = v[2];
+  const G4double tz = (vz == 0) ? txy : (std::copysign(fDz,vz) - p[2])/vz;
+  const G4double tmax = std::min(txy,tz);
   //
   return tmax;
 }
 
 
-double Box::DistanceToOut(double* p) const {
-  double dist = std::min( std::min(
+G4double Box::DistanceToOut(G4double* p) const {
+  G4double dist = std::min( std::min(
                    fDx-std::abs(p[0]),
                    fDy-std::abs(p[1]) ),
                    fDz-std::abs(p[2]) );
@@ -98,15 +98,15 @@ double Box::DistanceToOut(double* p) const {
 
 
 /*
-EInside Box::Inside(double rx, double ry, double rz) const {
-  double dist = std::max ( std::max (
+EInside Box::Inside(G4double rx, G4double ry, G4double rz) const {
+  G4double dist = std::max ( std::max (
                   std::abs(rx)-fDx,
                   std::abs(ry)-fDy),
                   std::abs(rz)-fDz);
   return (dist > fDelta) ? kOutside : ((dist > -fDelta) ? kSurface : kInside);
 }
-EInside Box::Inside(double* r) const {
-  double dist = std::max ( std::max (
+EInside Box::Inside(G4double* r) const {
+  G4double dist = std::max ( std::max (
                   std::abs(r[0])-fDx,
                   std::abs(r[1])-fDy),
                   std::abs(r[2])-fDz);

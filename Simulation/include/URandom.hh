@@ -38,13 +38,13 @@ public:
   ~URandom();
 
    /** Method to provide uniform random numbers on \f$(0,1)\f$ */
-   double flat();
+   G4double flat();
 
 public:
    /** c++11 implementation of the 64-bit Mersenne Twister engine */
    std::mt19937_64 fEngine;
    /** uniform distribution: utilises the above random engine to provide random numbers on \f$(0,1)\f$ */
-   std::uniform_real_distribution<double>* fDist;
+   std::uniform_real_distribution<G4double>* fDist;
 
 };
 
