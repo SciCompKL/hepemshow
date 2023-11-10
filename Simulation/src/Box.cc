@@ -76,14 +76,14 @@ G4double Box::DistanceToOut(G4double* p, G4double *v) const {
   // Find intersection
   //
   const G4double vx = v[0];
-  const G4double tx = (vx == 0) ? 1.0E+20 : (std::copysign(fDx,vx) - p[0])/vx;
+  const G4double tx = (vx == 0) ? 1.0E+20 : (G4double)((std::copysign(fDx,vx) - p[0])/vx);
   //
   const G4double vy = v[1];
-  const G4double ty = (vy == 0) ? tx : (std::copysign(fDy,vy) - p[1])/vy;
+  const G4double ty = (vy == 0) ? tx : (G4double)((std::copysign(fDy,vy) - p[1])/vy);
   const G4double txy = std::min(tx,ty);
   //
   const G4double vz = v[2];
-  const G4double tz = (vz == 0) ? txy : (std::copysign(fDz,vz) - p[2])/vz;
+  const G4double tz = (vz == 0) ? txy : (G4double)((std::copysign(fDz,vz) - p[2])/vz);
   const G4double tmax = std::min(txy,tz);
   //
   return tmax;

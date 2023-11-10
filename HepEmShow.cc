@@ -91,7 +91,7 @@ int main(int argc, char* argv[]) {
   // construct a HepEm random number generator, using our local uniform `URandom`
   // generator, then set it to be used in the above TLdata
   // NOTE: seed can be set as input argument
-  URandom*             theURnd         = new URandom(theInputParameters.fPrimaryAndEvents.fRandomSeed);
+  URandom*             theURnd         = new URandom(theInputParameters.fPrimaryAndEvents.fRandomSeed.getValue());
   G4HepEmRandomEngine* theRandomEngine = new G4HepEmRandomEngine(theURnd);
   theTLData->SetRandomEngine(theRandomEngine);
 

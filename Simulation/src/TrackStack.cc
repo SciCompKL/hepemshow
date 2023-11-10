@@ -29,7 +29,7 @@ int TrackStack::GetTypeOfNextTrack() {
   if (fCurIndx<0) {
     return -999;
   }
-  return fTrackVect[fCurIndx].GetCharge();
+  return fTrackVect[fCurIndx].GetCharge().getValue();
 }
 
 

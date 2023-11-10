@@ -200,7 +200,7 @@ void EventLoop::EndOfEventAction(Results& theResult, int eventID) {
 void EventLoop::BeginOfTrackingAction(Results& theResult, G4HepEmTrack& theTrack) {
   // check if this track is a secondary (parent ID > -1) then its type (based on the charge)
   if (theTrack.GetParentID() > -1) {
-    const int ich = theTrack.GetCharge();
+    const int ich = theTrack.GetCharge().getValue();
     switch (ich) {
       case  0: theResult.fPerEventRes.fNumSecGamma    += 1.0;
                break;
