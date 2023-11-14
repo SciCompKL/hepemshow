@@ -91,7 +91,7 @@ int main(int argc, char* argv[]) {
   // construct a HepEm random number generator, using our local uniform `URandom`
   // generator, then set it to be used in the above TLdata
   // NOTE: seed can be set as input argument
-  URandom*             theURnd         = new URandom(theInputParameters.fPrimaryAndEvents.fRandomSeed.getValue());
+  URandom*             theURnd         = new URandom(GET_VALUE(theInputParameters.fPrimaryAndEvents.fRandomSeed));
   G4HepEmRandomEngine* theRandomEngine = new G4HepEmRandomEngine(theURnd);
   theTLData->SetRandomEngine(theRandomEngine);
 
@@ -113,7 +113,7 @@ int main(int argc, char* argv[]) {
   double charge = theInputParameters.fPrimaryAndEvents.fParticleName == "e-" ? -1.0
                   : (theInputParameters.fPrimaryAndEvents.fParticleName == "gamma" ? 0.0 : +1.0);
   thePrimaryGenerator.SetCharge(charge);
-  theInputParameters.fPrimaryAndEvents.fParticleEnergy.setGradient(1.0);
+  SET_GRADIENT(theInputParameters.fPrimaryAndEvents.fParticleEnergy, 1.0);
   thePrimaryGenerator.SetKinEnergy(theInputParameters.fPrimaryAndEvents.fParticleEnergy);
   // set primary particle position and direction (should not be changed)
   thePrimaryGenerator.SetPosition(theGeometry.GetPrimaryXposition(), 0.0, 0.0);

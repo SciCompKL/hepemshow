@@ -102,7 +102,7 @@ G4double Geometry::CalculateDistanceToOut(G4double* r, G4double *v, Box** curren
 
   // calculate the position in the `layer` system:
   // - first calculate the index of the `layer` in which the point is located
-  const int iLayer = int( ((rx_Calo+0.5*fCaloThick)/fLayerThick).getValue() );
+  const int iLayer = int( GET_VALUE(((rx_Calo+0.5*fCaloThick)/fLayerThick)) );
   *indxLayer = iLayer;
   // - then the corresponding translation vector and transform the point
   const G4double trLayeri = -0.5*fCaloThick + (iLayer+0.5)*fLayerThick;
