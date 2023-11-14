@@ -14,11 +14,13 @@ void WriteResults(struct Results& res, int numEvents) {
   const G4double norm = numEvents > 0 ? 1.0/numEvents : 1.0;
   res.fEdepPerLayer.Scale(norm);
   res.fEdepDsqPerLayer.Scale(norm);
+  res.fEdepSqPerLayer.Scale(norm);
   res.fGammaTrackLenghtPerLayer.Scale(norm);
   res.fElPosTrackLenghtPerLayer.Scale(norm);
 
   res.fEdepPerLayer.WriteToFile(false);
   res.fEdepDsqPerLayer.WriteToFile(false);
+  res.fEdepSqPerLayer.WriteToFile(false);
   res.fGammaTrackLenghtPerLayer.WriteToFile(false);
   res.fElPosTrackLenghtPerLayer.WriteToFile(false);
 

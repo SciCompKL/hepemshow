@@ -126,6 +126,7 @@ int main(int argc, char* argv[]) {
   Results theResult;
   theResult.fEdepPerLayer.ReSet("hist_Edep_PerLayer", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
   theResult.fEdepDsqPerLayer.ReSet("hist_EdepDsq_PerLayer", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
+  theResult.fEdepSqPerLayer.ReSet("hist_EdepSq_PerLayer", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
   theResult.fGammaTrackLenghtPerLayer.ReSet("hist_GamTrackL_PerLayer", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
   theResult.fElPosTrackLenghtPerLayer.ReSet("hist_ElPosTrackL_PerLayer", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
 

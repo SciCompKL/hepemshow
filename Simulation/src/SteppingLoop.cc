@@ -314,6 +314,7 @@ void SteppingLoop::SteppingAction(Results& theResult, const G4HepEmTrack& theTra
   if (edep > 0.0) {
     theResult.fEdepPerLayer.Fill(indxLayer, edep);
     theResult.fEdepDsqPerLayer.Fill(indxLayer, GET_GRADIENT(edep)*GET_GRADIENT(edep));
+    theResult.fEdepSqPerLayer.Fill(indxLayer, edep*edep);
     switch (indxAbsorber) {
       case 0: theResult.fPerEventRes.fEdepAbs += edep;
               break;
