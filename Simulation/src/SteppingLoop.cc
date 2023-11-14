@@ -313,6 +313,7 @@ void SteppingLoop::SteppingAction(Results& theResult, const G4HepEmTrack& theTra
   const G4double edep = theTrack.GetEnergyDeposit();
   if (edep > 0.0) {
     theResult.fEdepPerLayer.Fill(indxLayer, edep);
+    theResult.fEdepDsqPerLayer.Fill(indxLayer, GET_GRADIENT(edep)*GET_GRADIENT(edep));
     switch (indxAbsorber) {
       case 0: theResult.fPerEventRes.fEdepAbs += edep;
               break;
