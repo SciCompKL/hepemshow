@@ -18,6 +18,11 @@ if(G4HepEm_geant4_FOUND)
   find_package(Geant4 REQUIRED)
 endif()
 
+if(G4HepEm_codi_forward)
+  message(NOTICE "G4HepEm has been configured with CoDiPack, so we will build an AD version of HepEmShow.")
+  set(CODI_FORWARD ON)  # Actually, not any further change required, as the compile definition and library link have PUBLIC inheritance.
+endif()
+
 
 #-------------------------------------------------------------------------------
 # Set the headers, sources and include directory:
