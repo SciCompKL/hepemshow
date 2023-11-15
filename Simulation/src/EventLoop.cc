@@ -161,6 +161,11 @@ void EventLoop::BeginOfEventAction(Results& theResult, int eventID, const G4HepE
 
   theResult.fPerEventRes.fNumStepsGamma  = 0.0;
   theResult.fPerEventRes.fNumStepsElPos  = 0.0;
+
+  for(int i=0; i<50; i++){
+    theResult.fEdepPerLayer_CurrentEvent.GetY()[i] = 0.;
+  }
+
 }
 
 void EventLoop::EndOfEventAction(Results& theResult, int eventID) {
@@ -168,6 +173,14 @@ void EventLoop::EndOfEventAction(Results& theResult, int eventID) {
   G4double dum = theResult.fPerEventRes.fEdepAbs;
   theResult.fEdepAbs  += dum;
   theResult.fEdepAbs2 += dum*dum;
+
+  auto& ce = theResult.fEdepPerLayer_CurrentEvent.GetY();
+  for(int i=0; i<50; i++){
+    theResult.fEdepPerLayer.GetY()[i] += (ce[i]);
+    theResult.fEdepSqPerLayer.GetY()[i] += ce[i]*ce[i];
+    theResult.fEdepDsqPerLayer.GetY()[i] += GET_GRADIENT(ce[i])*GET_GRADIENT(ce[i]);
+  }
+
 
   dum = theResult.fPerEventRes.fEdepGap;
   theResult.fEdepGap  += dum;

@@ -87,6 +87,8 @@ public:
   G4double  GetSum()     const { return fSum;     }
   const std::vector<G4double>& GetX() const { return fx; }
   const std::vector<G4double>& GetY() const { return fy; }
+  std::vector<G4double>& GetX() { return fx; }
+  std::vector<G4double>& GetY() { return fy; }
 
   // write result to file without (default) or after normalising
   void WriteToFile(bool isNorm=false);

@@ -125,6 +125,7 @@ int main(int argc, char* argv[]) {
   // to collect data per-layer and the number of layer is configurable input argument)
   Results theResult;
   theResult.fEdepPerLayer.ReSet("hist_Edep_PerLayer", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
+  theResult.fEdepPerLayer_CurrentEvent.ReSet("hist_Edep_PerLayer_CurrentEvent", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
   theResult.fEdepDsqPerLayer.ReSet("hist_EdepDsq_PerLayer", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
   theResult.fEdepSqPerLayer.ReSet("hist_EdepSq_PerLayer", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
   theResult.fGammaTrackLenghtPerLayer.ReSet("hist_GamTrackL_PerLayer", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());

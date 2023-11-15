@@ -66,8 +66,9 @@ struct ResultsPerEvent {
  */
 struct Results {
   Hist fEdepPerLayer;              ///< mean energy deposit per-layer histogram
-  Hist fEdepDsqPerLayer;           ///< mean edep dot-value squared per-layer histogram
-  Hist fEdepSqPerLayer;           ///< mean edep squared per-layer histogram
+  Hist fEdepPerLayer_CurrentEvent;       /// < mean energy deposit per-layer histogram, current event
+  Hist fEdepDsqPerLayer;           ///< mean edep per event dot-value squared per-layer histogram
+  Hist fEdepSqPerLayer;           ///< mean edep per event squared per-layer histogram
   Hist fGammaTrackLenghtPerLayer;  ///< mean number of \f$\gamma\f$ steps per-layer histogram
   Hist fElPosTrackLenghtPerLayer;  ///< mean number of \f$e^-/e^+\f$ steps per-layer histogram
   //
