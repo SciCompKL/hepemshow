@@ -113,7 +113,6 @@ int main(int argc, char* argv[]) {
   double charge = theInputParameters.fPrimaryAndEvents.fParticleName == "e-" ? -1.0
                   : (theInputParameters.fPrimaryAndEvents.fParticleName == "gamma" ? 0.0 : +1.0);
   thePrimaryGenerator.SetCharge(charge);
-  SET_GRADIENT(theInputParameters.fPrimaryAndEvents.fParticleEnergy, 1.0);
   thePrimaryGenerator.SetKinEnergy(theInputParameters.fPrimaryAndEvents.fParticleEnergy);
   // set primary particle position and direction (should not be changed)
   thePrimaryGenerator.SetPosition(theGeometry.GetPrimaryXposition(), 0.0, 0.0);

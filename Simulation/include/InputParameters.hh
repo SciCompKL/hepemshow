@@ -14,6 +14,7 @@
  */
 
 #include <iostream>
+#include <string>
 
 // NOTE: this is Unix specific!
 #include <getopt.h>
@@ -117,6 +118,25 @@ void Help() {
   }
 }
 
+// In forward-mode AD, allow real-number arguments to consist of two numbers separated by ':'.
+// If existent, the second number specifies the dot value of the input argument.
+static inline G4double parseRealInput(const char* arg){
+  std::string arg_s(arg);
+  int sep = arg_s.find(":");
+  G4double value;
+  if(sep==-1){
+     value = std::stod(arg);
+  } else {
+     #ifndef CODI_FORWARD
+        std::cerr << "Ignoring specification of dot value in argument, as this is not a forward-mode AD build." << std::cerr;
+     #endif
+     value = std::stod(arg_s.substr(0,sep).c_str());
+     double dotval = std::stod(arg_s.substr(sep+1,arg_s.size()-sep-1).c_str());
+     SET_GRADIENT(value, dotval);
+  }
+  return value;
+}
+
 
 void GetOpt(int argc, char *argv[], InputParameters& param) {
   while (true) {
@@ -133,10 +153,10 @@ void GetOpt(int argc, char *argv[], InputParameters& param) {
        param.fGeometry.fNumLayers = std::stoi(optarg);
        break;
     case 'a':
-       param.fGeometry.fThicknessAbsorber = std::stod(optarg);
+       param.fGeometry.fThicknessAbsorber = parseRealInput(optarg);
        break;
     case 'g':
-       param.fGeometry.fThicknessGap = std::stod(optarg);
+       param.fGeometry.fThicknessGap = parseRealInput(optarg);
        break;
     case 't':
        param.fGeometry.fSizeTransverse = std::stod(optarg);
@@ -151,7 +171,7 @@ void GetOpt(int argc, char *argv[], InputParameters& param) {
        }
        break;
     case 'e':
-       param.fPrimaryAndEvents.fParticleEnergy = std::stod(optarg);
+       param.fPrimaryAndEvents.fParticleEnergy = parseRealInput(optarg);
        break;
     case 'n':
        param.fPrimaryAndEvents.fNumEvents = std::stoi(optarg);
