@@ -123,8 +123,7 @@ void Hist::WriteToFile(bool isNorm) {
     norm  = 1. / (fSum*fDelta);
   }
   for (int i = 0; i < fNumBins; ++i) {
-    G4double val = fy[i] * norm;
-    fprintf(f, "%d\t%.8g\t%.14g\t%.14g\n", i, GET_VALUE((fx[i] + 0.5 * fDelta)), GET_VALUE((fy[i] * norm)), GET_GRADIENT(val));
+    fprintf(f, "%d\t%.8g\t%.14g\n", i, GET_VALUE((fx[i] + 0.5 * fDelta)), GET_VALUE((fy[i] * norm)));
   }
   fclose(f);
 }
