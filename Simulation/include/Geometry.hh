@@ -177,10 +177,7 @@ public:
   /** Gives the thickness of the `absorber` (i.e. full size along the x-axis).
     * @return thickness of the `absorber` in [mm] units.
     */
-  G4double const& GetAbsThick ( ) const {
-    return fAbsThick;
-  }
-  G4double& GetAbsThick ( ) {
+  G4double GetAbsThick ( ) const {
     return fAbsThick;
   }
 
@@ -200,10 +197,7 @@ public:
   /** Gives the thickness of the `gap` (i.e. full size along the x-axis).
     * @return thickness of the `gap` in [mm] units.
     */
-  G4double const& GetGapThick ( ) const {
-    return fGapThick;
-  }
-  G4double& GetGapThick ( ) {
+  G4double GetGapThick ( ) const {
     return fGapThick;
   }
 
@@ -322,7 +316,7 @@ public:
 
 
 
-public:
+private:
 
   /** Privite method that clculates the apropriate positions and volume/shape sizes whever any related parameters is updated.*/
   void   UpdateParameters();

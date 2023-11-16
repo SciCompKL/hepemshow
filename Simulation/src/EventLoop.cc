@@ -66,7 +66,7 @@ void EventLoop::ProcessEvents(G4HepEmTLData& theTLData, G4HepEmState& theState, 
     G4HepEmTrack& primaryTrack = theTrackStack.Insert();
 
     // 2. Invoke the beginning of event action (by passing the current primary track)
-    BeginOfEventAction(theResult, eventID, primaryTrack, theGeometry);
+    BeginOfEventAction(theResult, eventID, primaryTrack, theGeometry, thePrimaryGenerator);
 
     // Continuation of 1.:
     thePrimaryGenerator.GenerateOne(primaryTrack);
@@ -154,16 +154,21 @@ void EventLoop::ProcessEvents(G4HepEmTLData& theTLData, G4HepEmState& theState, 
 }
 
 
-void EventLoop::BeginOfEventAction(Results& theResult, int eventID, const G4HepEmTrack& thePrimaryTrack, Geometry& theGeometry) {
+void EventLoop::BeginOfEventAction(Results& theResult, int eventID, const G4HepEmTrack& thePrimaryTrack, Geometry& theGeometry, PrimaryGenerator& thePrimaryGenerator) {
   // reset all per-event accumulators in results, i.e. that are used to accumulate data during one event
 
   #ifdef CODI_REVERSE
     G4double::getTape().reset();
     G4double::getTape().setActive();
-    G4double::getTape().registerInput(*theResult.pThicknessAbsorber);
-    G4double::getTape().registerInput(*theResult.pThicknessGap);
-    G4double::getTape().registerInput(*theResult.pParticleEnergy);
-    theGeometry.UpdateParameters();
+    theResult.pThicknessAbsorber = theGeometry.GetAbsThick();
+    G4double::getTape().registerInput(theResult.pThicknessAbsorber);
+    theGeometry.SetAbsThick(theResult.pThicknessAbsorber);
+    theResult.pThicknessGap = theGeometry.GetGapThick();
+    G4double::getTape().registerInput(theResult.pThicknessGap);
+    theGeometry.SetGapThick(theResult.pThicknessGap);
+    theResult.pParticleEnergy = thePrimaryGenerator.GetKinEnergy();
+    G4double::getTape().registerInput(theResult.pParticleEnergy);
+    thePrimaryGenerator.SetKinEnergy(theResult.pParticleEnergy);
   #endif
 
   theResult.fPerEventRes.fEdepAbs        = 0.0;
@@ -231,9 +236,9 @@ void EventLoop::EndOfEventAction(Results& theResult, int eventID) {
        theResult.fEdepPerLayer_CurrentEvent.GetY()[i].setGradient(theResult.barEdep[i]);
     }
     G4double::getTape().evaluate();
-    theResult.barThicknessAbsorber.add( theResult.pThicknessAbsorber->getGradient() );
-    theResult.barThicknessGap.add( theResult.pThicknessGap->getGradient() );
-    theResult.barParticleEnergy.add( theResult.pParticleEnergy->getGradient() );
+    theResult.barThicknessAbsorber.add( theResult.pThicknessAbsorber.getGradient() );
+    theResult.barThicknessGap.add( theResult.pThicknessGap.getGradient() );
+    theResult.barParticleEnergy.add( theResult.pParticleEnergy.getGradient() );
   #endif
 }
 

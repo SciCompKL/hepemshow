@@ -130,9 +130,6 @@ int main(int argc, char* argv[]) {
     theResult.fEdepPerLayer_AccD.resize(50);
   #endif
   #ifdef CODI_REVERSE
-    theResult.pThicknessAbsorber = &theGeometry.GetAbsThick();
-    theResult.pThicknessGap = &theGeometry.GetGapThick();
-    theResult.pParticleEnergy = &thePrimaryGenerator.GetKinEnergy();
     theResult.barEdep.resize(50,0.);
     for(int i=0; i<50; i++){
        if(i<theInputParameters.barEdep.size()){
