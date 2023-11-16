@@ -7,20 +7,27 @@
 
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 
 
 void WriteResults(struct Results& res, int numEvents) {
   // for the histograms, bring them to be mean per event and write
   const G4double norm = numEvents > 0 ? 1.0/numEvents : 1.0;
   res.fEdepPerLayer.Scale(norm);
-  res.fEdepDsqPerLayer.Scale(norm);
-  res.fEdepSqPerLayer.Scale(norm);
   res.fGammaTrackLenghtPerLayer.Scale(norm);
   res.fElPosTrackLenghtPerLayer.Scale(norm);
 
   res.fEdepPerLayer.WriteToFile(false);
-  res.fEdepDsqPerLayer.WriteToFile(false);
-  res.fEdepSqPerLayer.WriteToFile(false);
+  std::ofstream edeps("edeps");
+  for(int i=0; i<50; i++){
+     edeps << std::setprecision(14) << res.fEdepPerLayer_Acc[i].getMean() << " " << res.fEdepPerLayer_Acc[i].getVar();
+     #if CODI_FORWARD
+        edeps << " " << res.fEdepPerLayer_AccD[i].getMean() << " " << res.fEdepPerLayer_AccD[i].getVar();
+     #endif
+     edeps << "\n";
+  }
+  edeps.close();
+
   res.fGammaTrackLenghtPerLayer.WriteToFile(false);
   res.fElPosTrackLenghtPerLayer.WriteToFile(false);
 

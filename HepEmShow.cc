@@ -125,8 +125,10 @@ int main(int argc, char* argv[]) {
   Results theResult;
   theResult.fEdepPerLayer.ReSet("hist_Edep_PerLayer", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
   theResult.fEdepPerLayer_CurrentEvent.ReSet("hist_Edep_PerLayer_CurrentEvent", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
-  theResult.fEdepDsqPerLayer.ReSet("hist_EdepDsq_PerLayer", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
-  theResult.fEdepSqPerLayer.ReSet("hist_EdepSq_PerLayer", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
+  theResult.fEdepPerLayer_Acc.resize(50);
+  #ifdef CODI_FORWARD
+    theResult.fEdepPerLayer_AccD.resize(50);
+  #endif
   theResult.fGammaTrackLenghtPerLayer.ReSet("hist_GamTrackL_PerLayer", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
   theResult.fElPosTrackLenghtPerLayer.ReSet("hist_ElPosTrackL_PerLayer", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
 

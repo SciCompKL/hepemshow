@@ -128,7 +128,7 @@ static inline G4double parseRealInput(const char* arg){
      value = std::stod(arg);
   } else {
      #ifndef CODI_FORWARD
-        std::cerr << "Ignoring specification of dot value in argument, as this is not a forward-mode AD build." << std::cerr;
+        std::cerr << "Ignoring specification of dot value in argument, as this is not a forward-mode AD build." << std::endl;
      #endif
      value = std::stod(arg_s.substr(0,sep).c_str());
      double dotval = std::stod(arg_s.substr(sep+1,arg_s.size()-sep-1).c_str());

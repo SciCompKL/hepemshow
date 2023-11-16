@@ -174,13 +174,13 @@ void EventLoop::EndOfEventAction(Results& theResult, int eventID) {
   theResult.fEdepAbs  += dum;
   theResult.fEdepAbs2 += dum*dum;
 
-  auto& ce = theResult.fEdepPerLayer_CurrentEvent.GetY();
+  theResult.fEdepPerLayer.Add(&theResult.fEdepPerLayer_CurrentEvent);
   for(int i=0; i<50; i++){
-    theResult.fEdepPerLayer.GetY()[i] += (ce[i]);
-    theResult.fEdepSqPerLayer.GetY()[i] += ce[i]*ce[i];
-    theResult.fEdepDsqPerLayer.GetY()[i] += GET_GRADIENT(ce[i])*GET_GRADIENT(ce[i]);
+    theResult.fEdepPerLayer_Acc[i].add(GET_VALUE((theResult.fEdepPerLayer_CurrentEvent.GetY()[i])));
+    #if CODI_FORWARD
+       theResult.fEdepPerLayer_AccD[i].add(GET_GRADIENT((theResult.fEdepPerLayer_CurrentEvent.GetY()[i])));
+    #endif
   }
-
 
   dum = theResult.fPerEventRes.fEdepGap;
   theResult.fEdepGap  += dum;
