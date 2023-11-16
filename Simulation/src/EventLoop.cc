@@ -66,7 +66,7 @@ void EventLoop::ProcessEvents(G4HepEmTLData& theTLData, G4HepEmState& theState, 
     G4HepEmTrack& primaryTrack = theTrackStack.Insert();
 
     // 2. Invoke the beginning of event action (by passing the current primary track)
-    BeginOfEventAction(theResult, eventID, primaryTrack);
+    BeginOfEventAction(theResult, eventID, primaryTrack, theGeometry);
 
     // Continuation of 1.:
     thePrimaryGenerator.GenerateOne(primaryTrack);
@@ -154,7 +154,7 @@ void EventLoop::ProcessEvents(G4HepEmTLData& theTLData, G4HepEmState& theState, 
 }
 
 
-void EventLoop::BeginOfEventAction(Results& theResult, int eventID, const G4HepEmTrack& thePrimaryTrack) {
+void EventLoop::BeginOfEventAction(Results& theResult, int eventID, const G4HepEmTrack& thePrimaryTrack, Geometry& theGeometry) {
   // reset all per-event accumulators in results, i.e. that are used to accumulate data during one event
 
   #ifdef CODI_REVERSE
@@ -163,6 +163,7 @@ void EventLoop::BeginOfEventAction(Results& theResult, int eventID, const G4HepE
     G4double::getTape().registerInput(*theResult.pThicknessAbsorber);
     G4double::getTape().registerInput(*theResult.pThicknessGap);
     G4double::getTape().registerInput(*theResult.pParticleEnergy);
+    theGeometry.UpdateParameters();
   #endif
 
   theResult.fPerEventRes.fEdepAbs        = 0.0;

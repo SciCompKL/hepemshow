@@ -322,7 +322,7 @@ public:
 
 
 
-private:
+public:
 
   /** Privite method that clculates the apropriate positions and volume/shape sizes whever any related parameters is updated.*/
   void   UpdateParameters();

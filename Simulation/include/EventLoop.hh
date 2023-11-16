@@ -55,7 +55,7 @@ private:
   EventLoop() = delete;
 
   /** Method invoked at the beginning of each event by passing the (single) primary track of the event.*/
-  static void BeginOfEventAction(Results& theResult, int eventID, const G4HepEmTrack& thePrimaryTrack);
+  static void BeginOfEventAction(Results& theResult, int eventID, const G4HepEmTrack& thePrimaryTrack, Geometry& theGeometry);
   /** Method invoked at the end of each event.*/
   static void EndOfEventAction(  Results& theResult, int eventID);
 
