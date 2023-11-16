@@ -177,7 +177,10 @@ public:
   /** Gives the thickness of the `absorber` (i.e. full size along the x-axis).
     * @return thickness of the `absorber` in [mm] units.
     */
-  G4double GetAbsThick ( ) const {
+  G4double const& GetAbsThick ( ) const {
+    return fAbsThick;
+  }
+  G4double& GetAbsThick ( ) {
     return fAbsThick;
   }
 
@@ -197,7 +200,10 @@ public:
   /** Gives the thickness of the `gap` (i.e. full size along the x-axis).
     * @return thickness of the `gap` in [mm] units.
     */
-  G4double GetGapThick ( ) const {
+  G4double const& GetGapThick ( ) const {
+    return fGapThick;
+  }
+  G4double& GetGapThick ( ) {
     return fGapThick;
   }
 

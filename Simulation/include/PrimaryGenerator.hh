@@ -52,7 +52,8 @@ public:
   void   SetKinEnergy(G4double ekin) { fKinEnergy = ekin; }
   /** Privides the kinetic energy of the primary particle.
     * @return kinetic energy in [MeV] units.*/
-  G4double GetKinEnergy()  const     { return fKinEnergy; }
+  G4double const& GetKinEnergy()  const     { return fKinEnergy; }
+  G4double& GetKinEnergy() { return fKinEnergy; }
 
   /** Sets the position of the primary particle.
     * @param[in] pos pointer to a 3D (global) position vector (legth is in [mm])*/

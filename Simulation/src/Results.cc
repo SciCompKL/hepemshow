@@ -18,6 +18,7 @@ void WriteResults(struct Results& res, int numEvents) {
   res.fElPosTrackLenghtPerLayer.Scale(norm);
 
   res.fEdepPerLayer.WriteToFile(false);
+
   std::ofstream edeps("edeps");
   for(int i=0; i<50; i++){
      edeps << std::setprecision(14) << res.fEdepPerLayer_Acc[i].getMean() << " " << res.fEdepPerLayer_Acc[i].getVar();
@@ -27,6 +28,15 @@ void WriteResults(struct Results& res, int numEvents) {
      edeps << "\n";
   }
   edeps.close();
+
+  #ifdef CODI_REVERSE
+     std::ofstream barInputs("barInputs");
+     barInputs << res.barThicknessAbsorber << "\n";
+     barInputs << res.barThicknessGap << "\n";
+     barInputs << res.barParticleEnergy << "\n";
+     barInputs.close();
+  #endif
+
 
   res.fGammaTrackLenghtPerLayer.WriteToFile(false);
   res.fElPosTrackLenghtPerLayer.WriteToFile(false);

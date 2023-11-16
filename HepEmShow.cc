@@ -129,6 +129,20 @@ int main(int argc, char* argv[]) {
   #ifdef CODI_FORWARD
     theResult.fEdepPerLayer_AccD.resize(50);
   #endif
+  #ifdef CODI_REVERSE
+    theResult.barThicknessAbsorber = 0;
+    theResult.barThicknessGap = 0;
+    theResult.barParticleEnergy = 0;
+    theResult.pThicknessAbsorber = &theGeometry.GetAbsThick();
+    theResult.pThicknessGap = &theGeometry.GetGapThick();
+    theResult.pParticleEnergy = &thePrimaryGenerator.GetKinEnergy();
+    theResult.barEdep.resize(50,0.);
+    for(int i=0; i<50; i++){
+       if(i<theInputParameters.barEdep.size()){
+          theResult.barEdep[i] = theInputParameters.barEdep[i];
+       }
+    }
+  #endif
   theResult.fGammaTrackLenghtPerLayer.ReSet("hist_GamTrackL_PerLayer", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
   theResult.fElPosTrackLenghtPerLayer.ReSet("hist_ElPosTrackL_PerLayer", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
 

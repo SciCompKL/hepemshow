@@ -152,6 +152,15 @@ void EventLoop::ProcessEvents(G4HepEmTLData& theTLData, G4HepEmState& theState, 
 
 void EventLoop::BeginOfEventAction(Results& theResult, int eventID, const G4HepEmTrack& thePrimaryTrack) {
   // reset all per-event accumulators in results, i.e. that are used to accumulate data during one event
+
+  #ifdef CODI_REVERSE
+    G4double::getTape().reset();
+    G4double::getTape().setActive();
+    G4double::getTape().registerInput(*theResult.pThicknessAbsorber);
+    G4double::getTape().registerInput(*theResult.pThicknessGap);
+    G4double::getTape().registerInput(*theResult.pParticleEnergy);
+  #endif
+
   theResult.fPerEventRes.fEdepAbs        = 0.0;
   theResult.fPerEventRes.fEdepGap        = 0.0;
 
@@ -207,6 +216,20 @@ void EventLoop::EndOfEventAction(Results& theResult, int eventID) {
   dum = theResult.fPerEventRes.fNumStepsElPos;
   theResult.fNumStepsElPos  += dum;
   theResult.fNumStepsElPos2 += dum*dum;
+
+  #ifdef CODI_REVERSE
+    for(int i=0; i<50; i++){
+       G4double::getTape().registerOutput(theResult.fEdepPerLayer_CurrentEvent.GetY()[i]);
+    }
+    G4double::getTape().setPassive();
+    for(int i=0; i<50; i++){
+       theResult.fEdepPerLayer_CurrentEvent.GetY()[i].setGradient(theResult.barEdep[i]);
+    }
+    G4double::getTape().evaluate();
+    theResult.barThicknessAbsorber += theResult.pThicknessAbsorber->getGradient();
+    theResult.barThicknessGap += theResult.pThicknessGap->getGradient();
+    theResult.barParticleEnergy += theResult.pParticleEnergy->getGradient();
+  #endif
 }
 
 

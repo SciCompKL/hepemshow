@@ -73,6 +73,11 @@ struct Results {
   #ifdef CODI_FORWARD
     std::vector<Accumulator<double>> fEdepPerLayer_AccD; ///< computes statistical properties of the dot value of the energy deposit per layer per event
   #endif
+  #ifdef CODI_REVERSE
+    std::vector<double> barEdep; ///< Bar values of the edeps, to be set in the beginning.
+    double barThicknessAbsorber, barThicknessGap, barParticleEnergy; ///< Accumulate the bar values of the thicknesses and energy.
+    G4double *pThicknessAbsorber, *pThicknessGap, *pParticleEnergy; ///< Pointers to the thickness and energy variables used by the simulation.
+  #endif
   Hist fGammaTrackLenghtPerLayer;  ///< mean number of \f$\gamma\f$ steps per-layer histogram
   Hist fElPosTrackLenghtPerLayer;  ///< mean number of \f$e^-/e^+\f$ steps per-layer histogram
   //
