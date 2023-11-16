@@ -75,7 +75,7 @@ struct Results {
   #endif
   #ifdef CODI_REVERSE
     std::vector<double> barEdep; ///< Bar values of the edeps, to be set in the beginning.
-    double barThicknessAbsorber, barThicknessGap, barParticleEnergy; ///< Accumulate the bar values of the thicknesses and energy.
+    Accumulator<double> barThicknessAbsorber, barThicknessGap, barParticleEnergy; ///< Accumulate the bar values of the thicknesses and energy.
     G4double *pThicknessAbsorber, *pThicknessGap, *pParticleEnergy; ///< Pointers to the thickness and energy variables used by the simulation.
   #endif
   Hist fGammaTrackLenghtPerLayer;  ///< mean number of \f$\gamma\f$ steps per-layer histogram

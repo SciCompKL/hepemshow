@@ -130,9 +130,6 @@ int main(int argc, char* argv[]) {
     theResult.fEdepPerLayer_AccD.resize(50);
   #endif
   #ifdef CODI_REVERSE
-    theResult.barThicknessAbsorber = 0;
-    theResult.barThicknessGap = 0;
-    theResult.barParticleEnergy = 0;
     theResult.pThicknessAbsorber = &theGeometry.GetAbsThick();
     theResult.pThicknessGap = &theGeometry.GetGapThick();
     theResult.pParticleEnergy = &thePrimaryGenerator.GetKinEnergy();

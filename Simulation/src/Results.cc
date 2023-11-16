@@ -31,9 +31,9 @@ void WriteResults(struct Results& res, int numEvents) {
 
   #ifdef CODI_REVERSE
      std::ofstream barInputs("barInputs");
-     barInputs << res.barThicknessAbsorber << "\n";
-     barInputs << res.barThicknessGap << "\n";
-     barInputs << res.barParticleEnergy << "\n";
+     barInputs << res.barThicknessAbsorber.getMean() << " " << res.barThicknessAbsorber.getVar() << "\n";
+     barInputs << res.barThicknessGap.getMean() << " " << res.barThicknessGap.getVar() << "\n";
+     barInputs << res.barParticleEnergy.getMean() << " " << res.barParticleEnergy.getVar() << "\n";
      barInputs.close();
   #endif
 

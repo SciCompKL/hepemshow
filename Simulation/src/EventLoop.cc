@@ -230,9 +230,9 @@ void EventLoop::EndOfEventAction(Results& theResult, int eventID) {
        theResult.fEdepPerLayer_CurrentEvent.GetY()[i].setGradient(theResult.barEdep[i]);
     }
     G4double::getTape().evaluate();
-    theResult.barThicknessAbsorber += theResult.pThicknessAbsorber->getGradient();
-    theResult.barThicknessGap += theResult.pThicknessGap->getGradient();
-    theResult.barParticleEnergy += theResult.pParticleEnergy->getGradient();
+    theResult.barThicknessAbsorber.add( theResult.pThicknessAbsorber->getGradient() );
+    theResult.barThicknessGap.add( theResult.pThicknessGap->getGradient() );
+    theResult.barParticleEnergy.add( theResult.pParticleEnergy->getGradient() );
   #endif
 }
 
