@@ -72,4 +72,8 @@ void WriteResults(struct Results& res, int numEvents) {
   std::cout << " Mean number of gamma steps " << res.fNumStepsGamma*norm  << std::endl;
   std::cout << " ------------------------------------------------------------\n";
 
+  #ifdef CODI_REVERSE
+    G4double::getTape().printStatistics(std::cout);
+  #endif
+
 }
