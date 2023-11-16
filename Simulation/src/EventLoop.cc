@@ -178,7 +178,7 @@ void EventLoop::EndOfEventAction(Results& theResult, int eventID) {
   for(int i=0; i<50; i++){
     theResult.fEdepPerLayer_Acc[i].add(GET_VALUE((theResult.fEdepPerLayer_CurrentEvent.GetY()[i])));
     #if CODI_FORWARD
-       theResult.fEdepPerLayer_AccD[i].add(GET_GRADIENT((theResult.fEdepPerLayer_CurrentEvent.GetY()[i])));
+       theResult.fEdepPerLayer_AccD[i].add(GET_DOTVALUE((theResult.fEdepPerLayer_CurrentEvent.GetY()[i])));
     #endif
   }
 

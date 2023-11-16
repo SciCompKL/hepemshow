@@ -132,7 +132,9 @@ static inline G4double parseRealInput(const char* arg){
      #endif
      value = std::stod(arg_s.substr(0,sep).c_str());
      double dotval = std::stod(arg_s.substr(sep+1,arg_s.size()-sep-1).c_str());
-     SET_GRADIENT(value, dotval);
+     #ifdef CODI_FORWARD
+        SET_DOTVALUE(value, dotval);
+     #endif
   }
   return value;
 }
