@@ -64,11 +64,15 @@ void EventLoop::ProcessEvents(G4HepEmTLData& theTLData, G4HepEmState& theState, 
     // - the primary track is the very first track in the stack, so obtain one
     //   track reference from the stack and generate one primary into that
     G4HepEmTrack& primaryTrack = theTrackStack.Insert();
+
+    // 2. Invoke the beginning of event action (by passing the current primary track)
+    BeginOfEventAction(theResult, eventID, primaryTrack);
+
+    // Continuation of 1.:
     thePrimaryGenerator.GenerateOne(primaryTrack);
     primaryTrack.SetID(theTrackStack.GetNextTrackID());
     //
-    // 2. Invoke the beginning of event action (by passing the current primary track)
-    BeginOfEventAction(theResult, eventID, primaryTrack);
+
     //
     //
     // 3. While the track-stack becomes empty:
