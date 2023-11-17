@@ -21,9 +21,9 @@ void WriteResults(struct Results& res, int numEvents) {
 
   std::ofstream edeps("edeps");
   for(int i=0; i<50; i++){
-     edeps << std::setprecision(14) << res.fEdepPerLayer_Acc[i].getMean() << " " << res.fEdepPerLayer_Acc[i].getVar();
+     edeps << std::setprecision(14) << res.fEdepPerLayer_Acc[i].getMean() << " " << res.fEdepPerLayer_Acc[i].getMeanSq();
      #if CODI_FORWARD
-        edeps << " " << res.fEdepPerLayer_AccD[i].getMean() << " " << res.fEdepPerLayer_AccD[i].getVar();
+        edeps << " " << res.fEdepPerLayer_AccD[i].getMean() << " " << res.fEdepPerLayer_AccD[i].getMeanSq();
      #endif
      edeps << "\n";
   }

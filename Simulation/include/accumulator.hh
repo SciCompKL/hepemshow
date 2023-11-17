@@ -13,11 +13,15 @@ public:
     n += 1;
   }
 
-  Scalar getMean(){
+  Scalar getMean() const {
     return sum/n;
   }
 
-  Scalar getVar(){
-    return sq_sum/n - (sum/n)*(sum/n);
+  Scalar getVar() const {
+    return getMeanSq() - getMean()*getMean();
+  }
+
+  Scalar getMeanSq() const {
+    return sq_sum/n;
   }
 };
