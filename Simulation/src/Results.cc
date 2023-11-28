@@ -29,12 +29,11 @@ void WriteResults(struct Results& res, int numEvents) {
 
 
   // the secondary type and step number statistics
-  std::cout << " --- Results::WriteResults ---------------------------------- " << std::endl;
-
   std::cout << std::endl;
+  std::cout << " --- Results::WriteResults ---------------------------------- " << std::endl;
   std::cout << std::setprecision(6);
-  std::cout << "Absorber: mean Edep = " << res.fEdepAbs << " [MeV] and  Std-dev = " << rmsEAbs << " [MeV]"<< std::endl;
-  std::cout << "Gap     : mean Edep = " << res.fEdepGap << " [MeV] and  Std-dev = " << rmsEGap << " [MeV]"<< std::endl;
+  std::cout << " Absorber: mean Edep = " << res.fEdepAbs << " [MeV] and  Std-dev = " << rmsEAbs << " [MeV]"<< std::endl;
+  std::cout << " Gap     : mean Edep = " << res.fEdepGap << " [MeV] and  Std-dev = " << rmsEGap << " [MeV]"<< std::endl;
 
   std::cout << std::endl;
   std::cout << std::setprecision(14);

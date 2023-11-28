@@ -3,7 +3,7 @@
  * @author  M. Novak
  * @date    July 2023
  *
- * @brief The main funtion of the `HepEmShow` application.
+ * @brief The main funtion of the `HepEmShow` simulation application.
  *
  * The main of the `HepEmShow` application is responsible for setting up the
  * environment, lunch the simulation and write the results. This is done by:
@@ -17,10 +17,10 @@
  *   generator (utilising the local `URandom` generator)
  * - constructing and setting up the application `Geometry` according to the
  *   provided configuration input arguments (in `InputParameters`)
- * - constructing and setting up a `Results` structure that will be used to collect
- *   some data during the simulation
  * - constructing and setting up the `PrimaryGenerator` of the application according
  *   to the provided configuration input arguments (in `InputParameters`)
+ * - constructing and setting up a `Results` structure that will be used to collect
+ *   some data during the simulation
  * - the `EventLoop::ProcessEvents` method is invoked then to **perform the simulation**
  * - the simulation results are witten to file (and to the standard output) by
  *   invoking `WriteResults()` (from the `Results`)

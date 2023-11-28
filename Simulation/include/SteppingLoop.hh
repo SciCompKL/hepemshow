@@ -70,11 +70,10 @@
  * secondary tracks are delivered back to the caller in the appropriate **seondary**
  * track fields of the `G4HepEmTLData` object.
  *
- * We might provide more details on how a \f$\gamma\f$ and \f$e^-/e^+\f$ simulation
- * step is computed but you might find some information by inspecting the
- * implementations of the top level `HowFar` and `Perform` `G4HepEm` methods
- * in the corresponding `G4HepEmGammaManager/G4HepEmElectronManager`.
- *
+ * More infomation and details, on how a \f$\gamma\f$ and \f$e^-/e^+\f$ simulation
+ * step is computed, might be found by inspecting the implementations of the top
+ * level `HowFar` and `Perform` `G4HepEm` methods in the corresponding
+ * `G4HepEmGammaManager/G4HepEmElectronManager`.
  */
 
 

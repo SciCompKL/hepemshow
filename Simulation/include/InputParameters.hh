@@ -68,19 +68,19 @@ struct InputParameters {
 void PrintParameters (const struct InputParameters& theParam) {
 
   std::cout << " \n === HepEmShow input parameters: "    << std::endl;
-  std::cout << "     --- Geometry configiration: " << std::endl;
+  std::cout << "     --- Geometry configuration: " << std::endl;
   std::cout << "         - number-of-layers      : "     << theParam.fGeometry.fNumLayers         << std::endl;
   std::cout << "         - absorber-thickness    : "     << theParam.fGeometry.fThicknessAbsorber << " [mm]" << std::endl;
   std::cout << "         - gap-thickness         : "     << theParam.fGeometry.fThicknessGap      << " [mm]" << std::endl;
   std::cout << "         - transverse-size       : "     << theParam.fGeometry.fSizeTransverse    << " [mm]" << std::endl;
 
-  std::cout << "     --- Primary and Event configiration: " << std::endl;
+  std::cout << "     --- Primary and Event configuration: " << std::endl;
   std::cout << "         - primary-particle      : "     << theParam.fPrimaryAndEvents.fParticleName   << std::endl;
   std::cout << "         - primary-energy        : "     << theParam.fPrimaryAndEvents.fParticleEnergy << " [MeV]" << std::endl;
   std::cout << "         - number-of-events      : "     << theParam.fPrimaryAndEvents.fNumEvents      <<  std::endl;
   std::cout << "         - random-seed           : "     << theParam.fPrimaryAndEvents.fRandomSeed     <<  std::endl;
 
-  std::cout << "     --- Additional configiration: " << std::endl;
+  std::cout << "     --- Additional configuration: " << std::endl;
   std::cout << "         - g4hepem-data-file    : "     << theParam.fG4HepEmDataFile  << std::endl;
   std::cout << "         - run-verbosity        : "     << theParam.fRunVerbosity     << std::endl;
 
@@ -101,7 +101,7 @@ static struct option options[] = {
   {"random-seed                                                           - default: 1234"   , required_argument, 0, 's'},
 
   {"g4hepem-data-file     (the pre-generated data file with its path)     - default: ../data/hepem_data" , required_argument, 0, 'd'},
-  {"run-verbosity         (verbosity of run infomation: nothing when 0)   - default: 1"      , required_argument, 0, 'v'},
+  {"run-verbosity         (verbosity of run information: nothing when 0)  - default: 1"      , required_argument, 0, 'v'},
   {"help"                                                                                    , no_argument      , 0, 'h'},
   {0, 0, 0, 0}
 };
@@ -119,7 +119,7 @@ void Help() {
 void GetOpt(int argc, char *argv[], InputParameters& param) {
   while (true) {
     int c, optidx = 0;
-    c = getopt_long(argc, argv, "hl:a:g:c:t:p:e:n:r:s:d:", options, &optidx);
+    c = getopt_long(argc, argv, "hl:a:g:t:p:e:n:s:d:v:", options, &optidx);
     if (c == -1)
       break;
     switch (c) {

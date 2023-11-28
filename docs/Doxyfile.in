@@ -1,7 +1,7 @@
 PROJECT_NAME         = "G4HepEmShow"
 OUTPUT_DIRECTORY     = "doxygen"
 XML_OUTPUT           = "xml"
-INPUT                = ../DataGeneration/include ../Simulation/include ../HepEmShow.cc
+INPUT                = ../DataGeneration/include ../Simulation/include ../HepEmShow.cc ../HepEmShow-DataGeneration.cc
 CITE_BIB_FILES       = source/bibfile
 FILE_PATTERNS        = *.cc *.hh
 GENERATE_LATEX       = NO

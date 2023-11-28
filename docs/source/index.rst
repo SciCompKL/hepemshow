@@ -1,6 +1,6 @@
 
-``HepEmShow`` a compact EM shower simulation
-==============================================
+``HepEmShow``: a compact EM shower simulation application
+==========================================================
 
 .. only:: html
 

@@ -26,7 +26,7 @@ subprocess.call('cd ..; doxygen Doxyfile.in', shell=True)
 
 
 # -- Project information -----------------------------------------------------
-project = 'HepEmShow a compact EM shower simulation'
+project = 'HepEmShow'
 copyright = '2023, M.Novak'
 author = 'Mihaly Novak'
 
@@ -56,7 +56,7 @@ extensions = [
 #needs_extensions = {'sphinx_jinja': '3.0'}
 
 # set path to the doxygen-generated XML for breathe
-breathe_projects = { 'HepEmShow a compact EM shower simulation': '../doxygen/xml' }
+breathe_projects = { 'HepEmShow': '../doxygen/xml' }
 
 
 numfig = True

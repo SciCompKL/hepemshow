@@ -21,6 +21,6 @@ new techniques, solution, etc.. Moreover, applying the new technology to the com
 risk (see above) that can be largely reduced by preceding with a feasibility study on a simpler, more compact but realistic simulation, i.e.
 having the key algorithmic properties identical to the native ``Geant4`` based simulation.
 
-``HepEmShow`` was developed exactly with this goal in mind: to provide a compact, ``Geant4`` like but significantly simpler simulation application
-with only the required components but all available locally. More details on the main components of the simulation application can be found in
-`The components of the simulation` section.
+``HepEmShow`` was developed exactly with this goal in mind: to provide a compact, ``Geant4`` like but ``Geant4`` independent, significantly
+simpler simulation application having only the necessary components but all of them available locally. More details on the main components of the
+simulation application can be found in :ref:`The components of the simulation <simulation_components_doc>` section.

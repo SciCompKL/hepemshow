@@ -15,14 +15,14 @@ Box::Box (const std::string& name, int indxMat, double pX, double pY, double pZ)
   fDz(pZ) {
   fDelta = 0.5*kCarTolerance;
   // check minimum size
-  if (pX < 2*kCarTolerance ||
-      pY < 2*kCarTolerance ||
-      pZ < 2*kCarTolerance)  {
-    std::ostringstream message;
-    message << "Dimensions too small for Solid: " << GetName() << "!" << std::endl
-            << "     hX, hY, hZ = " << pX << ", " << pY << ", " << pZ;
-    std::cout << message.str();
-  }
+//  if (pX < 2*kCarTolerance ||
+//      pY < 2*kCarTolerance ||
+//      pZ < 2*kCarTolerance)  {
+//    std::ostringstream message;
+//    message << "Dimensions too small for Solid: " << GetName() << "!" << std::endl
+//            << "     hX, hY, hZ = " << pX << ", " << pY << ", " << pZ;
+//    std::cout << message.str();
+//  }
 }
 
 
@@ -38,12 +38,12 @@ void Box::SetHalfLength(double val, int idx) {
               break;
     };
   } else {
-    std::ostringstream message;
-    message << "Dimension too small for solid: " << GetName() << "!"
-            << std::endl
-            << "      val = " << val << std::endl
-            << "      idx = " << idx;
-    std::cout << message.str();
+//    std::ostringstream message;
+//    message << "Dimension too small for solid: " << GetName() << "!"
+//            << std::endl
+//            << "      val = " << val << std::endl
+//            << "      idx = " << idx;
+//    std::cout << message.str();
   }
 }
 

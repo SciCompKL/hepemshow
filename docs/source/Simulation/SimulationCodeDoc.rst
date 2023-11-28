@@ -1,12 +1,30 @@
-Code documentation of the ``Simulation`` part of the ``HepEmShow`` application.
-----------------------------------------------------------------------------------
+``HepEmShow`` code documentation
+----------------------------------
 
 
 The main of the ``HepEmShow`` application
 ..............................................
 
+
+.. _the_main_doc:
+
+The main simulation application
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. doxygenfile:: HepEmShow.cc
-   :project: HepEmShow a compact EM shower simulation
+   :project: HepEmShow
+
+.. _the_main_generation_doc:
+
+The auxiliary application for data generation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. doxygenfile:: HepEmShow-DataGeneration.cc
+   :project: HepEmShow
+
+.. doxygenclass:: G4Setup
+   :project: HepEmShow
+
 
 
 
@@ -20,12 +38,12 @@ building up and filling in the ``calorimeter`` that is centered at the origin
 and placed in the ``world``.
 
 .. doxygenclass:: Geometry
-   :project: HepEmShow a compact EM shower simulation
+   :project: HepEmShow
    :members:
    :private-members:
 
 .. doxygenclass:: Box
-   :project: HepEmShow a compact EM shower simulation
+   :project: HepEmShow
    :members:
    :private-members:
 
@@ -36,11 +54,11 @@ The ``Physics`` code documentation
 
 
 .. doxygenclass:: Physics
-   :project: HepEmShow a compact EM shower simulation
+   :project: HepEmShow
 
 
 .. doxygenclass:: URandom
-   :project: HepEmShow a compact EM shower simulation
+   :project: HepEmShow
    :members:
    :private-members:
 
@@ -50,10 +68,31 @@ The ``PrimaryGenerator`` code documentation
 .............................................
 
 .. doxygenclass:: PrimaryGenerator
-   :project: HepEmShow a compact EM shower simulation
+   :project: HepEmShow
    :members:
    :private-members:
 
+
+
+Event loop, stepping loop and the track stack
+................................................
+
+.. doxygenclass:: EventLoop
+   :project: HepEmShow
+   :members:
+   :private-members:
+
+
+.. doxygenclass:: SteppingLoop
+   :project: HepEmShow
+   :members:
+   :private-members:
+
+
+.. doxygenclass:: TrackStack
+   :project: HepEmShow
+   :members:
+   :private-members:
 
 
 
@@ -66,11 +105,11 @@ Collecting data during the simulation
 
 
 .. doxygenfile:: Results.hh
-   :project: HepEmShow a compact EM shower simulation
+   :project: HepEmShow
 
 
 .. doxygenclass:: Hist
-   :project: HepEmShow a compact EM shower simulation
+   :project: HepEmShow
    :members:
    :private-members:
 
@@ -93,31 +132,10 @@ To see all configuration option, run the application as::
    	-n  --number-of-events      (number of primary events to simulate)          - default: 1000
    	-s  --random-seed                                                           - default: 1234
    	-d  --g4hepem-data-file     (the pre-generated data file with its path)     - default: ../data/hepem_data
-   	-v  --run-verbosity         (verbosity of run infomation: nothing when 0)   - default: 1
+   	-v  --run-verbosity         (verbosity of run information: nothing when 0)  - default: 1
    	-h  --help
 
 
 .. doxygenstruct:: InputParameters
-   :project: HepEmShow a compact EM shower simulation
+   :project: HepEmShow
    :members:
-
-
-Event loop, stepping loops and the track stack
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. doxygenclass:: EventLoop
-   :project: HepEmShow a compact EM shower simulation
-   :members:
-   :private-members:
-
-
-.. doxygenclass:: SteppingLoop
-   :project: HepEmShow a compact EM shower simulation
-   :members:
-   :private-members:
-
-
-.. doxygenclass:: TrackStack
-   :project: HepEmShow a compact EM shower simulation
-   :members:
-   :private-members:
