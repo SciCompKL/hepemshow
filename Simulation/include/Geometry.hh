@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 
 #ifndef GEOMETRY_HH
 #define GEOMETRY_HH
@@ -23,12 +25,12 @@
  *
  * - `absorber`:
  *   - thickness:   `fAbsThick`
- *   - set/get  :   `SetAbsThick(double)`/`GetAbsThick()`
+ *   - set/get  :   `SetAbsThick(G4double)`/`GetAbsThick()`
  *   - material :   lead tungstate/atolzite (`"G4_PbWO4"`) with material `index = 1` (by default)
  *
  * - `gap`:
  *   - thickness:   `fGapThick`
- *   - set/get  :   `SetGapThick(double)`/`GetGapThick()`
+ *   - set/get  :   `SetGapThick(G4double)`/`GetGapThick()`
  *   - material :   liquid argon (`"G4_lAr"`) with material `index = 2` (by default)
  *
  * @note The default length unit is [mm] so all thicknesses and sizes are
@@ -87,7 +89,7 @@
  *
  *
  * The geometry also provides a very simple "navigation" through its
- * `CalculateDistanceToOut(double*, double*, Box**, int*, int*)` method that determines:
+ * `CalculateDistanceToOut(G4double*, G4double*, Box**, int*, int*)` method that determines:
  * - the (deepest) volume/box in which the given global `position` is located
  * - the index of the layer (only if the point is located inside the `calorimeter`)
  * - and the index of the absorber: 0 for the `absorber` and 1 for the `gap`
@@ -101,7 +103,7 @@
  *   `position` was located: from the given `position` along the given `direction`.
  *
  * Note, that this distance is computed by using the corresponding box/volume
- * method (namely `Box::DistanceToOut(double*,double*) const`) and the `box` object
+ * method (namely `Box::DistanceToOut(G4double*,G4double*) const`) and the `box` object
  * in which the given `position` was located:
  * - distance to out is 0 if a given `position` is outside of that volume/box
  * - volume boundaries, closer to `position` than half of the
@@ -159,7 +161,7 @@ public:
   /** Gives the thickness of the `calorimeter` (i.e. full size along the x-axis).
     * @return thickness of the `calorimeter` in [mm] units.
     */
-  double GetCaloThick ( ) const {
+  G4double GetCaloThick ( ) const {
     return fCaloThick;
   }
 
@@ -167,7 +169,7 @@ public:
   /** Sets the required absorber thickness (i.e. full size along the x-axis).
     * @param[in]  thickness Required thickness of the `absorber` in [mm].
     */
-  void   SetAbsThick (double thickness) {
+  void   SetAbsThick (G4double thickness) {
     fAbsThick = thickness;
     UpdateParameters();
   }
@@ -175,7 +177,7 @@ public:
   /** Gives the thickness of the `absorber` (i.e. full size along the x-axis).
     * @return thickness of the `absorber` in [mm] units.
     */
-  double GetAbsThick ( ) const {
+  G4double GetAbsThick ( ) const {
     return fAbsThick;
   }
 
@@ -187,7 +189,7 @@ public:
     *
     * @param[in]  thickness Required thickness of the `gap` in [mm] (can be set to 0).
     */
-  void   SetGapThick (double thickness) {
+  void   SetGapThick (G4double thickness) {
     fGapThick = thickness;
     UpdateParameters();
   }
@@ -195,7 +197,7 @@ public:
   /** Gives the thickness of the `gap` (i.e. full size along the x-axis).
     * @return thickness of the `gap` in [mm] units.
     */
-  double GetGapThick ( ) const {
+  G4double GetGapThick ( ) const {
     return fGapThick;
   }
 
@@ -207,7 +209,7 @@ public:
     *
     * @param[in]  val Required full transvers size of the `calorimeter` in [mm].
     */
-  void   SetCaloSizeYZ (double val) {
+  void   SetCaloSizeYZ (G4double val) {
     fCaloSizeYZ = val;
     UpdateParameters();
   }
@@ -215,7 +217,7 @@ public:
   /** Gives the transverse size of the  `calorimeter` (i.e. full size along the yz-axis).
     * @return full transverse size of the `calorimeter` volume/shape in [mm] units.
     */
-  double GetCaloSizeYZ ( ) const {
+  G4double GetCaloSizeYZ ( ) const {
     return fCaloSizeYZ;
   }
 
@@ -227,7 +229,7 @@ public:
     *
     * @return the x-coordinate of the mid-point between the `world` and `calorimeter` boundaries on the left.
     */
-  double GetPrimaryXposition()   const { return fPrimaryXPosition; }
+  G4double GetPrimaryXposition()   const { return fPrimaryXPosition; }
 
   /** Provides the x-coordinate on the `calorimeter` boundary on the left hand side.
     *
@@ -236,7 +238,7 @@ public:
     *
     * @return the x-coordinate of the `calorimeter` boundary on the left hand side.
     */
-  double GetCaloStartXposition() const { return fCaloStartX; }
+  G4double GetCaloStartXposition() const { return fCaloStartX; }
 
 
   /**
@@ -309,7 +311,7 @@ public:
     *         calculated to be located. It might be zero (the step actually shouldn't be done in the located volume) or 1E+20 [mm] (the particle
     *         about leaving the `calorimeter`).
     */
-  double CalculateDistanceToOut(double* r, double *v, Box** currentVolume, int* indxLayer, int* indxAbs);
+  G4double CalculateDistanceToOut(G4double* r, G4double *v, Box** currentVolume, int* indxLayer, int* indxAbs);
 
 
 
@@ -328,35 +330,35 @@ private:
   int    fNumLayers;
 
   /** `Absorber` thickness measured along the `x`-axis in [mm] (can be set)*/
-  double fAbsThick;
+  G4double fAbsThick;
 
   /** `Gap` thickness measured along the `x`-axis in [mm] (can be set; even to
     *  zero: single material `calorimeter` sliced by layers along the `x`-axis)*/
-  double fGapThick;
+  G4double fGapThick;
 
   /** `Layer` thickness measured along the `x` axes in [mm].
     *  Computed automatically (whenever the `absorber` or `gap` thickness is
     *  updated*/
-  double fLayerThick;
+  G4double fLayerThick;
 
   /** The thickness of the entire `calorimeter` measured along the `x` axes in [mm]
     * Computed automatically whenever the `layer` thickness (i.e. absorber and/or
     * gap thickness) or number of layer is updated. */
-  double fCaloThick;
+  G4double fCaloThick;
 
   /** The transverse size (i.e. full size along the `yz` axes) of the `calorimeter`
     * in [mm] units (same for `asborber`, `gap` and `layer` volumes/shapes)*/
-  double fCaloSizeYZ;
+  G4double fCaloSizeYZ;
 
 
   /** The `x`-coordinate of the `calorimeter` boundary on the left hand size.
     * Calculated automatically (whenever the related parameters are updated) */
-  double fCaloStartX;
+  G4double fCaloStartX;
 
   /** The `x`-coordinate of the mid-point between the `calorimeter` and `world`
     * boundaries on the left hand size.
     * Calculated automatically (whenever the related parameters are updated) */
-  double fPrimaryXPosition;
+  G4double fPrimaryXPosition;
 
 
   // pointers to box shape objects representing each elements of the geometry

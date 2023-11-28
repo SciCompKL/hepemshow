@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 
 
 #include "EventLoop.hh"
@@ -62,11 +64,15 @@ void EventLoop::ProcessEvents(G4HepEmTLData& theTLData, G4HepEmState& theState, 
     // - the primary track is the very first track in the stack, so obtain one
     //   track reference from the stack and generate one primary into that
     G4HepEmTrack& primaryTrack = theTrackStack.Insert();
+
+    // 2. Invoke the beginning of event action (by passing the current primary track)
+    BeginOfEventAction(theResult, eventID, primaryTrack, theGeometry, thePrimaryGenerator);
+
+    // Continuation of 1.:
     thePrimaryGenerator.GenerateOne(primaryTrack);
     primaryTrack.SetID(theTrackStack.GetNextTrackID());
     //
-    // 2. Invoke the beginning of event action (by passing the current primary track)
-    BeginOfEventAction(theResult, eventID, primaryTrack);
+
     //
     //
     // 3. While the track-stack becomes empty:
@@ -112,7 +118,7 @@ void EventLoop::ProcessEvents(G4HepEmTLData& theTLData, G4HepEmState& theState, 
       //   Therefore, primaries need to be moved to the calorimeter boundary
       //   (as they point into the calorimeter they will be inside then).
       if (nextTrack->GetParentID() < 0) {
-        double* pos = nextTrack->GetPosition();
+        G4double* pos = nextTrack->GetPosition();
         pos[0] = theGeometry.GetCaloStartXposition();
       }
       // - invoke the beginning of tracking action before start tracking this track
@@ -141,15 +147,30 @@ void EventLoop::ProcessEvents(G4HepEmTLData& theTLData, G4HepEmState& theState, 
   // calculate and report the event processing time
   struct timeval finish;
   gettimeofday(&finish, NULL);
-  const double theTime = ((double)(finish.tv_sec-start.tv_sec)*1000000 + (double)(finish.tv_usec-start.tv_usec)) / 1000000;
+  const G4double theTime = ((G4double)(finish.tv_sec-start.tv_sec)*1000000 + (G4double)(finish.tv_usec-start.tv_usec)) / 1000000;
   if (verbosity > 0) {
     std::cout << " --- EventLoop::ProcessEvents: completed simulation within t = " << theTime << " [s]" << std::endl;
   }
 }
 
 
-void EventLoop::BeginOfEventAction(Results& theResult, int eventID, const G4HepEmTrack& thePrimaryTrack) {
+void EventLoop::BeginOfEventAction(Results& theResult, int eventID, const G4HepEmTrack& thePrimaryTrack, Geometry& theGeometry, PrimaryGenerator& thePrimaryGenerator) {
   // reset all per-event accumulators in results, i.e. that are used to accumulate data during one event
+
+  #ifdef CODI_REVERSE
+    G4double::getTape().reset();
+    G4double::getTape().setActive();
+    theResult.pThicknessAbsorber = theGeometry.GetAbsThick();
+    G4double::getTape().registerInput(theResult.pThicknessAbsorber);
+    theGeometry.SetAbsThick(theResult.pThicknessAbsorber);
+    theResult.pThicknessGap = theGeometry.GetGapThick();
+    G4double::getTape().registerInput(theResult.pThicknessGap);
+    theGeometry.SetGapThick(theResult.pThicknessGap);
+    theResult.pParticleEnergy = thePrimaryGenerator.GetKinEnergy();
+    G4double::getTape().registerInput(theResult.pParticleEnergy);
+    thePrimaryGenerator.SetKinEnergy(theResult.pParticleEnergy);
+  #endif
+
   theResult.fPerEventRes.fEdepAbs        = 0.0;
   theResult.fPerEventRes.fEdepGap        = 0.0;
 
@@ -159,13 +180,26 @@ void EventLoop::BeginOfEventAction(Results& theResult, int eventID, const G4HepE
 
   theResult.fPerEventRes.fNumStepsGamma  = 0.0;
   theResult.fPerEventRes.fNumStepsElPos  = 0.0;
+
+  for(int i=0; i<50; i++){
+    theResult.fEdepPerLayer_CurrentEvent.GetY()[i] = 0.;
+  }
+
 }
 
 void EventLoop::EndOfEventAction(Results& theResult, int eventID) {
   // propagare the data accunulated during this event to the results
-  double dum = theResult.fPerEventRes.fEdepAbs;
+  G4double dum = theResult.fPerEventRes.fEdepAbs;
   theResult.fEdepAbs  += dum;
   theResult.fEdepAbs2 += dum*dum;
+
+  theResult.fEdepPerLayer.Add(&theResult.fEdepPerLayer_CurrentEvent);
+  for(int i=0; i<50; i++){
+    theResult.fEdepPerLayer_Acc[i].add(GET_VALUE((theResult.fEdepPerLayer_CurrentEvent.GetY()[i])));
+    #if CODI_FORWARD
+       theResult.fEdepPerLayer_AccD[i].add(GET_DOTVALUE((theResult.fEdepPerLayer_CurrentEvent.GetY()[i])));
+    #endif
+  }
 
   dum = theResult.fPerEventRes.fEdepGap;
   theResult.fEdepGap  += dum;
@@ -192,13 +226,27 @@ void EventLoop::EndOfEventAction(Results& theResult, int eventID) {
   dum = theResult.fPerEventRes.fNumStepsElPos;
   theResult.fNumStepsElPos  += dum;
   theResult.fNumStepsElPos2 += dum*dum;
+
+  #ifdef CODI_REVERSE
+    for(int i=0; i<50; i++){
+       G4double::getTape().registerOutput(theResult.fEdepPerLayer_CurrentEvent.GetY()[i]);
+    }
+    G4double::getTape().setPassive();
+    for(int i=0; i<50; i++){
+       theResult.fEdepPerLayer_CurrentEvent.GetY()[i].setGradient(theResult.barEdep[i]);
+    }
+    G4double::getTape().evaluate();
+    theResult.barThicknessAbsorber.add( theResult.pThicknessAbsorber.getGradient() );
+    theResult.barThicknessGap.add( theResult.pThicknessGap.getGradient() );
+    theResult.barParticleEnergy.add( theResult.pParticleEnergy.getGradient() );
+  #endif
 }
 
 
 void EventLoop::BeginOfTrackingAction(Results& theResult, G4HepEmTrack& theTrack) {
   // check if this track is a secondary (parent ID > -1) then its type (based on the charge)
   if (theTrack.GetParentID() > -1) {
-    const int ich = theTrack.GetCharge();
+    const int ich = GET_VALUE(theTrack.GetCharge());
     switch (ich) {
       case  0: theResult.fPerEventRes.fNumSecGamma    += 1.0;
                break;

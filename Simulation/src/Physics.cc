@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 
 
 
@@ -25,10 +27,10 @@
 #include "G4HepEmRandomEngine.hh"
 #include "URandom.hh"
 
-double G4HepEmRandomEngine::flat() {
+G4double G4HepEmRandomEngine::flat() {
   return ((URandom*)fObject)->flat();
 }
 
-void G4HepEmRandomEngine::flatArray(const int size, double *vect) {
+void G4HepEmRandomEngine::flatArray(const int size, G4double *vect) {
   for (int i = 0; i < size; i++) vect[i] = ((URandom*)fObject)->flat();
 }

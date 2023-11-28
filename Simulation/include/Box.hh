@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 
 #ifndef BOX_HH
 #define BOX_HH
@@ -65,7 +67,7 @@ public:
    * @param[in] pY      Half length of the box along the y-axis.
    * @param[in] pZ      Half length of the box along the z-axis.
    */
-  Box (const std::string& name, int indxMat, double pX, double pY, double pZ);
+  Box (const std::string& name, int indxMat, G4double pX, G4double pY, G4double pZ);
 
   /** Destructor (nothig to do)*/
  ~Box () {}
@@ -91,14 +93,14 @@ public:
     * @param[in] idx Encodes the axis along the half length is given
     *                (idx=0 --> x; idx=1 --> y; idx=2 --> z).
     */
-  void SetHalfLength(double val, int idx);
+  void SetHalfLength(G4double val, int idx);
 
   /** Get the half length of the box along the given axis.
     * @param[in] idx Encodes the axis along the half length is required
     *                (idx=0 --> x; idx=1 --> y; idx=2 --> z).
     * @return Half length of this box along the required axis.
     */
-  double GetHalfLength(int idx) const;
+  G4double GetHalfLength(int idx) const;
 
 
   /**
@@ -114,7 +116,7 @@ public:
     * @param[in] v 3D normalised direction
     * @return Distance to the surface boundary from inside (see above).
     */
-  double DistanceToOut(double* r, double *v) const;
+  G4double DistanceToOut(G4double* r, G4double *v) const;
 
   /**
     * Calculates the distance to the nearest boundary of a shape from inside (safety).
@@ -124,13 +126,13 @@ public:
     * @param[in] r 3D position of the point in local coordinates
     * @return Distance to the nearest surface boundary from inside (see above).
     */
-  double DistanceToOut(double* r) const;
+  G4double DistanceToOut(G4double* r) const;
 
 
   // Return whether the given `position` (in local coordinates) is
   // inside(0)/outside(1)/on surface(2), taking into account tolerance.
-//  EInside Inside(double rx, double ry, double rz) const;
-//  EInside Inside(double* r) const;
+//  EInside Inside(G4double rx, G4double ry, G4double rz) const;
+//  EInside Inside(G4double* r) const;
 
 
 private:
@@ -140,16 +142,16 @@ private:
   /** Index of the material this volume is filled with.*/
   int    fMaterialIndx;
   /** Half length of the box along the x-axis. */
-  double fDx;
+  G4double fDx;
   /** Half length of the box along the y-axis. */
-  double fDy;
+  G4double fDy;
   /** Half length of the box along the z-axis. */
-  double fDz;
+  G4double fDz;
 
   /** Value of the tolerance in [mm]. */
-  const double kCarTolerance = 1.0E-9;
+  const G4double kCarTolerance = 1.0E-9;
   /** Half of the above tolerance. */
-  double fDelta;
+  G4double fDelta;
 
 };
 

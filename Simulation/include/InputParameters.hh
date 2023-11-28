@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 
 #ifndef INPUTPARAMETERS_HH
 #define INPUTPARAMETERS_HH
@@ -12,6 +14,8 @@
  */
 
 #include <iostream>
+#include <string>
+#include <vector>
 
 // NOTE: this is Unix specific!
 #include <getopt.h>
@@ -35,10 +39,10 @@ struct InputParameters {
       fSizeTransverse(400.0) {}
 
     int    fNumLayers;         ///< number of layers in the calorimeter
-    double fThicknessAbsorber; ///< absorber thickness along X in [mm]
-    double fThicknessGap;      ///< gap thickness along X in [mm]
-    double fThicknessCalo;     ///< calorimeter thickness along X [mm] ONLY if number of layers is zero
-    double fSizeTransverse;    ///< calorimeter full size along YZ in [mm]
+    G4double fThicknessAbsorber; ///< absorber thickness along X in [mm]
+    G4double fThicknessGap;      ///< gap thickness along X in [mm]
+    G4double fThicknessCalo;     ///< calorimeter thickness along X [mm] ONLY if number of layers is zero
+    G4double fSizeTransverse;    ///< calorimeter full size along YZ in [mm]
   };
 
 
@@ -52,9 +56,9 @@ struct InputParameters {
       fRandomSeed(1234) {}
 
     std::string  fParticleName;   ///< primary particle name: {"e-", "e+" or "gamma"}
-    double       fParticleEnergy; ///< primary particle energy in [MeV]
+    G4double       fParticleEnergy; ///< primary particle energy in [MeV]
     int          fNumEvents;      ///< number of events to simulate (each will start with a single primary)
-    double       fRandomSeed;     ///< seed for the random number generator
+    G4double       fRandomSeed;     ///< seed for the random number generator
   };
 
   // all members
@@ -62,6 +66,9 @@ struct InputParameters {
   PrimaryAndEvents fPrimaryAndEvents; ///< the primary partcile and events related configuration
   std::string      fG4HepEmDataFile;  ///< the pre-generated data file (with path)
   int              fRunVerbosity;     ///< level of printout verbosity duing setting up: nothing when < 1.
+  #ifdef CODI_REVERSE
+    std::vector<double> barEdep;     ///< Bar values of the energy depositions
+  #endif
 };
 
 
@@ -101,6 +108,9 @@ static struct option options[] = {
   {"random-seed                                                           - default: 1234"   , required_argument, 0, 's'},
 
   {"g4hepem-data-file     (the pre-generated data file with its path)     - default: ../data/hepem_data" , required_argument, 0, 'd'},
+  #ifdef CODI_REVERSE
+    {"edep-bars             (bar values of edeps, in [MeV] units)           - default:: 0:0:...:0", required_argument, 0, 'b'},
+  #endif
   {"run-verbosity         (verbosity of run information: nothing when 0)  - default: 1"      , required_argument, 0, 'v'},
   {"help"                                                                                    , no_argument      , 0, 'h'},
   {0, 0, 0, 0}
@@ -115,11 +125,46 @@ void Help() {
   }
 }
 
+// Parses string 'number1:number2:...:numberN' into vector {number1,...,numberN}.
+static inline std::vector<double> stod_array(const char* arg){
+  std::vector<double> ret;
+  std::string arg_s(arg);
+  arg_s = arg_s + ":";
+  size_t pos = 0;
+  do {
+     int sep = arg_s.find(":",pos);
+     std::string s = arg_s.substr(pos,sep-pos);
+     ret.push_back(std::stod(s.c_str()));
+     pos = sep+1;
+  } while(pos<arg_s.size());
+  return ret;
+}
+
+// In forward-mode AD, allow real-number arguments to consist of two numbers separated by ':'.
+// If existent, the second number specifies the dot value of the input argument.
+static inline G4double parseRealInput(const char* arg){
+  std::vector<double> arg_d = stod_array(arg);
+  if(arg_d.size()==1){
+     return arg_d[0];
+  } else {
+     if(arg_d.size()>2){
+        std::cerr << "Specify 'number' or 'number:number', not more than two elements." << std::endl;
+     }
+     G4double ret = arg_d[0];
+     #ifdef CODI_FORWARD
+        SET_DOTVALUE(ret, arg_d[1]);
+     #else
+        std::cerr << "Ignoring specification of dot value in argument, as this is not a forward-mode AD build." << std::endl;
+     #endif
+     return ret;
+  }
+}
+
 
 void GetOpt(int argc, char *argv[], InputParameters& param) {
   while (true) {
     int c, optidx = 0;
-    c = getopt_long(argc, argv, "hl:a:g:t:p:e:n:s:d:v:", options, &optidx);
+    c = getopt_long(argc, argv, "hl:a:g:t:p:e:n:s:d:v:b:", options, &optidx);
     if (c == -1)
       break;
     switch (c) {
@@ -131,10 +176,10 @@ void GetOpt(int argc, char *argv[], InputParameters& param) {
        param.fGeometry.fNumLayers = std::stoi(optarg);
        break;
     case 'a':
-       param.fGeometry.fThicknessAbsorber = std::stod(optarg);
+       param.fGeometry.fThicknessAbsorber = parseRealInput(optarg);
        break;
     case 'g':
-       param.fGeometry.fThicknessGap = std::stod(optarg);
+       param.fGeometry.fThicknessGap = parseRealInput(optarg);
        break;
     case 't':
        param.fGeometry.fSizeTransverse = std::stod(optarg);
@@ -149,7 +194,7 @@ void GetOpt(int argc, char *argv[], InputParameters& param) {
        }
        break;
     case 'e':
-       param.fPrimaryAndEvents.fParticleEnergy = std::stod(optarg);
+       param.fPrimaryAndEvents.fParticleEnergy = parseRealInput(optarg);
        break;
     case 'n':
        param.fPrimaryAndEvents.fNumEvents = std::stoi(optarg);
@@ -163,6 +208,14 @@ void GetOpt(int argc, char *argv[], InputParameters& param) {
        break;
     case 'v':
        param.fRunVerbosity = std::stoi(optarg);
+       break;
+
+    case 'b':
+       #ifdef CODI_REVERSE
+          param.barEdep = stod_array(optarg);
+       #else
+          std::cerr << "Ignoring -b argument, as this is a not a reverse-AD build." << std::endl;
+       #endif
        break;
 
     case 'h':

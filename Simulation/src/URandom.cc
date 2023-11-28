@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 
 #include "URandom.hh"
 
@@ -10,6 +12,6 @@ URandom::~URandom() {
   delete fDist;
 }
 
-double URandom::flat() {
+G4double URandom::flat() {
   return fDist->operator()(fEngine);
 }

@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 
 #ifndef STEPPINGLOOP_HH
 #define STEPPINGLOOP_HH
@@ -28,7 +30,7 @@
  *   method)
  * - information (e.g. energy deposit) might be collected at the end of each
  *   simulation step (by calling the `SteppingLoop::SteppingAction(Results&,
- *   const G4HepEmTrack&, const Box*, double, int, int, int, int)` method )
+ *   const G4HepEmTrack&, const Box*, G4double, int, int, int, int)` method )
  *
  * **A bit more details**:
  *
@@ -148,13 +150,13 @@ private:
    * @param eventID ID of the event to which the particle under tracking belongs to
    * @param stepID ID of this step that was just performed, i.e. number of steps cmpleted so far with with the current track
    */
-  static void SteppingAction(Results& theResult, const G4HepEmTrack& theTrack, const Box* currentVolume, double currentPhysStepLength, int indxLayer, int indxAbsorber, int eventID, int stepID);
+  static void SteppingAction(Results& theResult, const G4HepEmTrack& theTrack, const Box* currentVolume, G4double currentPhysStepLength, int indxLayer, int indxAbsorber, int eventID, int stepID);
 
 
   // some utilities to modify 3vectors
-  static void Set3Vect(double* v, double to);
-  static void Set3Vect(double* v, const double* to);
-  static void AddTo3Vect(double* v, const double* u, double scale=1.0);
+  static void Set3Vect(G4double* v, G4double to);
+  static void Set3Vect(G4double* v, const G4double* to);
+  static void AddTo3Vect(G4double* v, const G4double* u, G4double scale=1.0);
 
 };
 

@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 
 #ifndef PHYSICS_HH
 #define PHYSICS_HH
@@ -21,7 +23,7 @@
  * `HepEmShow`), needs to provide is an implementation of a uniform random
  * number generator. An object from such genertor must be plugged-in to the
  * `G4HepEmRandomEngine` by implementing the two missing `G4HepEmRandomEngine::flat()`
- * and `G4HepEmRandomEngine::flatArray(const int, double *)` methods. This is
+ * and `G4HepEmRandomEngine::flatArray(const int, G4double *)` methods. This is
  * also done in the `Physics.cc` implementation file that completes the
  * implementation of `G4HepEmRun`.
  *

@@ -20,6 +20,16 @@ if(G4HepEm_geant4_FOUND)
   find_package(Geant4 REQUIRED)
 endif()
 
+if(G4HepEm_codi_forward)
+  message(NOTICE "G4HepEm has been configured with forward-mode AD using CoDiPack, \nso we will build a forward-mode AD version of HepEmShow.")
+  set(CODI_FORWARD ON)  # Actually, not any further change required, as the compile definition and library link have PUBLIC inheritance.
+endif()
+
+if(G4HepEm_codi_reverse)
+  message(NOTICE "G4HepEm has been configured with reverse-mode AD using CoDiPack, \nso we will build a reverse-mode AD version of HepEmShow.")
+  set(CODI_REVERSE ON)  # Actually, not any further change required, as the compile definition and library link have PUBLIC inheritance.
+endif()
+
 
 #-------------------------------------------------------------------------------
 # Set the headers, sources and include directory:

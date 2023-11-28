@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 #ifndef TrackStack_HH
 #define TrackStack_HH
 

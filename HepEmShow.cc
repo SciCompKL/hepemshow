@@ -91,7 +91,7 @@ int main(int argc, char* argv[]) {
   // construct a HepEm random number generator, using our local uniform `URandom`
   // generator, then set it to be used in the above TLdata
   // NOTE: seed can be set as input argument
-  URandom*             theURnd         = new URandom(theInputParameters.fPrimaryAndEvents.fRandomSeed);
+  URandom*             theURnd         = new URandom(GET_VALUE(theInputParameters.fPrimaryAndEvents.fRandomSeed));
   G4HepEmRandomEngine* theRandomEngine = new G4HepEmRandomEngine(theURnd);
   theTLData->SetRandomEngine(theRandomEngine);
 
@@ -124,6 +124,19 @@ int main(int argc, char* argv[]) {
   // to collect data per-layer and the number of layer is configurable input argument)
   Results theResult;
   theResult.fEdepPerLayer.ReSet("hist_Edep_PerLayer", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
+  theResult.fEdepPerLayer_CurrentEvent.ReSet("hist_Edep_PerLayer_CurrentEvent", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
+  theResult.fEdepPerLayer_Acc.resize(50);
+  #ifdef CODI_FORWARD
+    theResult.fEdepPerLayer_AccD.resize(50);
+  #endif
+  #ifdef CODI_REVERSE
+    theResult.barEdep.resize(50,0.);
+    for(int i=0; i<50; i++){
+       if(i<theInputParameters.barEdep.size()){
+          theResult.barEdep[i] = theInputParameters.barEdep[i];
+       }
+    }
+  #endif
   theResult.fGammaTrackLenghtPerLayer.ReSet("hist_GamTrackL_PerLayer", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
   theResult.fElPosTrackLenghtPerLayer.ReSet("hist_ElPosTrackL_PerLayer", 0, theGeometry.GetNumLayers(), theGeometry.GetNumLayers());
 

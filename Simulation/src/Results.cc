@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 
 #include "Results.hh"
 
@@ -5,27 +7,49 @@
 
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 
 
 void WriteResults(struct Results& res, int numEvents) {
   // for the histograms, bring them to be mean per event and write
-  const double norm = numEvents > 0 ? 1.0/numEvents : 1.0;
+  const G4double norm = numEvents > 0 ? 1.0/numEvents : 1.0;
   res.fEdepPerLayer.Scale(norm);
   res.fGammaTrackLenghtPerLayer.Scale(norm);
   res.fElPosTrackLenghtPerLayer.Scale(norm);
 
   res.fEdepPerLayer.WriteToFile(false);
+
+  std::ofstream edeps("edeps");
+  for(int i=0; i<50; i++){
+     edeps << std::setprecision(14) << res.fEdepPerLayer_Acc[i].getMean() << " " << res.fEdepPerLayer_Acc[i].getMeanSq();
+     #if CODI_FORWARD
+        edeps << " " << res.fEdepPerLayer_AccD[i].getMean() << " " << res.fEdepPerLayer_AccD[i].getMeanSq();
+     #endif
+     edeps << "\n";
+  }
+  edeps.close();
+
+  #ifdef CODI_REVERSE
+     std::ofstream barInputs("barInputs");
+     barInputs << std::setprecision(14);
+     barInputs << res.barThicknessAbsorber.getMean() << " " << res.barThicknessAbsorber.getVar() << "\n";
+     barInputs << res.barThicknessGap.getMean() << " " << res.barThicknessGap.getVar() << "\n";
+     barInputs << res.barParticleEnergy.getMean() << " " << res.barParticleEnergy.getVar() << "\n";
+     barInputs.close();
+  #endif
+
+
   res.fGammaTrackLenghtPerLayer.WriteToFile(false);
   res.fElPosTrackLenghtPerLayer.WriteToFile(false);
 
   //
   res.fEdepAbs  = res.fEdepAbs*norm;
   res.fEdepAbs2 = res.fEdepAbs2*norm;
-  const double rmsEAbs = std::sqrt(std::abs(res.fEdepAbs2 - res.fEdepAbs*res.fEdepAbs));
+  const G4double rmsEAbs = std::sqrt(std::abs(res.fEdepAbs2 - res.fEdepAbs*res.fEdepAbs));
 
   res.fEdepGap  = res.fEdepGap*norm;
   res.fEdepGap2 = res.fEdepGap2*norm;
-  const double rmsEGap = std::sqrt(std::abs(res.fEdepGap2 - res.fEdepGap*res.fEdepGap));
+  const G4double rmsEGap = std::sqrt(std::abs(res.fEdepGap2 - res.fEdepGap*res.fEdepGap));
 
 
   // the secondary type and step number statistics
@@ -46,5 +70,9 @@ void WriteResults(struct Results& res, int numEvents) {
             << " Mean number of e-/e+ steps " << res.fNumStepsElPos*norm  << std::endl;
   std::cout << " Mean number of gamma steps " << res.fNumStepsGamma*norm  << std::endl;
   std::cout << " ------------------------------------------------------------\n";
+
+  #ifdef CODI_REVERSE
+    G4double::getTape().printStatistics(std::cout);
+  #endif
 
 }

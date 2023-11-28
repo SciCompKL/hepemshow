@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 #ifndef URandom_HH
 #define URandom_HH
 
@@ -38,7 +40,7 @@ public:
   ~URandom();
 
    /** Method to provide uniform random numbers on \f$(0,1)\f$ */
-   double flat();
+   G4double flat();
 
 public:
    /** c++11 implementation of the 64-bit Mersenne Twister engine */

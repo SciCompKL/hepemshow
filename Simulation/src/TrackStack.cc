@@ -1,3 +1,5 @@
+#include "ad_type.h"
+
 
 #include "TrackStack.hh"
 
@@ -27,7 +29,7 @@ int TrackStack::GetTypeOfNextTrack() {
   if (fCurIndx<0) {
     return -999;
   }
-  return fTrackVect[fCurIndx].GetCharge();
+  return GET_VALUE(fTrackVect[fCurIndx].GetCharge());
 }
 
 
