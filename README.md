@@ -1,27 +1,39 @@
-<p align="center">  
-  <a href="https://hepemshow.readthedocs.io/en/latest/">
-    <img src="./docs/source/logo_HepEmShow.png"></a>
-</p>
+*This README is about the extension of HepEmShow with AD capabilities. See [README_ORIGINAL.md](README_ORIGINAL.md) for information about HepEmShow.*
 
+# Differentiated HEP-style Electromagnetic Shower Simulation
+Based on [G4HepEm](https://github.com/mnovak42/g4hepem/), [HepEmShow](https://github.com/mnovak42/hepemshow/) is a compact, self-contained simulation of electromagnetic showers through a simple calorimeter. This repository contains a version of HepEmShow that has been extended with algorithmic differentiation (AD) capabilities using the AD tool [CoDiPack](https://github.com/SciCompKL/CoDiPack). Along with [differentiated G4HepEm](https://github./com/maxaehle/g4hepem/), this makes it possible to compute forward- and reverse-mode derivatives of 
+- output variables of the simulation, such as energy depositions in the layers of the calorimeter,
 
-# Introduction & motivation  
+with respect to 
+- input variables of the simulation, such as the kinetic energy of the primary particles, and the geometric thicknesses of absorber and gap layers.
 
-The motivation of the project was to provide a **mock-up of a typical** [`Geant4`](https://geant4.web.cern.ch) **simulation application**. Something that preserves the most important algorithmic and computing characteristics of a typical [`Geant4`](https://geant4.web.cern.ch) based particle transport simulation while exposes the underlying main computing flow, algorithms and components in a clear and simple way. The primary goal was to provide a starting point, a sandbox that can be easily utilised even by non-experts for initial testing, trying new technologies, techniques targeting [`Geant4`](https://geant4.web.cern.ch) based simulation applications in order encourage, stimulate and facilitate such activities.     
+## Building from source
+A version of HepEmShow without any AD capabilities can be built as usual: Build G4HepEm, download HepEmShow into some directory, enter that directory and run
+```bash
+mkdir build
+cd build
+cmake ../ -DG4HepEm_DIR=path/to/g4hepem/install/lib/cmake/G4HepEm/ -DCMAKE_BUILD_TYPE=Release
+make
+```
+To create a forward-mode or reverse-mode AD build, first build the respective version of G4HepEm. After this, the above `cmake` call for HepEmShow should automatically apply the same AD settings. You might have to specify the path to your [CoDiPack](https://github.com/SciCompKL/CoDiPack) directory via `-DCoDiPack_DIR=/path/to/CoDiPack/cmake`. Instead of `install/lib`, CMake may have used `install/lib64`.
 
-`HepEmShow` provides a **minimalist, simplistic** but **complete and self contained** implementation of a [`Geant4`](https://geant4.web.cern.ch) like but [`Geant4`](https://geant4.web.cern.ch) independent simulation application for modelling `High Energy Physics`(**HEP**) style  `electromagnetic`(**EM**) `shower`(**SHOW**) in a configurable, simplified sampling calorimeter illustrated below.
+If both non-AD and AD builds are required, consider using directories `build_no`/`build_ad` and `$PWD/../install_no`/`$PWD/../install_ad` instead of `build` and `$PWD/../install`.
 
-<p align="center">
-  <img src="./docs/source/IntroAndInstall/figs/calo_layer2.png" alt="drawing" width="500"/>
-</p>
+## Computing derivatives
 
-Beyond the usual **application specific** simulation **components** (e.g. application geometry or primary particle/event generation description), ``HepEmShow`` **also** includes a minimalist and simplistic but **local implementation of** all necessary, **general** [`Geant4`](https://geant4.web.cern.ch) **kernel components** (e.g. event processing or stepping loops). This makes `HepEmShow` self contained and complete allowing to alter and change the underlying computing flow, components and algorithm at any points.
+You can run differentiated versions of `HepEmShow` just like the original non-differentiated code. It will produce an additional file `edeps` with 50 rows. The *i*-th row contains the mean energy deposition (in MeV) and the mean squared energy deposition (in MeV²) of the *i*-th layer. 
 
-It must be noted, that while `HepEmShow` is a [`Geant4`](https://geant4.web.cern.ch) independent EM shower simulation, the provided results agree very well to those obtained by the corresponding [`Geant4`](https://geant4.web.cern.ch) based simulation as illustrated below.
+In the **forward mode**, each line in the `edeps` file contains two additional numbers, namely, the mean derivative of the energy deposition and the mean squared derivative of the energy deposition in the respective layer. The AD inputs, with respect to which these derivatives are formed, are to be specified through the command-line interface as follows. In order to "seed" the primary energy (in MeV), absorber thickness (in mm), and gap thickness (in mm) with a non-zero dot-value, specify the respective dot-value behind the value passed to `-e`/`-a`/`-g`, separated by a colon. For example, 
+```bash
+./HepEmShow -n 1000 -e 10000:3.5 -a 2.3:1
+```
+means that you are interested in the derivative with respect to the primary energy (in MeV) times 3.5 plus the derivative with respect to the absorber thickness (in mm) times 1, averaged over 1000 events.
 
-<p align="center">
-  <img src="./docs/source/IntroAndInstall/figs/fig-Edep-G4-vs-HepEmShow-10Mill.png" alt="drawing" width="500"/>
-</p>
+In the **reverse mode**, you can specify the bar-value of the energy deposition in all of the 50 layers via the `-b` command line argument. The values have to be separated by colons, and trailing zeros may be omitted. For example
+```bash
+./HepEmShow -n 1000 -e 10000 -b 1:0:3.5
+```
+means that you are interested in the derivative of the energy deposition in the first layer times 1 plus the derivative in the third layer times 3.5, averaged over 1000 events at 10000 MeV. The derivatives are computed in one stroke with respect to the absorber thickness (in mm), gap thickness (in mm) and primary energy (in MeV), and are written to a file `barInputs` in separate lines. The first entry in each of the three lines is the mean derivative, the second entry is the mean squared derivative.
 
-# Requirements
-
-The only requirement, that already allows to build and execute the `HepEmShow` simulation application (using the default material configuration of the calorimeter), is [`G4HepEm`](https://github.com/mnovak42/g4hepem). It is actually [`G4HepEm`](https://github.com/mnovak42/g4hepem) that makes possible to develop such a [`Geant4`](https://geant4.web.cern.ch) like but [`Geant4`](https://geant4.web.cern.ch) independent EM shower simulation like `HepEmShow`. See more details in the [**corresponding part**](https://hepemshow.readthedocs.io/en/latest/IntroAndInstall/install.html#details) of the [**Build and Install**](https://hepemshow.readthedocs.io/en/latest/IntroAndInstall/install.html]) section of the [**Documentation**](https://hepemshow.readthedocs.io/en/latest/) or jump to [**Quick start**](https://hepemshow.readthedocs.io/en/latest/IntroAndInstall/install.html#quick-start).
+## License Hints
+The original version of [HepEmShow](https://github.com/mnovak42/hepemshow/) has been released under the [Apache License version 2.0](https://github.com/mnovak42/hepemshow/blob/master/LICENSE). Please note that CoDiPack has been released under the [GNU General Public License (GPL) version 3](https://github.com/SciCompKL/CoDiPack/blob/master/LICENSE), meaning that you must comply with the provisions of the GPL if you convey the combined work to others.
